@@ -42,6 +42,7 @@ body {
 .container-comments {
     width: 95%;
     max-height: 500px;
+    margin: auto;
     background-color: var(--bg-color-container);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -129,3 +130,50 @@ body {
 }
 
 /* End Section Comments */
+
+
+
+/* Media Query */
+
+@media (min-width: 736px) and (max-width: 2000px) {
+
+    body
+
+    .container-comments-form{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container-comments {
+        border-radius: 10px 0px 0px 10px;
+        width: 50%;
+        margin: 0;
+    }
+
+    .container-form {
+        height: 500px;
+        border-bottom-right-radius: inherit !important;
+        border-radius: 0px 10px 10px 0px !important;
+        border: none;
+        border-left: 3px dashed var(--bg-color-comments);
+        width: 50%;
+    }
+
+    .container-form form label, .container-form form input, .container-form form textarea, .container-form form button , .container-form form p {
+        font-size: 1rem !important;
+    }
+
+    .container form input, .container-form form p , .container-form form div {
+        margin: 0 !important;
+    }
+
+    .container-form form p {
+        margin-top: 10px !important;
+    }
+
+    .container-form form textarea {
+        height: 50px !important;
+    }
+}
