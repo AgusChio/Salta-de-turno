@@ -1,1 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Roboto:wght@300;400;500&display=swap');
 
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+
+.main{
+    margin-left: 70px;
+    margin-right: 70px;
+}
+.textmain{
+    padding-block: 120px;
+    text-align: left;
+    width: 45%;
+}
+.textmain p,
+.textmain h2{
+    font-family: 'Roboto', sans-serif;
+}
+.textmain h1,
+.bbtn{
+    font-family: 'Poppins', sans-serif;
+}
+/*FARMACIA DE TURNO*/
+.textmain h1{
+    color: #18468B;
+    font-size: 70px;
+    margin: 0;
+}
+/*SALTA CAPITAL*/
+.textmain h2{
+    color: #28A174;
+    font-size: 55px;
+    font-weight: 300;
+    margin: auto;
+}
+/*EXPLICACION*/
+.textmain p{
+    color: #0A1E3D;
+    padding-bottom: 16px;
+    font-size: 20px;
+    font-weight: 400;
+}
+/*DISEÑO Y TAMAÑO DE BOTON*/
+.bbtn{
+    color: #FFFFFF;
+    background-color: #2782FF;
+    border: none;
+    font-size: 18px;
+    font-weight: 300;
+    border-radius: 25px;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+}
+/*TAMAÑO MIN Y MAX DE LA IMAGEN*/
+.main img{
+    text-align: center;
+    min-width: 310px;
+    max-width: 900px;
+    width: 100%;
+    float: right;
+}
+
+/*MIN 360PX CELULAR*/
+@media (max-width: 900px) {
+    .main{
+        margin: 0;
+    }
+    .main .textmain{
+        width: auto;
+        margin: 20px;
+    }
+    .textmain h1{
+        font-size: 29px;
+    }
+    .textmain h2{
+        font-size: 25px;
+    }
+    .textmain p{
+        font-size: 15px;
+    }
+    .bbtn{
+        font-size: 12px;
+        font-weight: 600;
+    }
+}
