@@ -3,20 +3,12 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
 
 * {
     font-family: 'Poppins', 'sans-serif';
-    margin: 10px;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     list-style: none;
     color: #0a1e3d;
-    text-align: center;
-}
-
-.footer-links h4 {
-    font-family: 'Roboto', 'sans-serif';
-    font-size: 20px;
-    margin-bottom: 25px;
-
-
+    text-transform: capitalize;
 }
 
 .container {
@@ -26,7 +18,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
 
 .footer {
     background-color: #f1f1f1;
-    padding: 20px;
+    padding: 80px 0;
 }
 
 .footer-row {
@@ -34,7 +26,19 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
     flex-wrap: wrap;
 }
 
-a {
+.footer-links{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-links h4 {
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 20px;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+.footer-link ul li a {
     text-decoration: none;
     color: #0a1e3d;
     margin: 0;
@@ -44,8 +48,18 @@ a {
     transition: all .3s ease;
 }
 
-a:hover {
+.footer-link ul li a:hover {
     color: #0a1e3d;
     padding-left: 6px;
 }
 
+@media(max-width:360px) {
+    .footer-row {
+        text-align: center;
+    }
+
+    .footer-links {
+        width: 100px;
+        margin-bottom: 30px;
+    }
+}
