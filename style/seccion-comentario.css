@@ -8,8 +8,6 @@
 
 
 body {
-    background: linear-gradient(180deg, var(--color-tertiary) 0%, var(--color-secondary));
-    height: fit-content;
     color: var(--text-color) !important;
 }
 
@@ -34,9 +32,6 @@ body {
     text-align: center;
     font-family: var(--font-title);
     color: var(--text-color);
-    text-decoration-line: underline;
-    text-decoration-style: wavy;
-    text-decoration-color: var(--color-underline);
 }
 
 .container-comments {
