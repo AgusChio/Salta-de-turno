@@ -8,6 +8,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
     box-sizing: border-box;
     list-style: none;
     color: #0a1e3d;
+    text-align: center;
 }
 
 .footer-links h4 {
@@ -37,12 +38,14 @@ a {
     text-decoration: none;
     color: #0a1e3d;
     margin: 0;
+    font-size: 18px;
+    display: block;
+    margin-bottom: 15px;
+    transition: all .3s ease;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: #0a1e3d;
+    padding-left: 6px;
 }
-/*footer-links {
-    width: 50%;
-    padding: 0 15px;
-}
+
