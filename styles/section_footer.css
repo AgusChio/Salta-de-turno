@@ -1,15 +1,3 @@
-@import 
-url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&display=swap');
-
-* {
-    font-family: 'Poppins', 'sans-serif';
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    color: black;
-
-}
 
 .curveado {
     position: relative;
@@ -27,7 +15,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
 }
 
 .footer {
-    padding: 80px 0;
+    padding: 10px;
     background-image: linear-gradient(#FFFFFF, #cccbcb);
 }
 
@@ -40,6 +28,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
 .footer-links {
     width: 25%;
     padding: 0 15px;
+    border-bottom: 3px dashed #034172;
 }
 
 /**/
@@ -55,7 +44,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
     text-decoration: none;
     color: black;
     display: block;
-    margin-bottom: 15px;
+    margin-bottom: 7px;
     transition: all .3s ease;
 }
 
@@ -82,8 +71,9 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
     font-family: 'Roboto', 'sans-serif';
     color: #034172;
     text-align: center;
-    margin: 10px;
+    margin-top: 10px;
 }
+
 
 @media(max-width:991px){
     .footer-row {
