@@ -4,3 +4,6 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
 
 /*footer*/
 @import url("section_footer.css");
+
+/*General*/
+@import url("general.css");
