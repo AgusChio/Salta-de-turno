@@ -82,6 +82,7 @@ url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Roboto&dis
     font-family: 'Roboto', 'sans-serif';
     color: #034172;
     text-align: center;
+    margin: 10px;
 }
 
 @media(max-width:991px){
