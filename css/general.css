@@ -13,7 +13,8 @@ font-family: 'Roboto', sans-serif; */
     --sites: #034172;
 }
 h1,
-h2, 
+h2,
+h3, 
 nav a,
 nav .btn{
     color: var(--font);
