@@ -7,42 +7,21 @@
 .navbar-collapse .btn{
     font-weight: 500;
 }
+.navbar-collapse .btn{
+    padding: .5rem;
+    font-size: .9rem;
+    border-color: #36EDA9;
+}
+.navbar-collapse .btn:hover{
+    color: var(--bg-nav);
+}
+.navbar-collapse .btn::after{
+    background: #36EDA9; 
+}
 
 @media screen and (min-width:992px){
     .navbar-collapse{
     justify-content: flex-end;
-    }
-
-    .navbar-collapse .btn{
-    border: .125rem solid #36EDA9;
-    border-radius: 1rem;
-    position: relative;
-    overflow: hidden;
-    }
-    .navbar-collapse .btn:hover{
-    color: var(--bg-nav);
-    }
-    .navbar-collapse .btn::after {
-        content: "";
-        background: #36EDA9; 
-        position: absolute;
-        z-index: -1;
-        padding: 16px 20px;
-        /* display: block; */
-        top: 0;
-        bottom: 0;
-        left: -100%;
-        right: 100%;
-        -webkit-transition: all 0.35s;
-        transition: all 0.35s;
-    }
-    .navbar-collapse .btn:hover::after {
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        -webkit-transition: all 0.35s;
-        transition: all 0.35s;
     }
 }
 
