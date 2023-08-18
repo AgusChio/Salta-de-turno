@@ -1,0 +1,107 @@
+.cronograma-anual{
+    margin: 4rem 8rem;
+    font-family: 'Poppins', sans-serif;
+    
+}
+/*CRONOGRAMA ANUAL*/
+.cronograma-anual h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    letter-spacing: .5rem;
+    color: #034172;
+    border-bottom: 2px solid #034172;
+}
+/*MESES*/
+.tabla-meses{
+    display: grid;
+    border-spacing: 1px;
+    place-content: space-evenly;
+    place-items: center;
+    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(6,auto);
+}
+
+.box-mes{
+    max-width: max-content;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    color: #034172;
+    text-align: center;
+    font-size: 30px;
+    margin: .5rem;
+    padding: 1rem;
+}
+.box-mes:hover{
+    background-color: #034172;
+    color: #FFFFFF;
+}
+/*TABLA*/
+.tabla-anual{
+    color: #FFFFFF;
+    background-color: #034172;
+    max-height: 725px;
+    margin: 1rem 0;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+.tabla-dias{
+    border-collapse: collapse;
+    border: hidden;
+}
+.borde-right{
+    border-right: 3px solid #FFFFFF;
+}
+.tabla-dias th{
+    padding: 20px;
+    background-color: #034172;
+    border-bottom: 2px solid #FFFFFF;
+    
+}
+.tabla-dias thead{
+    top: 0px;
+    font-size: 30px;
+    position: sticky;
+    padding: 20px;
+}
+.tabla-anual:hover{
+    overflow-y: scroll;
+}
+.farma-fecha, 
+.farma-lugar{
+    text-align: center;
+    font-size: 20px;
+    border-spacing: 2px;
+    padding: 4px;
+    border-bottom: 3px dashed #ffffff85;
+}
+.farma-fecha{
+    padding: 0 30px;
+    min-width: 150px;
+    word-spacing: 6vw;
+}
+.farma-fecha strong{
+    font-size: 30px;
+    text-align: end;
+}
+.farma-lugar{
+    width: 100%;
+}
+/**/
+@media (max-width: 900px){
+    .cronograma-anual{
+        margin: .5rem;
+    }
+    .cronograma-anual h1{
+        text-align: center;
+    }
+    .farma-fecha{
+        min-width: 10px;
+    }
+    .tabla-meses{
+        grid-template-columns: repeat(3,auto);
+    }
+    .box-mes{
+        font-size: 18px;
+        padding: .5rem;
+    }
+}
