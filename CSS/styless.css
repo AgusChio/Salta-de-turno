@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&family=Roboto:wght@300;400;500&display=swap');
-
+body{
+    margin: 0%;
+}
 header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
+    background-image: url('../img/Imagen-fondo-inicio.png');
+    background-position: top bottom;
+    background-size: cover;
 }
 
 .main{
-    margin-left: 70px;
-    margin-right: 70px;
+    margin: 50px;
 }
 .textmain{
     padding-block: 120px;
-    text-align: left;
-    width: 45%;
+    text-align: right;
 }
 .textmain p,
 .textmain h2{
@@ -27,13 +28,13 @@ header{
 /*FARMACIA DE TURNO*/
 .textmain h1{
     color: #18468B;
-    font-size: 70px;
+    font-size: 65px;
     margin: 0;
 }
 /*SALTA CAPITAL*/
 .textmain h2{
     color: #28A174;
-    font-size: 55px;
+    font-size: 50px;
     font-weight: 300;
     margin: auto;
 }
@@ -43,6 +44,7 @@ header{
     padding-bottom: 16px;
     font-size: 20px;
     font-weight: 400;
+    text-align: left;
 }
 /*DISEÑO Y TAMAÑO DE BOTON*/
 .bbtn{
@@ -62,7 +64,7 @@ header{
     min-width: 310px;
     max-width: 900px;
     width: 100%;
-    float: right;
+    float: left;
 }
 
 /*MIN 360PX CELULAR*/
@@ -73,6 +75,7 @@ header{
     .main .textmain{
         width: auto;
         margin: 20px;
+        text-align: left;
     }
     .textmain h1{
         font-size: 29px;
