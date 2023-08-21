@@ -1,0 +1,159 @@
+:root {
+    --font-title: 'Roboto', sans-serif;
+    --font-text: 'Poppins', sans-serif;
+    --text-color: #034172;
+    --text-color-light: #174487;
+    --color-primary: #36EDA9;
+    --color-secondary: #338DFF;
+    --color-tertiary: #82D1FF;
+    --color-underline: #4674B7;
+    --bg-color-container: #F1F1F1;
+    --bg-color-comments: #D9D9D9;
+}
+/* Start Section Comments */
+
+.header-title {
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: var(--font-title);
+    color: var(--text-color) !important;
+}
+
+.container-comments {
+    width: 95%;
+    max-height: 500px;
+    margin: auto;
+    background-color: var(--bg-color-container);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.comment {
+    width: 85%;
+    height: fit-content;
+    background-color: var(--bg-color-comments);
+    font-family: var(--font-text);
+}
+
+.container-form {
+    width: 95%;
+    background-color: var(--text-color-light);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-top: 3px dashed var(--bg-color-comments);
+}
+
+.placeholder-color::placeholder {
+    color: #FFFFFF;
+}
+
+.ec-stars-wrapper {
+    font-size: 0;
+    display: inline-block;
+}
+
+.ec-stars-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.ec-stars-wrapper:hover a {
+    color: rgb(255, 219, 87);
+}
+
+.ec-stars-wrapper>a:hover~a {
+    color: #ffffff;
+}
+
+/*** ESTILOS BOTÓN SLIDE LEFT ***/
+.button-submit {
+    background: #fff;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: 16px 20px;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.button-submit:hover {
+    color: #fff;
+}
+
+.button-submit::after {
+    content: "";
+    background: var(--text-color);
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.button-submit:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+/* End Section Comments */
+
+
+
+/* Media Query */
+
+@media (min-width: 736px) and (max-width: 2000px) {
+
+    body
+
+    .container-comments-form{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container-comments {
+        border-radius: 10px 0px 0px 10px;
+        width: 50%;
+        margin: 0;
+    }
+
+    .container-form {
+        height: 500px;
+        border-bottom-right-radius: inherit !important;
+        border-radius: 0px 10px 10px 0px !important;
+        border: none;
+        border-left: 3px dashed var(--bg-color-comments);
+        width: 50%;
+    }
+
+    .container-form form label, .container-form form input, .container-form form textarea, .container-form form button , .container-form form p {
+        font-size: 1rem !important;
+    }
+
+    .container form input, .container-form form p , .container-form form div {
+        margin: 0 !important;
+    }
+
+    .container-form form p {
+        margin-top: 10px !important;
+    }
+
+    .container-form form textarea {
+        height: 50px !important;
+    }
+}
