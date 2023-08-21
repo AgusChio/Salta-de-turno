@@ -1,0 +1,27 @@
+.logo img{
+    width: 3.5rem;
+    margin-right: .5rem;
+    filter: drop-shadow(1px 2px 2px #888);
+}
+.logo .navbar-brand,
+.navbar-collapse .btn{
+    font-weight: 500;
+}
+.navbar-collapse .btn{
+    padding: .5rem;
+    font-size: .9rem;
+    border-color: #36EDA9;
+}
+.navbar-collapse .btn:hover{
+    color: var(--bg-nav);
+}
+.navbar-collapse .btn::after{
+    background: #36EDA9; 
+}
+
+@media screen and (min-width:992px){
+    .navbar-collapse{
+    justify-content: flex-end;
+    }
+}
+
