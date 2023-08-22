@@ -9,6 +9,10 @@
 /* Estilos Header */
 @import url("header-landing.css");
 
+
+/* Estilos Filtros Landing */
+@import url("section-filter.css");
+
 /* Estilos comentarios */
 @import url("section-comments.css");
 

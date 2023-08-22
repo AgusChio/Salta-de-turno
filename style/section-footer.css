@@ -1,10 +1,12 @@
-@import url("general.css");
+*{
+    list-style: none;
+}
 
 /*Wave*/
 .curveado {
     position: absolute;
     width: 100%;
-    margin-top: 0;
+    margin-top: -1px;
 }
 
 .curveado img {
@@ -19,39 +21,24 @@
 
 /*Footer*/
 .footer {
-    padding: 90px 0 10px ;
-    background-image: linear-gradient(#F1F1F1, #cccbcb);
+    background: linear-gradient(180deg, #ffffff 100%, #cccbcb 100%);
+    height: fit-content;
 }
 
-/*Uno al lado del otro*/
-.footer-row {
-    display: flex;
-    flex-wrap: wrap;
-}
 
 .footer-links {
     font-family: var(--font-text);
-    width: 25%;
-    padding: 0 15px;
-    border-bottom: 3px dashed var(--text-color); /*linea punteada*/
-    text-align: center;
+    border-bottom: 2px dashed var(--text-color); /*linea punteada*/
 }
 
 /*Titulos*/
 .footer-links h4 {
     font-family: var(--font-title);
-    font-size: 20px;
     color: var(--text-color);
-    margin-bottom: 20px;
-    text-align: center;
 }
 
 .footer-links ul li a {
-    font-size: 18px;
-    text-decoration: none;
     color: var(--text-color-light);
-    display: block;
-    margin-bottom: 7px;
     transition: all .3s ease;
 }
 
@@ -61,36 +48,61 @@
 }
 
 /*Redes Sociales*/
-.social-link a {
-    display: inline-flex;
-    min-height: 40px;
-    margin: 0;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    transition: all .5s ease;
+.iconify {
+    border: solid 2px var(--text-color);
+    color: var(--text-color);
+    transition: all .3s ease;
 }
 
-.social-link a:hover {
+.iconify:hover {
     background-color: var(--text-color);
+    color: #ffffff;
+    transition: all .3s ease;
+}
+
+.social-link {
+    width: 50%;
 }
 
 /*Copiright*/
 .copy {
     font-family: var(--font-title);
     color: var(--text-color);
-    text-align: center;
-    margin-top: 10px;
 }
 
 /*Responsive*/
 
-@media(max-width:991px){
-    .footer-row {
-        text-align: center;
+
+@media (min-width: 736px) and (max-width: 2000px){
+    .container-footer {
+        width: 100% !important;
+        display: flex;
+        flex-direction: row;
+        align-items:start;
+        margin-top: 100px;
     }
-    .footer-links {
+
+    .footer-links{
+        border-bottom: 0;
+        width: 35%;
+        height: 20vh;
+    }
+
+    .border-dashed{
+        border-right: dashed 2px var(--text-color);
+    }
+
+    .container-copy{
         width: 100%;
-        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-top: dashed 2px var(--text-color);
+        padding: 20px 0;
+    }
+
+    .copy{
+        padding: 0 !important;
+        margin: 0 !important;
     }
 }

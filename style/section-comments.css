@@ -1,19 +1,5 @@
-:root {
-    --font-title: 'Roboto', sans-serif;
-    --font-text: 'Poppins', sans-serif;
-    --text-color: #0A1E3D;
-    --text-color-light: #174487;
-    --color-primary: #36EDA9;
-    --color-secondary: #338DFF;
-    --color-tertiary: #82D1FF;
-    --color-quaternary: #28A174;
-    --color-underline: #4674B7;
-    --bg-color-container: #F1F1F1;
-    --bg-color-comments: #D9D9D9;
-}
-
 .header-title {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-align: center;
     font-family: var(--font-title);
     color: var(--text-color) !important;
@@ -21,11 +7,11 @@
 
 .container-general-comments{
     height: fit-content;
-    width: 93%;
+    width: 95%;
 }
 
 .container-comments {
-    height: 65vh;
+    width: 100%;
     margin: auto;
     background-color: var(--bg-color-container);
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -41,8 +27,7 @@
 }
 
 .container-form {
-    width: 95%;
-    height: 65vh;
+    width: 100%;
     background-color: #2090E1;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     border-top: 3px dashed var(--bg-color-comments);
@@ -71,6 +56,10 @@
 
 .ec-stars-wrapper>a:hover~a {
     color: #ffffff;
+}
+
+.container-form form textarea {
+    height: 200px;
 }
 
 .button-submit {
@@ -113,8 +102,11 @@
     transition: all 0.35s;
 }
 
-@media (min-width: 736px) and (max-width: 2000px) {
-
+@media (min-width: 736px) and (max-width: 1750px) {
+    .header-title{
+        letter-spacing: 2px;
+    }
+    
     .container-comments-form{
         display: flex;
         flex-direction: row;
@@ -124,6 +116,7 @@
     .container-comments {
         border-radius: 10px 0px 0px 10px;
         width: 50%;
+        height: 105vh;
         margin: 0;
     }
 
@@ -133,6 +126,15 @@
         border: none;
         border-left: 3px dashed var(--bg-color-comments);
         width: 50%;
+        height: 105vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-comments{
+        width: 100%;
     }
 
     .container-form form label, .container-form form input, .container-form form textarea, .container-form form button , .container-form form p {
@@ -146,8 +148,52 @@
     .container-form form p {
         margin-top: 10px !important;
     }
+}
 
-    .container-form form textarea {
-        height: 50px !important;
+@media (min-width: 1751px){
+    .header-title{
+        letter-spacing: 2px;
+    }
+
+    .container-comments-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container-comments {
+        border-radius: 10px 0px 0px 10px;
+        width: 50%;
+        height: 80vh;
+        margin: 0;
+    }
+
+    .container-form {
+        border-bottom-right-radius: inherit !important;
+        border-radius: 0px 10px 10px 0px !important;
+        border: none;
+        border-left: 3px dashed var(--bg-color-comments);
+        width: 50%;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-comments{
+        width: 100%;
+    }
+
+    .container-form form label, .container-form form input, .container-form form textarea, .container-form form button , .container-form form p {
+        font-size: 1rem !important;
+    }
+
+    .container form input, .container-form form p , .container-form form div {
+        margin: 0 !important;
+    }
+
+    .container-form form p {
+        margin-top: 10px !important;
     }
 }
