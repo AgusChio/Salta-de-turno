@@ -64,6 +64,7 @@ div{
     list-style: none;
     margin: 0;
 }
+
 /* botones vertical*/
 .buttons{
     display: flex;
@@ -102,6 +103,7 @@ div{
     border-bottom: 2px solid #424676;
     margin: 1.5rem 1rem ;
 }
+
 .sectionp{
     display: flex;
     flex-direction: column;
@@ -132,8 +134,6 @@ div{
     list-style: none;
 }
 
-
-
 /* responsive desing */
 
 /* small device max-width= 414px */
@@ -143,106 +143,6 @@ div{
     margin: 4rem 1.5rem 1.5rem 1.5rem;
     position: relative;
     border: none;
-}
-
-div{
-    height: 350px;
-    width: 250px;
-    border: none;
-    border-radius: .5em ;
-    text-align: center; 
-    background-color: #DCFFF4;
-    position: absolute;
-    box-shadow: 3px 4px 10px  #C7C7C7;
-}
-
-#div1 + #div2{
-    width: 130px;
-    height: 130px;
-    background-color: gray;
-    top: -60px;
-    left: 66px;    
-}
-
-#div2{
-    background-image: url("assets_lourdes/farmacia2.webp");
-    background-size: cover;
-    border: none;
-}
-.pharmacy{
-    overflow: scroll;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* contenido tarjeta horizontal*/
-#div1{
-    padding: .5em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card h4, .card li{
-    color: #0A1E3D;
-}
-
-.card h4{
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 5rem;
-    padding: 0;
-}
-
-.card ul{
-    padding: 0;
-    margin: 0;
-    line-height: 2em;
-    text-align: left;
-}
-
-.card li{
-    font-family: 'Poppins', sans-serif;
-    list-style: none;
-}
-
-/* botones horizontal */
-.buttons{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.button{
-    width: 45%;
-    height: 2rem;
-    text-align: center;
-    padding-top: .6em;
-    border: 1px solid #2782ff;
-    border-radius: .4rem;
-    color: #2782ff;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-}
-
-#maps{
-    background-color: #2782ff;
-    color: #FFFFFF;
-}
-
-/* seccion farmacias */
-.dropDownList{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow: auto;
-}
-}
-
 /* medium devicw max-width = 768px */
 @media (min-width: 768px ){
     /* segunfo intento de dar vuelta la tarjeta */
