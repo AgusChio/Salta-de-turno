@@ -6,6 +6,9 @@
 @import url("nav.css");
 
 
+/* Estilos cards */
+@import url("component-card.css");
+
 /* Estilos Header */
 @import url("header-landing.css");
 

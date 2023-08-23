@@ -3,12 +3,11 @@
     padding: 0;
 }
 
-.pharmacy-section h2{
+.pharmacy-section header{
     color: var(--text-color);
     padding: 1rem;
     text-align: center;
-    font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .pharmacy-section img{

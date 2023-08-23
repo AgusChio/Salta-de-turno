@@ -21,7 +21,7 @@
 
 /*Footer*/
 .footer {
-    background: linear-gradient(180deg, #ffffff 100%, #cccbcb 100%);
+    background: linear-gradient(180deg, #ffffff 50%, #cccbcb 100%);
     height: fit-content;
 }
 
