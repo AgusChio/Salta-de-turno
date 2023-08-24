@@ -1,5 +1,5 @@
 .container-cards{
-    padding: 10px
+    gap: 20px;
 }
 
 .card-farmacia {
@@ -8,7 +8,7 @@
     width: 75vw;
     max-width: 550px;
     margin:20px 20px 20px 50px;
-    padding: 50px 0px 50px 0px;
+    padding: 50px 20px 50px 0px;
     background: #ffffff;
     border-radius: 24px;
     color: var(--text-color);
@@ -62,7 +62,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-@media (width <=900px) {
+@media (max-width: 900px) {
     .container-cards{
         padding: 0px 0px 0px 0px !important;
     }
@@ -71,8 +71,8 @@
         width: 90%;
         margin: 0 auto;
         margin-top: 70px;
-        padding-left: 50px !important;
-        padding-right: 50px !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
         text-align: center;
         flex-direction: column;
     }
