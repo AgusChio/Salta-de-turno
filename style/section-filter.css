@@ -1,10 +1,8 @@
 .pharmacy-section{
-    background-color: var(--bg);
     padding: 0;
 }
 
-.pharmacy-section header{
-    color: var(--text-color);
+.pharmacy-section header h3{
     padding: 1rem;
     text-align: center;
     letter-spacing: 2px;

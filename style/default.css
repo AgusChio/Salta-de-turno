@@ -9,6 +9,7 @@
 /* Estilos cards */
 @import url("component-card.css");
 
+
 /* Estilos Header */
 @import url("header-landing.css");
 @import url('header-pharmacy.css');
@@ -16,6 +17,10 @@
 
 /* Estilos Filtros Landing */
 @import url("section-filter.css");
+
+
+/* Estilos Accordion */
+@import url('accordion-pharmacy.css');
 
 /* Estilos comentarios */
 @import url("section-comments.css");

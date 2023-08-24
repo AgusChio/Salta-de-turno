@@ -1,0 +1,43 @@
+.accordion-container{
+    background-image: linear-gradient(#DCFFF4, #fdfdfd);
+}
+.accordion-item{
+    border: none;
+    border-bottom: 2px solid var(--text-color-light);
+    background-color: transparent;
+}
+.accordion-button{
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+    background-color: transparent;
+}
+.accordion-button:focus{
+    background-color: transparent;
+}
+.accordion-body{
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+}
+.container-buttons .button-call,
+.container-buttons .button-map{
+    padding: .4rem;
+}
+
+@media screen and (min-width:420px) {
+    .container-buttons .button-call,
+    .container-buttons .button-map{
+        padding: .5rem 1rem;
+    }
+}
+@media screen and (min-width:450px) {
+    .container-buttons .button-call,
+    .container-buttons .button-map{
+        padding: .5rem 1.5rem;
+    }
+}
+@media screen and (min-width:1280px) {
+    .accordion-body .card-farmacia{
+        width: 43%;
+    }
+}

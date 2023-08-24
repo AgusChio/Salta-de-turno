@@ -4,10 +4,6 @@
     filter: drop-shadow(1px 2px 2px #888);
 }
 
-.navbar-brand{
-    color: #0A1E3D !important;
-}
-
 .logo .navbar-brand,
 .navbar-collapse .btn{
     font-weight: 500;

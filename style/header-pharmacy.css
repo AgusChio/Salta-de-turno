@@ -1,35 +1,21 @@
 .container-header{
-    padding: .5rem;
     background-image: url('../assets/images/back-pharmacy.png');
     background-size: cover;
 }
 .pharmacy{
-    width: 100%;
-    display: flex;
     flex-direction: column-reverse;
 }
-.container-text-pharmacy h1{
-    color: var(--text-color-light);
-    letter-spacing: 3px;
-}
+
 .container-text-pharmacy p{
     font-family: var(--font-title);
-}
-.container-text-pharmacy h1,
-.bbtn{
-    font-family: var(--font-text);
 }
 
 
 @media (min-width: 900px){
     .pharmacy{
-        width: 90%;
-        margin: auto;
         flex-direction: row-reverse;
     }
-    .container-text-pharmacy{
-        width: 50%;
-    }
+    .container-text-pharmacy,
     .container-image-pharmacy{
         width: 50%;
     }

@@ -4,13 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
 
 
 body {
-    color: var(--text-color) !important;
-    background-color: #fdfdfd;
+    font-family: var(--font-text);
+    color: var(--text-color);
 }
 
 :root {
@@ -26,16 +25,31 @@ body {
     --bg-color-container: #F1F1F1;
     --bg-color-comments: #D9D9D9;
 }
-
-h1,
-h2,
-h3, 
+h1{
+    color: var(--text-color-light);
+    letter-spacing: 3px;
+}
+h2{
+    color: var(--text-color-light);
+    font-family: var(--font-title);
+}
+h3,
+h4{
+    color: var(--text-color-light);
+    font-family: var(--font-title);
+}
 nav a,
 nav .btn{
-    color: var(--text-color-light);
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-title);
 }
 
+.main-landing{
+    background: linear-gradient(180deg, #D2FFEE 10%, #2984FF 100%);
+}
+
+.main-pharmacy{
+    background-color: #FDFDFD;
+}
 .btn{
     background: transparent;
     border: 1px solid;
@@ -67,7 +81,4 @@ nav .btn{
     transition: all 0.35s;
 }
 
-main{
-    height: fit-content;
-    background: linear-gradient(180deg, #D2FFEE 10%, #2984FF 100%);
-}
+

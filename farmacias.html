@@ -1,113 +1,677 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/general.css">
-    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
-    <title>Farmacias</title>
-</head>
-<body>
-    <header class="container-header">
-        <nav class="navbar navbar-expand-lg nav-pharmacy">
-            <div class="container-fluid">
-                <div class="logo">
-                    <img src="assets/images/logo.png" alt="salta de turno">
-                    <a class="navbar-brand | ms-2 | fw-bold" href="#">Salta de Turno</a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style/general.css" />
+        <link
+            rel="shortcut icon"
+            href="./assets/images/logo.png"
+            type="image/x-icon"
+        />
+        <title>Farmacias</title>
+    </head>
+    <body>
+        <header class="container-header | p-2">
+            <nav class="navbar navbar-expand-lg nav-pharmacy">
+                <div class="container-fluid">
+                    <div class="logo">
+                        <img
+                            src="assets/images/logo.png"
+                            alt="salta de turno"
+                        />
+                        <a class="navbar-brand | ms-2 | fw-bold" href="#"
+                            >Salta de Turno</a
+                        >
+                    </div>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarNavDropdown"
+                    >
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Farmacias</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Mapa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"
+                                    >Cronograma anual</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">FarmaOnline</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"
+                                    >Farmacias que vacunan</a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <button type="button" class="nav-link btn">
+                                    Iniciar sesión
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Farmacias</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Mapa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Cronograma anual</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FarmaOnline</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Farmacias que vacunan</a>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="nav-link btn">Iniciar sesión</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
- 
-        <div class="container-image-text-header pharmacy">
-            <div class="container-text-pharmacy | d-flex | flex-column | justify-content-center | p-4">
-                <h1 class="fs-1 | fw-bold | mb-3">Conoce todas las farmacias</h1>
-                <p class="fs-5 | mb-4">
-                    ¿Cómo estás? ¿Buscas una farmacia cerca de tu casa o en un área específica? Bueno, aquí encontrarás
-                    todo lo que necesitas saber sobre farmacias de turno, horarios en diferentes días, obras sociales, y
-                    más.
-                    También puedes encontrar información sobre campañas de vacunación y mucho más. ¡Entra pronto y
-                    explora lo que tenemos para ofrecerte!
-                </p>
-                <a href="#" class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2">Ver Mas</a>
-            </div>
+            </nav>
 
-            <div class="container-image-pharmacy">
-                <img src="assets/images/header-pharmacy.png" alt="img-pc" class="w-100 | h-100">
-            </div>
-        </div>
-    </header>
-    <main>
-        
-        <article class="container-fluid container-sites">
-            <header class="sites d-flex justify-content-center">
-                <h2>Sitio de interés</h2>
-            </header>
-            <section class="section-sites | d-flex | flex-column | mt-5">
-                <h3>FarmaOnline</h3>
-                <p>"FarmaOnline" es una plataforma en línea que permite a los usuarios comprar una variedad de insumos farmacéuticos a través de su sitio web. La misma te permite seleccionar y comprar productos farmacéuticos desde la comodidad de tu hogar y luego retirarlos en la farmacia de tu elección.</p>
-                <div id="carousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="assets/images/img_makeup.png" class="d-block w-100" alt="maquillaje">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/img_beauty_caree.png" class="d-block w-100" alt="dermocosmética">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/img_personal_caree.png" class="d-block w-100" alt="cuidado personal">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="assets/images/img_baby_ofert.png" class="d-block w-100" alt="bebés">
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+            <div class="container-image-text-header pharmacy | w-100 | d-flex">
+                <div
+                    class="container-text-pharmacy | d-flex | flex-column | justify-content-center | p-4"
+                >
+                    <h1 class="fs-1 | fw-bold | mb-3">
+                        Conoce todas las farmacias
+                    </h1>
+                    <p class="fs-5 | mb-4">
+                        ¿Cómo estás? ¿Buscas una farmacia cerca de tu casa o en
+                        un área específica? Bueno, aquí encontrarás todo lo que
+                        necesitas saber sobre farmacias de turno, horarios en
+                        diferentes días, obras sociales, y más. También puedes
+                        encontrar información sobre campañas de vacunación y
+                        mucho más. ¡Entra pronto y explora lo que tenemos para
+                        ofrecerte!
+                    </p>
+                    <a
+                        href="#"
+                        class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2"
+                        >Ver Mas</a
+                    >
                 </div>
-                <a href="https://www.farmaonline.com/ofertas-home" class="btn mb-3" role="button">Visita FarmaOnline</a>
+
+                <div class="container-image-pharmacy">
+                    <img
+                        src="assets/images/header-pharmacy.png"
+                        alt="img-pc"
+                        class="w-100 | h-100"
+                    />
+                </div>
+            </div>
+        </header>
+        <main class="pb-5 main-pharmacy">
+            <section class="accordion-container | p-4">
+                <header class="titleSection | pb-4">
+                    <h3 class="fs-1 | fw-semibold">Farmacias</h3>
+                </header>
+                <div class="accordion" id="accordionPanelsStayOpen">
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button
+                                class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseOne"
+                                aria-expanded="true"
+                                aria-controls="panelsStayOpen-collapseOne"
+                            >
+                                Zona Norte
+                            </button>
+                        </h4>
+                        <div id="panelsStayOpen-collapseOne"
+                            class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseTwo"
+                                aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseTwo"
+                            >
+                                Zona Sur
+                            </button>
+                        </h4>
+                        <div
+                            id="panelsStayOpen-collapseTwo"
+                            class="accordion-collapse collapse"
+                        >
+                            <div class="accordion-body">
+                                <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+                                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree"
+                                aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseThree"
+                            >
+                                Zona Este
+                            </button>
+                        </h4>
+                        <div
+                            id="panelsStayOpen-collapseThree"
+                            class="accordion-collapse collapse"
+                        >
+                            <div class="accordion-body">
+                                <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+                                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFour"
+                                aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFour"
+                            >
+                                Zona Oeste
+                            </button>
+                        </h4>
+                        <div
+                            id="panelsStayOpen-collapseFour"
+                            class="accordion-collapse collapse"
+                        >
+                            <div class="accordion-body">
+                                <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+                                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h4 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseFive"
+                                aria-expanded="false"
+                                aria-controls="panelsStayOpen-collapseFive"
+                            >
+                                Zona Centro
+                            </button>
+                        </h4>
+                        <div
+                            id="panelsStayOpen-collapseFive"
+                            class="accordion-collapse collapse"
+                        >
+                            <div class="accordion-body">
+                                <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+                                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>    
+
+                                    <div class="card-farmacia">
+                                        <img src="./assets/images/img-card-farmacia.png" />
+                                        <div>
+                                            <h2>Nombre de la farmacia</h2>
+                                            <div class="w-100 | d-flex | flex-column | justify-content-center | text-start ">
+                                                <p><strong>Zona:</strong> Sur-oeste</p>
+                                                <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                                                <p><strong>Cierra:</strong> 22:00hs </p>
+                                            </div>
+                                            <div class="container-buttons | w-100  | mt-3 | d-flex | justify-content-between">
+                                                <a href="#" class="button-call | fw-bold | text-decoration-none | rounded-3">Llamar</a>
+                                                <a href="#" class="button-map | fw-bold | text-decoration-none | rounded-3">Ver mapa</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-        </article>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
+
+            <!-- <article class="container-fluid container-sites">
+                <header class="sites d-flex justify-content-center">
+                    <h2>Sitio de interés</h2>
+                </header>
+                <section class="section-sites | d-flex | flex-column | mt-5">
+                    <h3>FarmaOnline</h3>
+                    <p>
+                        "FarmaOnline" es una plataforma en línea que permite a
+                        los usuarios comprar una variedad de insumos
+                        farmacéuticos a través de su sitio web. La misma te
+                        permite seleccionar y comprar productos farmacéuticos
+                        desde la comodidad de tu hogar y luego retirarlos en la
+                        farmacia de tu elección.
+                    </p>
+                    <div
+                        id="carousel"
+                        class="carousel slide"
+                        data-bs-ride="carousel"
+                    >
+                        <div class="carousel-indicators">
+                            <button
+                                type="button"
+                                data-bs-target="#carousel"
+                                data-bs-slide-to="0"
+                                class="active"
+                                aria-current="true"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carousel"
+                                data-bs-slide-to="1"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carousel"
+                                data-bs-slide-to="2"
+                                aria-label="Slide 3"
+                            ></button>
+                            <button
+                                type="button"
+                                data-bs-target="#carousel"
+                                data-bs-slide-to="3"
+                                aria-label="Slide 4"
+                            ></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img
+                                    src="assets/images/img_makeup.png"
+                                    class="d-block w-100"
+                                    alt="maquillaje"
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="assets/images/img_beauty_caree.png"
+                                    class="d-block w-100"
+                                    alt="dermocosmética"
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="assets/images/img_personal_caree.png"
+                                    class="d-block w-100"
+                                    alt="cuidado personal"
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="assets/images/img_baby_ofert.png"
+                                    class="d-block w-100"
+                                    alt="bebés"
+                                />
+                            </div>
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carousel"
+                            data-bs-slide="prev"
+                        >
+                            <span
+                                class="carousel-control-prev-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carousel"
+                            data-bs-slide="next"
+                        >
+                            <span
+                                class="carousel-control-next-icon"
+                                aria-hidden="true"
+                            ></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <a
+                        href="https://www.farmaonline.com/ofertas-home"
+                        class="btn mb-3"
+                        role="button"
+                        >Visita FarmaOnline</a
+                    >
+                </section>
+            </article> -->
+        </main>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
