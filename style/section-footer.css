@@ -2,17 +2,6 @@
     list-style: none;
 }
 
-/*Wave*/
-.curveado {
-    position: absolute;
-    width: 100%;
-    margin-top: -1px;
-}
-
-.curveado img {
-    width: 100%;
-}
-
 /*Contenedor*/
 .container {
     max-width: 1200px;
@@ -20,13 +9,13 @@
 }
 
 /*Footer*/
-.footer {
-    background: linear-gradient(180deg, #ffffff 50%, #cccbcb 100%);
-    /* height: fit-content; */
+footer {
+    background: linear-gradient(180deg, #fdfdfd 50%, #a5a5a5 100%);
 }
 
 
 .footer-links {
+    padding: .5rem 0;
     font-family: var(--font-text);
     border-bottom: 2px dashed var(--text-color); /*linea punteada*/
 }
@@ -84,6 +73,9 @@
     .footer-links{
         border-bottom: 0;
         width: 35%;
+    }
+    .social{
+        margin-top: 3rem;
     }
 
     .border-dashed{

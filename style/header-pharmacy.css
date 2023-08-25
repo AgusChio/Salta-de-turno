@@ -5,11 +5,12 @@
 .pharmacy{
     flex-direction: column-reverse;
 }
-
+.container-text-pharmacy h2{
+    color: var(--color-quaternary);
+}
 .container-text-pharmacy p{
     font-family: var(--font-title);
 }
-
 
 @media (min-width: 900px){
     .pharmacy{

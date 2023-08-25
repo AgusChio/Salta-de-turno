@@ -1,5 +1,9 @@
 .accordion-container{
+    padding: 3rem 1.5rem;
     background-image: linear-gradient(#DCFFF4, #fdfdfd);
+}
+.title-section h3{
+    border-bottom: 2px solid;
 }
 .accordion-item{
     border: none;
@@ -17,7 +21,7 @@
 .accordion-body{
     width: 100%;
     height: 100vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .container-buttons .button-call,
 .container-buttons .button-map{
