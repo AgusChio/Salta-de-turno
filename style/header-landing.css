@@ -1,3 +1,6 @@
+.nav-landing{
+    background-color: #FFF;
+}
 .container-text p{
     font-family: var(--font-title);
 }

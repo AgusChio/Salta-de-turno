@@ -13,11 +13,11 @@
 
 <body>
     <header class="p-2">
-        <nav class="navbar | navbar-expand-lg">
+        <nav class="navbar | navbar-expand-lg | nav-landing">
             <div class="container-fluid">
                 <div class="logo | d-flex | align-items-center">
                     <img src="./assets/images/logo.png" alt="salta de turno">
-                    <a class="navbar-brand | ms-2 | fw-bold" href="#">Salta de Turno</a>
+                    <a class="navbar-brand | ms-2 | fw-bold" href="index.html">Salta de Turno</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -30,13 +30,13 @@
                             <a class="nav-link" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">De turno</a>
+                            <a class="nav-link" href="#turno">De turno</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Comentarios</a>
+                            <a class="nav-link" href="#comments">Comentarios</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Farmacias</a>
+                            <a class="nav-link" href="farmacias.html" target="_blank">Farmacias</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -55,7 +55,7 @@
         </nav>
 
         <div
-            class="container-image-text-header | w-100 | d-flex | justify-content-between | justify-content-center | flex-wrap | pt-3">
+            class="container-image-text-header | w-100 | d-flex | justify-content-between | justify-content-center | flex-wrap">
             <div class="container-text | w-50 | d-flex | flex-column | justify-content-center | p-4">
                 <h1 class="fs-1 | fw-bold | mb-3">Farmacias de Turno</h1>
                 <h2 class="fs-2 | fw-light | mb-3">Salta Capital</h2>
@@ -66,7 +66,7 @@
                     También puedes encontrar información sobre campañas de vacunación y mucho más. ¡Entra pronto y
                     explora lo que tenemos para ofrecerte!
                 </p>
-                <a href="#" class="bbtn | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2">Ver
+                <a href="#turno" class="bbtn | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2">Ver
                     Farmacias de Turno</a>
             </div>
 
@@ -80,7 +80,7 @@
         <section class="container-fluid | pharmacy-section">
             <img src="./assets/images/wave-white.png" alt="wave">
             <header>
-                <h3>Farmacias de turno</h3>
+                <h3 id="turno">Farmacias de turno</h3>
             </header>
             <div class="d-flex | div-search">
                 <form role="search">
@@ -213,7 +213,7 @@
             </div>
         </section>
 
-        <section class="container-general-comments | m-auto | d-flex  | flex-column | mb-4 | p-4">
+        <section id="comments" class="container-general-comments | m-auto | d-flex  | flex-column | mb-4 | p-4">
             <header class="fs-1 | mt-5 | fw-bold | header-title | mb-5">Dejanos un Comentario</header>
             <div class="container-comments-form">
                 <div class="container-comments | rounded-top-4 | pt-1 | pb-3">

@@ -2,6 +2,11 @@
     background-image: url('../assets/images/back-pharmacy.png');
     background-size: cover;
 }
+.nav-pharmacy{
+    background-color: #FFF;
+    background-image: url('../assets/images/back-pharmacy.png');
+    background-size: cover;
+}
 .pharmacy{
     flex-direction: column-reverse;
 }

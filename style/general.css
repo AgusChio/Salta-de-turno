@@ -45,6 +45,16 @@ h3{
     letter-spacing: 2px;
     text-align: center;
 }
+.container-image-text-header{
+    padding-top: 4rem;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+}
 nav a,
 nav .btn{
     font-family: var(--font-title);

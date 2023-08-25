@@ -19,14 +19,14 @@
     </head>
     <body>
         <header class="container-header | p-2">
-            <nav class="navbar navbar-expand-lg nav-pharmacy">
+            <nav class="navbar | navbar-expand-lg | nav-pharmacy">
                 <div class="container-fluid">
                     <div class="logo">
                         <img
                             src="assets/images/logo.png"
                             alt="salta de turno"
                         />
-                        <a class="navbar-brand | ms-2 | fw-bold" href="#"
+                        <a class="navbar-brand | ms-2 | fw-bold" href="index.html" target="_blank"
                             >Salta de Turno</a
                         >
                     </div>
@@ -47,24 +47,24 @@
                     >
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio</a>
+                                <a class="nav-link" href="index.html" target="_blank">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Farmacias</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Mapa</a>
+                                <a class="nav-link" href="#maps">Mapa</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"
+                                <a class="nav-link" href="#schedule"
                                     >Cronograma anual</a
                                 >
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">FarmaOnline</a>
+                                <a class="nav-link" href="#farmaonline">FarmaOnline</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#"
+                                <a class="nav-link" href="#vacuum"
                                     >Farmacias que vacunan</a
                                 >
                             </li>
@@ -96,7 +96,7 @@
                         ofrecerte!
                     </p>
                     <a
-                        href="#"
+                        href="#cards"
                         class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2"
                         >Ver Mas</a
                     >
@@ -112,7 +112,7 @@
             </div>
         </header>
         <main class="pb-5 | main-pharmacy">
-            <section class="accordion-container">
+            <section id="cards" class="accordion-container">
                 <header class="title-section | pb-4">
                     <h3>Farmacias</h3>
                 </header>
@@ -540,7 +540,7 @@
                 </div>
             </section>
 
-            <section class="maps">
+            <section id="maps" class="maps">
                 <header class="maps-title">
                     <h3>Más farmacias</h3>
                     <p>
@@ -557,7 +557,7 @@
                 </div>
             </section>
 
-            <section class="cronograma-anual">
+            <section id="schedule" class="cronograma-anual">
                 <header>
                     <h3>Cronograma Anual</h3>
                 </header>
@@ -669,7 +669,7 @@
                 </div>
             </section>
 
-            <section class="container-table-farmacy">
+            <section id="vacuum" class="container-table-farmacy">
                 <header>
                     <h3 class="title-farmacy">Farmacias que vacunan</h3>
                 </header>
@@ -727,7 +727,7 @@
                 </div>
             </section>
 
-            <article class="container-sites">
+            <article id="farmaonline" class="container-sites">
                 <header class="sites">
                     <h2 class="fs-1 | fw-bold">Sitio de interés</h2>
                 </header>
@@ -831,6 +831,7 @@
                     </div>
                     <a
                         href="https://www.farmaonline.com/ofertas-home"
+                        target="_blank"
                         class="btn mb-3"
                         role="button"
                         >Visita FarmaOnline</a
