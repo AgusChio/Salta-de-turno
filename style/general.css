@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 
@@ -96,6 +97,18 @@ nav .btn{
     bottom: 0;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
+}
+
+img.img-carousel{
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+@media screen and (width > 1000px){
+    img.img-carousel{
+        height: 940px;
+    }
 }
 
 
