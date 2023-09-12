@@ -8,8 +8,8 @@
 .medicineBox{
     width: 350px;
     height: 200px;
-    margin: 5rem;
-    position: absolute;
+    margin: 2.5rem;
+    position: relative;
     transform-style: preserve-3d;
 }
 
@@ -52,4 +52,12 @@
 
 .textContent{
     font-size: var(--text-size-box);
+}
+
+/* vista de la lista de cajas */
+.list-medicineBox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
