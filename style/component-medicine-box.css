@@ -1,6 +1,7 @@
 /* caja de medicamentos */
 :root{
     --bg-color: #FFFFFF;
+    --bg-colortwo:#93EECC;
     --text-size-box: 12px;
     --border-size: 1.5px;
 }
@@ -54,6 +55,13 @@
     font-size: var(--text-size-box);
 }
 
+/* background */
+.sectionMedicineFree header{
+    background-image: linear-gradient(
+        var(--bg-colortwo),
+        var(--bg-color)
+    );
+}
 /* vista de la lista de cajas */
 .list-medicineBox{
     display: flex;
