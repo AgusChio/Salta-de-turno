@@ -1,0 +1,114 @@
+@import url("default.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: var(--font-text);
+    color: var(--text-color);
+}
+
+:root {
+    --font-title: 'Roboto', sans-serif;
+    --font-text: 'Poppins', sans-serif;
+    --text-color: #0A1E3D;
+    --text-color-light: #18468B;
+    --color-primary: #36EDA9;
+    --color-secondary: #338DFF;
+    --color-tertiary: #82D1FF;
+    --color-quaternary: #28A174;
+    --color-underline: #4674B7;
+    --bg-color-container: #F1F1F1;
+    --bg-color-comments: #D9D9D9;
+    --table-color: #034172;
+}
+h1{
+    color: var(--text-color-light);
+    letter-spacing: 3px;
+}
+h2{
+    color: var(--text-color-light);
+    font-family: var(--font-title);
+}
+h3,
+h4{
+    color: var(--text-color-light);
+    font-family: var(--font-title);
+}
+h3{
+    font-size: calc(1.375rem + 1.5vw);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.container-image-text-header{
+    padding-top: 4rem;
+}
+.navbar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 3;
+}
+nav a,
+nav .btn{
+    font-family: var(--font-title);
+}
+
+.main-landing{
+    background: linear-gradient(180deg, #D2FFEE 10%, #2984FF 100%);
+}
+
+.main-pharmacy{
+    background-color: #FDFDFD;
+}
+.btn{
+    background: transparent;
+    border: 1px solid;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.btn:hover::after{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+img.img-carousel{
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+@media screen and (width > 1000px){
+    img.img-carousel{
+        height: 940px;
+    }
+}
+
+
