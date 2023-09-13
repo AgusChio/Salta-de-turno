@@ -9,6 +9,7 @@
     max-height: 450px;
     border-radius: 2rem;
     overflow: hidden;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.166);
 }
 .table-farmacy {
     width: 100%;

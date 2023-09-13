@@ -12,7 +12,7 @@
     letter-spacing: normal;
 }
 .section-sites .btn{
-    width: 50%;
+    width: 55%;
     margin-top: 1rem;
     color: #FDFDFD;
     background-color: var(--text-color);
@@ -23,6 +23,19 @@
 }
 .section-sites .btn::after{
     background: #FDFDFD; 
+}
+
+img.img-carousel{
+    height: 120px;
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+@media screen and (width > 1000px){
+    img.img-carousel{
+        height: 210px;
+    }
 }
 
 @media screen and (min-width: 768px) {

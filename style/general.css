@@ -10,7 +10,7 @@
 
 body {
     font-family: var(--font-text);
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
 :root {
@@ -27,6 +27,7 @@ body {
     --bg-color-comments: #D9D9D9;
     --table-color: #034172;
 }
+
 h1{
     color: var(--text-color-light);
     letter-spacing: 3px;
@@ -97,18 +98,6 @@ nav .btn{
     bottom: 0;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
-}
-
-img.img-carousel{
-    width: 100%;
-    object-fit: fill;
-    object-position: center;
-}
-
-@media screen and (width > 1000px){
-    img.img-carousel{
-        height: 940px;
-    }
 }
 
 

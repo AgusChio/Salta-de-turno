@@ -35,6 +35,7 @@
     margin: 1rem 0;
     border-radius: 2rem;
     overflow: hidden;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.166);
 }
 .tabla-anual:hover{
     overflow-y: scroll;
