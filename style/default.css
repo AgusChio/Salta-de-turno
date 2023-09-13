@@ -43,5 +43,6 @@
 /* Estilos Footer */
 @import url("section-footer.css");
 
-
+/* Estilos seccion medicamentos de venta libre */
+@import url("component-medicine-box.css");
 
