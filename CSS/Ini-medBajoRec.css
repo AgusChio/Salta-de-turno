@@ -4,7 +4,7 @@ body{
 }
 /*FONDO*/
 .Main-Sec-Inicio{
-    background-image: url('../img/img-bg-medicamentos.png');
+    background-image: url('../IMG/img-bg-medicamentos.png');
     background-repeat: no-repeat;
     background-position: right;
 }
