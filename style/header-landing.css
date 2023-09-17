@@ -1,0 +1,48 @@
+.nav-landing{
+    background-color: #FFF;
+}
+.container-text p{
+    font-family: var(--font-title);
+}
+
+.container-text h2{
+    color: var(--color-quaternary);
+}
+
+
+.bbtn{
+    width: 40%;
+    color: #FFFFFF;
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-secondary);
+    transition: all 0.3s ease-in-out;
+}
+
+.bbtn:hover{
+    color: var(--color-secondary);
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 900px) {
+    .container-image-text-header {
+        flex-direction: column-reverse;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .container-text{
+        width: 100% !important;
+    }
+
+    .container-image{
+        width: 100% !important;
+    }
+
+    .bbtn{
+        width: 80%;
+        margin: auto;
+    }
+}

@@ -1,0 +1,31 @@
+.container-header{
+    background-image: url('../assets/images/back-pharmacy.png');
+    background-size: cover;
+}
+.nav-pharmacy{
+    background-color: #FFF;
+    background-image: url('../assets/images/back-pharmacy.png');
+    background-size: cover;
+}
+.pharmacy{
+    flex-direction: column-reverse;
+}
+.container-text-pharmacy h2{
+    color: var(--color-quaternary);
+}
+.container-text-pharmacy p{
+    font-family: var(--font-title);
+}
+
+@media (min-width: 900px){
+    .pharmacy{
+        flex-direction: row-reverse;
+    }
+    .container-text-pharmacy,
+    .container-image-pharmacy{
+        width: 50%;
+    }
+    .btn-pharmacy{
+        align-self: flex-end;
+    }
+}
