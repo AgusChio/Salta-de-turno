@@ -6,6 +6,20 @@
     --border-size: 1.5px;
 }
 
+.underline-title{
+    border-bottom: 2px solid var(--text-color);
+}
+
+.underline-title h3{
+    color:var(--text-color);
+    text-align: start;
+    padding: 10px 0  0 10px;
+}
+
+.maps-title p{
+    padding: 10px 0 0 10px;
+}
+
 .medicineBox{
     width: 350px;
     height: 200px;
