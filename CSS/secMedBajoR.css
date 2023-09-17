@@ -1,0 +1,77 @@
+.Main-MedBajoRec{
+    margin: 2rem 4rem;
+}
+/*MEDICAMENTOS BAJO RECETA*/
+.text-MedBajoRec h1,
+.text-MedBajoRec p,
+.text-med-box,
+.text-top-box p,
+.text-bottom-box p{
+    color: #034172;
+    font-family: 'Roboto', sans-serif;
+}
+.text-MedBajoRec h1{
+    border-bottom: 2px solid #034172;
+    font-size: 45px;
+    padding-bottom: .25rem;
+    margin: 0;
+}
+.text-MedBajoRec p{
+    font-size: 25px;
+    margin: 1rem 0 2rem 0;
+}
+/*SECCION MEDICAMENTOS*/
+.List-MedBajoRec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+/*CAJA DE MEDICAMENTO*/
+.MedBajoRec{
+    width: 595px;
+    height: 340px;
+    box-sizing: border-box;
+
+    background-image: url('../IMG/caja-medicamento-bajo-receta.png');
+    background-repeat: no-repeat;
+    
+    padding: 0 2.5rem 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+/*TEXTO INICIAL DE LA CAJA*/
+.text-top-box p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.text-top-box p + p{
+    font-size: 15px;
+    font-weight: 400;
+}
+/*TEXTO CENTRAL DE LA CAJA*/
+.text-med-box h4{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+}
+.text-med-box p{
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: 0;
+}
+/*TEXTO FINAL DE LA CAJA*/
+.text-bottom-box p{
+    font-size: 15px;
+}
+
+/*OTRAS CLASES ;-;*/
+.text-betw{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
