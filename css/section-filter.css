@@ -11,7 +11,6 @@
 .pharmacy-section img{
     width: 100%;
     min-height: 1.6rem;
-    /* filter: drop-shadow(1px 2px 2px #888); */
 }
 .div-search{
     flex-direction: column;
@@ -43,12 +42,7 @@
         order: -1;
     }
 }
-/* @media screen and (min-width:860px){
-    .form-select-sm{
-        padding: .5rem 1rem;
-        font-size: 1.5rem;
-    }
-} */
+
 @media screen and (min-width: 860px) {
     .form-control{
         padding-left: 3rem;
