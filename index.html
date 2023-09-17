@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salta de turno</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/general.css">
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+</head>
+
+<body>
+    <header class="p-2">
+        <nav class="navbar | navbar-expand-lg | nav-landing">
+            <div class="container-fluid">
+                <div class="logo | d-flex | align-items-center">
+                    <img src="./assets/images/logo.png" alt="salta de turno">
+                    <a class="navbar-brand | ms-2 | fw-bold" href="index.html">Salta de Turno</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle | navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse | navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#turno">De turno</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#comments">Comentarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./pages/farmacias.html">Farmacias</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">Medicamentos</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Venta libre</a></li>
+                                <li><a class="dropdown-item" href="#">Naturales</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="nav-link | btn">Iniciar sesión</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div
+            class="container-image-text-header | w-100 | d-flex | justify-content-between | justify-content-center | flex-wrap">
+            <div class="container-text | w-50 | d-flex | flex-column | justify-content-center | p-4">
+                <h1 class="fs-1 | fw-bold | mb-3">Farmacias de Turno</h1>
+                <h2 class="fs-2 | fw-light | mb-3">Salta Capital</h2>
+                <p class="fs-5 | mb-4">
+                    ¿Cómo estás? ¿Buscas una farmacia cerca de tu casa o en un área específica? Bueno, aquí encontrarás
+                    todo lo que necesitas saber sobre farmacias de turno, horarios en diferentes días, obras sociales, y
+                    más.
+                    También puedes encontrar información sobre campañas de vacunación y mucho más. ¡Entra pronto y
+                    explora lo que tenemos para ofrecerte!
+                </p>
+                <a href="#turno" class="bbtn | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2">Ver
+                    Farmacias de Turno</a>
+            </div>
+
+            <div class="container-image | w-50">
+                <img src="./assets/images/imagen-landing-header.png" alt="img-pc" class="w-100 | h-100">
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-5 | main-landing">
+        <section class="container-fluid | pharmacy-section">
+            <img src="./assets/images/wave-white.png" alt="wave">
+            <header>
+                <h3 id="turno">Farmacias de turno</h3>
+            </header>
+            <div class="d-flex | div-search">
+                <form role="search">
+                    <input class="form-control" type="search" placeholder="Busca tu farmacia" aria-label="Search">
+                </form>
+                <div class="d-flex | div-select">
+                    <!-- cambiar a class="form-select-lg con js en el break de 860px" -->
+                    <select class="form-select-sm">
+                        <option selected>Zona</option>
+                        <option value="north">Norte</option>
+                        <option value="east">Este</option>
+                        <option value="west">Oeste</option>
+                        <option value="south">Sur</option>
+                    </select>
+                    <!-- aquí hay que usar js para que aparezca el calendario, sino no puedo poner "fecha" -->
+                    <input type="date" class="form-select-sm | border | border-dark">
+                    <select class="form-select-sm">
+                        <option selected>Obra social</option>
+                        <option value="avalian">Avalian</option>
+                        <option value="ips">IPS</option>
+                        <option value="osde">OSDE</option>
+                        <option value="ospe">OSPE</option>
+                        <option value="swiss">Swiss Medical</option>
+                        <option value="pami">PAMI</option>
+                        <option value="iosfa">IOSFA</option>
+                        <option value="boreal">Boreal</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+                <div class="card-farmacia">
+                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
+                    <div>
+                        <h2>Nombre de la farmacia</h2>
+                        <div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>
+                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                            <p><strong>Zona:</strong> Sur-oeste</p>
+                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                            <p><strong>Cierra:</strong> 22:00hs </p>
+                        </div>
+                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-farmacia">
+                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
+                    <div>
+                        <h2>Nombre de la farmacia</h2>
+                        <div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>
+                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                            <p><strong>Zona:</strong> Sur-oeste</p>
+                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                            <p><strong>Cierra:</strong> 22:00hs </p>
+                        </div>
+                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-farmacia">
+                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
+                    <div>
+                        <h2>Nombre de la farmacia</h2>
+                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                            <p><strong>Zona:</strong> Sur-oeste</p>
+                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                            <p><strong>Cierra:</strong> 22:00hs </p>
+                        </div>
+                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>                
+                <div class="card-farmacia">
+                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
+                    <div>
+                        <h2>Nombre de la farmacia</h2>
+                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                            <p><strong>Zona:</strong> Sur-oeste</p>
+                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                            <p><strong>Cierra:</strong> 22:00hs </p>
+                        </div>
+                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-farmacia">
+                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
+                    <div>
+                        <h2>Nombre de la farmacia</h2>
+                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                            <p><strong>Zona:</strong> Sur-oeste</p>
+                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                            <p><strong>Cierra:</strong> 22:00hs </p>
+                        </div>
+                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-farmacia">
+                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
+                    <div>
+                        <h2>Nombre de la farmacia</h2>
+                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                            <p><strong>Zona:</strong> Sur-oeste</p>
+                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
+                            <p><strong>Cierra:</strong> 22:00hs </p>
+                        </div>
+                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comments" class="container-general-comments | m-auto | d-flex  | flex-column | mb-4 | p-4">
+            <header class="fs-1 | mt-5 | fw-bold | header-title | mb-3">Dejanos un Comentario</header>
+            <p class="fs-6 | mb-5">Bienvenido a nuestra sección de comentarios. Aquí tienes la oportunidad de compartir tus pensamientos, opiniones y sugerencias con nosotros. Valoramos tus comentarios y los utilizamos para mejorar nuestros servicios. Siéntete libre de dejar tu comentario sobre tu experiencia o cualquier otro tema que desees discutir, siempre y cuando sea desde el respeto. ¡Esperamos leerte pronto!</p>
+            <div class="container-comments-form">
+                <div class="container-comments | rounded-top-4 | pt-1 | pb-3">
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+
+                    <div class="comment | m-auto | mt-3 | p-3 | rounded-4">
+                        <div class="comment-name | d-flex | justify-content-center | justify-content-between | w-100">
+                            <h3 class="fs-6">Soledad Herrera</h3>
+                            <p class="m-0 | text-warning">★★★★★</p>
+                        </div>
+                        <div class="comment-subjet">
+                            <p class="m-0 | fs-6">Asunto</p>
+                        </div>
+                        <div class="comment-comment">
+                            <p class="m-0 | fs-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-form | text-light | m-auto | rounded-bottom-4 | pb-3 | pt-2 | ps-2 | pe-2">
+                    <form class="form-comments | d-flex | flex-column | pt-3 | ps-3 | pe-3 ">
+                        <label for="name" class="fw-medium | fs-5 ">Nombre Completo:</label>
+                        <input type="text" name="name" id="name"
+                            class="placeholder-color | bg-transparent | text-light | p-2 | border | border-light | rounded-4 "
+                            placeholder="Eugenia Solis">
+                        <label for="email" class="fw-medium | fs-5 | ">Correo Electronico</label>
+                        <input type="text" name="email" id="email"
+                            class="placeholder-color | bg-transparent | text-light | p-2 | border | border-light | rounded-4 "
+                            placeholder="euge@gmail.com">
+                        <label for="subjet" class="fw-medium | fs-5 ">Asunto:</label>
+                        <input type="text" name="subjet" id="subjet"
+                            class="placeholder-color | bg-transparent | text-light | p-2 | border | border-light | rounded-4 "
+                            placeholder="Me encanta la web">
+                        <p class="stars-paragraph | fw-medium | fs-5 mb-0">Estrellas:</p>
+                        <div class="ec-stars-wrapper">
+                            <a href="#" data-value="1">&#9733;</a>
+                            <a href="#" data-value="2">&#9733;</a>
+                            <a href="#" data-value="3">&#9733;</a>
+                            <a href="#" data-value="4">&#9733;</a>
+                            <a href="#" data-value="5">&#9733;</a>
+                        </div>
+                        <label for="comment" class="fw-medium | fs-5 ">Mensaje:</label>
+                        <textarea name="comment" id="comment" cols="30" rows="10"
+                            class="placeholder-color | bg-transparent | text-light | p-2 | border | border-light | rounded-4 "
+                            placeholder="Queria contarles que..."></textarea>
+                        <button type="submit" class="button-submit | rounded-3 | fw-bold">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="d-flex | flex-column">
+        <img src="./assets/images/wave-blue.png" alt="Wave blue">
+        <div class="container-footer">
+            <!-- Inicio 1-->
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
+                <h4 class="text-center">Inicio</h4>
+                <ul class="text-center | w-50 | ps-0">
+                    <li><a href="#" class="text-decoration-none">De turno</a></li>
+                    <li><a href="#" class="text-decoration-none">Comentarios</a></li>
+                    <li><a href="#" class="text-decoration-none">Farmacias</a></li>
+                    <li><a href="#" class="text-decoration-none">Medicamentos</a></li>
+                </ul>
+            </div>
+            <!-- Farmacias 2-->
+            <div
+                class="footer-links farma | d-flex | flex-column | justify-content-center | align-items-center ">
+                <h4 class="text-center">Farmacias</h4>
+                <ul class="text-center | w-50 | ps-0">
+                    <li><a href="#" class="text-decoration-none">Todas las farmacias</a></li>
+                    <li><a href="#" class="text-decoration-none">Mapa</a></li>
+                    <li><a href="#" class="text-decoration-none">Cronograma anual</a></li>
+                    <li><a href="#" class="text-decoration-none">FarmaOnline</a></li>
+                    <li><a href="#" class="text-decoration-none">Farmacias que vacunan</a></li>
+                </ul>
+            </div>
+            <!-- Medicamentos 3-->
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center | border-dashed">
+                <h4 class="text-center">Medicamentos</h4>
+                <ul class="text-center | w-50 | ps-0">
+                    <li><a href="#" class="text-decoration-none">Venta libre</a></li>
+                    <li><a href="#" class="text-decoration-none">Venta bajo receta</a></li>
+                    <li><a href="#" class="text-decoration-none">Tipos</a></li>
+                    <li><a href="#" class="text-decoration-none">Injectables de venta libre</a></li>
+                    <li><a href="#" class="text-decoration-none">Plantas medicinales</a></li>
+                </ul>
+            </div>
+            <!-- Redes sociales 4-->
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
+                <h4 class="social">Redes sociales</h4>
+                <div
+                    class="social-link | d-flex | align-items-center | justify-content-center | align-items-center ">
+                    <a href="http://www.instagram.com" target="_blank" title="@saltadeturno"><span
+                            class="iconify | p-2 | rounded-3" data-icon="bi:instagram" data-width="40"></span></a>
+                    <a href="http://www.facebook.com" target="_blank" title="Salta de Turno"><span
+                            class="iconify | p-2 | rounded-3" data-icon="lucide:facebook" data-width="40"></span></a>
+                    <a href="mailto:saltadeturno@gmail.com" target="_blank" title="saltadeturno@gmail.com"><span
+                            class="iconify | p-2 | rounded-3" data-icon="iconamoon:email-fill"
+                            data-width="40"></span></a>
+                </div>
+            </div>
+        </div>
+        <!-- Derechos de Autor -->
+        <div class="container-copy">
+            <p
+                class="copy | w-75 | text-center | d-flex | justify-content-center | align-items-center | m-auto | p-3 | pt-0">
+                Copyright &copy;2023 Equipo verde - Fundación Pescar</p>
+        </div>
+    </footer>
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+</html>

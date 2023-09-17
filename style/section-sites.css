@@ -1,0 +1,51 @@
+.container-sites{
+    padding: 3rem 1.5rem;
+}
+.sites h2{
+    text-align: center;
+    letter-spacing: 2px;
+    border-bottom: 2px solid;
+}
+.section-sites h3{
+    text-align: start;
+    font-size: 1.5rem;
+    letter-spacing: normal;
+}
+.section-sites .btn{
+    width: 55%;
+    margin-top: 1rem;
+    color: #FDFDFD;
+    background-color: var(--text-color);
+    border-color: var(--text-color);
+}
+.section-sites .btn:hover{
+    color: var(--text-color);
+}
+.section-sites .btn::after{
+    background: #FDFDFD; 
+}
+
+img.img-carousel{
+    height: 120px;
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+@media screen and (width > 1000px){
+    img.img-carousel{
+        height: 210px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .section-sites h3,
+    .section-sites p{
+        order: -2;
+    }
+    .section-sites .btn{
+        width: 12rem;
+        order: -1;
+        margin-top: 0;
+    }
+}

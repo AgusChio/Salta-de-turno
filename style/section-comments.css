@@ -1,0 +1,195 @@
+.header-title {
+    letter-spacing: 1px;
+    text-align: center;
+    font-family: var(--font-title);
+    color: var(--text-color) !important;
+}
+
+.container-general-comments{
+    width: 95%;
+}
+
+.container-comments {
+    width: 100%;
+    height: 50vh;
+    margin: auto;
+    background-color: var(--bg-color-container);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.comment {
+    width: 85%;
+    height: fit-content;
+    background-color: var(--bg-color-comments);
+    font-family: var(--font-text);
+}
+
+.container-form {
+    width: 100%;
+    background-color: #2090E1;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-top: 3px dashed var(--bg-color-comments);
+}
+.form-comments {
+    gap: .8rem;
+}
+
+.form-comments input:focus{
+    outline-color: var(--bg-color-container);
+}
+
+.placeholder-color::placeholder {
+    color: #FFFFFF;
+}
+
+.ec-stars-wrapper {
+    font-size: 0;
+    display: inline-block;
+}
+
+.ec-stars-wrapper a {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.ec-stars-wrapper:hover a {
+    color: rgb(255, 219, 87);
+}
+
+.ec-stars-wrapper>a:hover~a {
+    color: #ffffff;
+}
+
+.container-form form textarea {
+    height: 200px;
+    resize: none;
+}
+
+.button-submit {
+    background: #fff;
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+    padding: .5rem;
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.button-submit:hover {
+    color: #fff;
+}
+
+.button-submit::after {
+    content: "";
+    background: var(--text-color);
+    position: absolute;
+    z-index: -1;
+    padding: .5rem;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.button-submit:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+@media (min-width: 736px) and (max-width: 1750px) {
+    .header-title{
+        letter-spacing: 2px;
+    }
+    
+    .container-comments-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container-comments {
+        border-radius: 10px 0px 0px 10px;
+        width: 50%;
+        height: 100vh; 
+    }
+
+    .container-form {
+        border-bottom-right-radius: inherit !important;
+        border-radius: 0px 10px 10px 0px !important;
+        border: none;
+        border-left: 3px dashed var(--bg-color-comments);
+        width: 50%;
+        height: 100vh;
+        overflow-y: scroll;
+    }
+
+    .form-comments{
+        height: fit-content;
+    }
+
+    .container-form form label, .container-form form input, .container-form form textarea, .container-form form button , .container-form form p {
+        font-size: 1rem !important;
+    }
+}
+
+@media (min-width: 1751px){
+    .header-title{
+        letter-spacing: 2px;
+    }
+
+    .container-comments-form{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .container-comments {
+        border-radius: 10px 0px 0px 10px;
+        width: 50%;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container-form {
+        border-bottom-right-radius: inherit !important;
+        border-radius: 0px 10px 10px 0px !important;
+        border: none;
+        border-left: 3px dashed var(--bg-color-comments);
+        width: 50%;
+        height: 100vh;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-comments{
+        height: fit-content;
+    }
+
+    .container-form form label, .container-form form input, .container-form form textarea, .container-form form button , .container-form form p {
+        font-size: 1rem !important;
+    }
+
+    .container form input, .container-form form p , .container-form form div {
+        margin: 0 !important;
+    }
+
+    .container-form form p {
+        margin-top: 10px !important;
+    }
+}

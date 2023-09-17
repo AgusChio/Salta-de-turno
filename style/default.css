@@ -1,0 +1,48 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Estilos scrollbar */
+@import url("scroll-bar.css");
+
+/* Estilos Navbar */
+@import url("nav.css");
+
+
+/* Estilos cards */
+@import url("component-card.css");
+
+
+/* Estilos Header */
+@import url("header-landing.css");
+@import url('header-pharmacy.css');
+
+
+/* Estilos Filtros Landing */
+@import url("section-filter.css");
+
+
+/* Estilos Accordion */
+@import url('accordion-pharmacy.css');
+
+
+/* Estilos comentarios */
+@import url("section-comments.css");
+
+
+/* Estilos mapa */
+@import url('maps.css');
+
+/* Estilos Tabla  */
+@import url("section-table-farmacy-vacuum.css");
+@import url('section-annual-schedule.css');
+@import url('section-table-farmacy-vacuum.css');
+
+/* Estilos Carousel */
+@import url('section-sites.css');
+
+/* Estilos Footer */
+@import url("section-footer.css");
+
+/* Estilos seccion medicamentos de venta libre */
+@import url("component-medicine-box.css");
+
