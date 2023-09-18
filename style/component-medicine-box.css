@@ -18,9 +18,7 @@ body{
 .medicineBox{
     width: max(300px, 25vmax);
     height: max(200px, 13vmax);
-    /* margin: 2.58rem; */
     position: relative;
-    /* transform-style: preserve-3d; */
 }
 
 .frontBox{
@@ -39,7 +37,6 @@ body{
     transform: skewX(-55deg) translateX(7px);
     border-top: var(--border-size) solid var(--text-color);
     border-left: var(--border-size) solid var(--text-color);
-    /* border-right: var(--border-size) solid var(--text-color); */
 }
 
 .rightBox{
@@ -52,9 +49,6 @@ body{
     transform: skewY(-35deg);
     border: var(--border-size) solid var(--text-color);
     border-left: none;
-    /* border-right: var(--border-size) solid var(--text-color);
-    border-top: var(--border-size) solid var(--text-color);
-    border-bottom: var(--border-size) solid var(--text-color); */
 }
 
 .nameContent{

@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     width: 75vw;
-    max-width: 550px;
+    max-width: 520px;
     margin:20px 20px 20px 50px;
     padding: 50px 20px 50px 0px;
     background: #ffffff;
@@ -29,7 +29,6 @@
 
 .card-farmacia h2 {
     font-size: 1.4rem;
-    margin-right: 1.8rem;
 }
 
 .alert{
