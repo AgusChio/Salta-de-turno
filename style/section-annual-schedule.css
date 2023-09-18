@@ -1,5 +1,5 @@
 .schedule-table{
-    width: 90%;
+    width: 100%;
     max-width: 1100px;
 }   
 .tabla-meses{
@@ -94,10 +94,10 @@
     }
     .farma-fecha, 
     .farma-lugar{
-        font-size: 1rem;
+        font-size: .8rem;
     }
     .farma-fecha strong{
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
 }
 
