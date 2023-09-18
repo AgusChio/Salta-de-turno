@@ -1,6 +1,6 @@
 .card-syringe{
     max-width: max(300px, 35vmax);
-    max-height: max(400px, 18vmax);
+    max-height: 400px;
     flex-direction: column;
     gap: .5rem;
     border: 2px solid var(--text-color);
@@ -20,6 +20,8 @@
 
 @media (min-width: 900px){
     .card-syringe{
+        max-width: 620px;
+        max-height: 300px;
         flex-direction: row;
         gap: 1rem;
     }

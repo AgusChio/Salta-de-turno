@@ -19,16 +19,14 @@
 </head>
 <body>
     <header class="container-header-medicine | p-2">
-        <nav class="navbar | navbar-expand-lg">
+        <nav class="navbar | navbar-expand-lg | nav-medicine">
             <div class="container-fluid">
                 <div class="logo">
                     <img
                         src="../assets/images/logo.png"
                         alt="Salta de Turno"
-                    />
-                    <a class="navbar-brand | ms-2 | fw-bold" href="../index.html" target="_blank"
-                        >Salta de Turno</a
                     >
+                    <a class="navbar-brand | ms-2 | fw-bold" href="../index.html" target="_blank">Salta de Turno</a>
                 </div>
                 <button
                     class="navbar-toggler"
@@ -47,24 +45,27 @@
                 >
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
+                            <a class="nav-link" href="../index.html">Pagina principal</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Venta libre</a>
+                            <a class="nav-link" href="#">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="# ">Venta bajo receta</a>
+                            <a class="nav-link" href="#free">Venta libre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"
+                            <a class="nav-link" href="#recipes">Venta bajo receta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#types-med"
                                 >Tipos</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Inyectables</a>
+                            <a class="nav-link" href="#injectables">Inyectables</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"
+                            <a class="nav-link" href="#plants"
                                 >Plantas medicinales</a
                             >
                         </li>
@@ -88,7 +89,7 @@
                     Los fármacos son medicamentos que se utilizan para tratar o prevenir enfermedades y trastornos de salud. Pueden venir en diferentes formas, como pastillas, cápsulas, gotas, parches, inyecciones, etc. La selección del medicamento adecuado depende de muchos factores, incluidas las condiciones médicas, la gravedad de la enfermedad y los posibles efectos secundarios. Es importante seguir las instrucciones del médico y utilizar el fármaco de manera adecuada para obtener los mejores resultados.
                 </p>
                 <a
-                    href="#cards"
+                    href="#types-med"
                     class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2"
                     >Ver los tipos de medicamentos</a
                 >
@@ -104,7 +105,7 @@
     </header>
     <main>
         <!-- Venta libre -->
-        <section class="sectionMedicineFree accordion-container">
+        <section id="free" class="sectionMedicineFree accordion-container">
             <header>
                 <h3>Medicamentos de venta libre</h3>
                 <p>En esta sección puedes encontrar los medicamentos de venta libre mas comunes.</p>
@@ -221,7 +222,7 @@
             </div>
         </section>
         <!-- Bajo receta -->
-        <section class="Main-MedBajoRec">
+        <section id="recipes" class="Main-MedBajoRec">
             <header class="text-MedBajoRec">
                 <h3>Medicamentos bajo receta</h3>
                 <p>Esta sección está dedicada a los medicamentos que solo pueden obtenerse con una receta médica, asegurando así un uso responsable y seguro bajo supervisión profesional</p>
@@ -341,7 +342,7 @@
             </div>
         </section>
         <!-- Inyectables -->
-        <section class="injectables">
+        <section id="injectables" class="injectables">
             <header class="title-syringe">
                 <h3>Inyectables de venta libre</h3>
                 <p>Esta sección se dedica a brindarte información sobre inyectables de venta libre.</p>
@@ -414,7 +415,7 @@
             <header class="title-plants">
                 <h3>Plantas Medicinales</h3>
                 <p>Aquí encontrarás una amplia variedad de hierbas y plantas cuidadosamente seleccionadas por sus propiedades terapéuticas. Explora los beneficios naturales que estas plantas pueden aportar a tu salud y bienestar, y descubre cómo incorporarlas en tu estilo de vida de forma segura y efectiva.  Si deseas conocer la fuente de información de las plantas medicinales, simplemente haz clic en el siguiente boton.</p>
-                <a href="#" class="btn | mb-3 | fw-bold" role="button">Ver más información</a>
+                <a href="../assets/pdf/plantas-medicinales.pdf" download="plantas-medicinales.pdf" class="btn | mb-3 | fw-bold" role="button">Descarga las plantas medicinales</a>
             </header>
             <div class="container-table-plants | schedule-table | mt-5 | m-auto ">
                 <div class="table-plants-category | d-flex | flex-wrap | justify-content-center | m-auto">
@@ -507,9 +508,9 @@
                 class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
                 <h4 class="text-center">Inicio</h4>
                 <ul class="text-center | w-50 | ps-0">
-                    <li><a href="#" class="text-decoration-none">De turno</a></li>
-                    <li><a href="#" class="text-decoration-none">Comentarios</a></li>
-                    <li><a href="#" class="text-decoration-none">Farmacias</a></li>
+                    <li><a href="../index.html#turno" class="text-decoration-none">De turno</a></li>
+                    <li><a href="../index.html#comments" class="text-decoration-none">Comentarios</a></li>
+                    <li><a href="./farmacias.html" class="text-decoration-none">Farmacias</a></li>
                     <li><a href="#" class="text-decoration-none">Medicamentos</a></li>
                 </ul>
             </div>
@@ -518,11 +519,11 @@
                 class="footer-links farma | d-flex | flex-column | justify-content-center | align-items-center ">
                 <h4 class="text-center">Farmacias</h4>
                 <ul class="text-center | w-50 | ps-0">
-                    <li><a href="#" class="text-decoration-none">Todas las farmacias</a></li>
-                    <li><a href="#" class="text-decoration-none">Mapa</a></li>
-                    <li><a href="#" class="text-decoration-none">Cronograma anual</a></li>
-                    <li><a href="#" class="text-decoration-none">FarmaOnline</a></li>
-                    <li><a href="#" class="text-decoration-none">Farmacias que vacunan</a></li>
+                    <li><a href="./pages/farmacias.html#cards" class="text-decoration-none">Todas las farmacias</a></li>
+                    <li><a href="./pages/farmacias.html#maps" class="text-decoration-none">Mapa</a></li>
+                    <li><a href="./pages/farmacias.html#schedule" class="text-decoration-none">Cronograma anual</a></li>
+                    <li><a href="./pages/farmacias.html#farmaonline" class="text-decoration-none">FarmaOnline</a></li>
+                    <li><a href="./pages/farmacias.html#vacuum" class="text-decoration-none">Farmacias que vacunan</a></li>
                 </ul>
             </div>
             <!-- Medicamentos 3-->
@@ -530,11 +531,11 @@
                 class="footer-links | d-flex | flex-column | justify-content-center | align-items-center | border-dashed">
                 <h4 class="text-center">Medicamentos</h4>
                 <ul class="text-center | w-50 | ps-0">
-                    <li><a href="#" class="text-decoration-none">Venta libre</a></li>
-                    <li><a href="#" class="text-decoration-none">Venta bajo receta</a></li>
-                    <li><a href="#" class="text-decoration-none">Tipos</a></li>
-                    <li><a href="#" class="text-decoration-none">Injectables de venta libre</a></li>
-                    <li><a href="#" class="text-decoration-none">Plantas medicinales</a></li>
+                    <li><a href="#free" class="text-decoration-none">Venta libre</a></li>
+                    <li><a href="#recipes" class="text-decoration-none">Venta bajo receta</a></li>
+                    <li><a href="#types-med" class="text-decoration-none">Tipos</a></li>
+                    <li><a href="#injectables" class="text-decoration-none">Injectables de venta libre</a></li>
+                    <li><a href="#plants" class="text-decoration-none">Plantas medicinales</a></li>
                 </ul>
             </div>
             <!-- Redes sociales 4-->

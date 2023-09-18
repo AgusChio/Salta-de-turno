@@ -32,8 +32,7 @@ footer {
 }
 
 .footer-links ul li a:hover {
-    color: var(--color-tertiary);
-    padding-left: 6.2px;
+    color: var(--color-secondary);
 }
 
 /*Redes Sociales*/
@@ -92,7 +91,7 @@ footer {
         align-items: center;
         justify-content: center;
         border-top: dashed 2px var(--text-color);
-        padding: 20px 0;
+        padding: 1.25rem 0;
     }
 
     .copy{

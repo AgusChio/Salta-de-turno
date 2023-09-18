@@ -9,6 +9,11 @@
     width: 100%;
     background-color: var(--table-color);
 }
+.table-farmacy thead{
+    background-color: var(--table-color);
+    position: sticky;
+    top: 0;
+}
 .table-farmacy th {
     font-size: 1.5rem;
     text-align: center;
@@ -22,7 +27,7 @@
     border-right: 3px solid var(--bg-color-container); 
 }
 .container-table:hover{
-    overflow-y: scroll;
+    overflow: scroll;
 }
 @media (min-width: 736px){
     .container-table{
