@@ -1,0 +1,81 @@
+/* Estilos tabla plantas medicinales */
+/* -Hay clases que se pueden reutilizar o llamar con selectores grupales
+-El botón de más información podría descargar el pdf de todas las plantas*/
+
+.title-plants .btn{
+    color: #FCFCFC;
+    background-color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+
+.title-plants .btn:hover{
+    color: var(--text-color-light);
+}
+
+.title-plants .btn::after{
+    background-color: #FCFCFC; 
+}
+
+.table-plants-category{
+    gap: .7rem;
+}
+
+.plants{
+    border-radius: 1rem;
+    color: var(--color-quaternary);
+    padding: .3rem;
+    cursor: pointer;
+}
+
+.plants:hover{
+    background-color: var(--color-quaternary);
+    color: #FCFCFC;
+}
+
+.table-plants-border{
+    border: 3px solid var(--color-quaternary);
+}
+
+.table-plants{
+    background-color: transparent;
+}
+
+.table-plants th{
+    border-bottom-color: var(--color-quaternary);
+    color: var(--color-quaternary);
+}
+
+.table-plants tr{
+    border-bottom-color: var(--color-quaternary);
+    color: var(--color-quaternary);
+}
+
+.border-right-cell-plants{
+    border-right-color: var(--color-quaternary); 
+}
+
+@media (min-width: 736px){
+    .plants{
+        font-size: 1.2rem;
+        padding: .5rem;
+    }
+    .container-table::-webkit-scrollbar{
+        display: none;
+    }
+    .table-plants-category{
+        width: 90%;
+    }
+    .table-plants th{
+        font-size: 1.5rem;
+    }
+}
+@media (min-width: 900px){
+    .table-plants-category{
+        gap: 1rem;
+    }
+    .plants{
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+

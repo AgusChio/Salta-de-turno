@@ -45,3 +45,12 @@
 
 /* Estilos medicamentos bajo recetas */
 @import url('section-recipes.css');
+
+/* Estilos tipos de medicamentos */
+@import url('section-types-medications.css');
+
+/* Estilos inyectables */
+@import url('section-injectable.css');
+
+/* Estilos pantas medicinales */
+@import url('section-plants.css');

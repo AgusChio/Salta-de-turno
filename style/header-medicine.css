@@ -4,3 +4,12 @@
     background-repeat: no-repeat;
     background-position-x: right;
 }
+.container-image-medicine{
+    width: 80%;
+    margin: auto;
+}
+@media (min-width: 900px){
+    .container-image-medicine{
+        width: 40%;
+    }
+}
