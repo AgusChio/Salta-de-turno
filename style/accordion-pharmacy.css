@@ -1,10 +1,10 @@
 .accordion-container{
-    padding: 3rem 1.4rem;
     background-image: linear-gradient(#DCFFF4, #fdfdfd);
 }
-.title-section h3{
-    border-bottom: 2px solid;
-}
+.accordion{
+    max-width: 1900px;
+    margin: auto;
+} 
 .accordion-item{
     border: none;
     border-bottom: 2px solid var(--text-color-light);

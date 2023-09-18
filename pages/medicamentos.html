@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="../style/general.css" />
+    <link
+        rel="shortcut icon"
+        href="../assets/images/logo.png"
+        type="image/x-icon"
+    >
+    <title>Medicamentos</title>
+</head>
+<body>
+    <header class="container-header-medicine | p-2">
+        <nav class="navbar | navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="logo">
+                    <img
+                        src="../assets/images/logo.png"
+                        alt="Salta de Turno"
+                    />
+                    <a class="navbar-brand | ms-2 | fw-bold" href="../index.html" target="_blank"
+                        >Salta de Turno</a
+                    >
+                </div>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarNavDropdown"
+                >
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Venta libre</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="# ">Venta bajo receta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
+                                >Tipos</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inyectables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"
+                                >Plantas medicinales</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <button type="button" class="nav-link btn">
+                                Iniciar sesión
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-image-text-header pharmacy | w-100 | d-flex">
+            <div
+                class="container-text-pharmacy | d-flex | flex-column | justify-content-center | p-4"
+            >
+                <h1 class="fs-1 | fw-bold | mb-3">
+                    Medicamentos
+                </h1>
+                <h2 class="fs-2 | fw-light | mb-3">Conoce un poco más acerca de los fármacos</h2>
+                <p class="fs-5 | mb-4">
+                    Los fármacos son medicamentos que se utilizan para tratar o prevenir enfermedades y trastornos de salud. Pueden venir en diferentes formas, como pastillas, cápsulas, gotas, parches, inyecciones, etc. La selección del medicamento adecuado depende de muchos factores, incluidas las condiciones médicas, la gravedad de la enfermedad y los posibles efectos secundarios. Es importante seguir las instrucciones del médico y utilizar el fármaco de manera adecuada para obtener los mejores resultados.
+                </p>
+                <a
+                    href="#cards"
+                    class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2"
+                    >Ver los tipos de medicamentos</a
+                >
+            </div>
+            <div class="container-image-medicine">
+                <img
+                    src="../assets/images/img-inicio-medicamentos.png"
+                    alt="img-pc"
+                    class="w-100 | h-100"
+                />
+            </div>
+        </div>
+    </header>
+    <!-- Venta libre -->
+    <section class="sectionMedicineFree accordion">
+        <header>
+            <h3>Medicamentos de venta libre</h3>
+            <p>En esta sección puedes encontrar los medicamentos de venta libre mas comunes.</p>
+        </header>
+        <div class="list-medicineBox">
+            <div class="medicineBox ">
+                <div class="topBox"></div>
+                <div class="frontBox | d-flex | justify-content-between">
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>codigo nacional</p>
+                    </div>
+                    <div class=" d-flex | flex-column | w-100 | nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p class="fw-regular">Principios activos</p>
+                    </div>
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p>Leyenda</p>
+                        <p>Presentacion y cantidad</p>
+                    </div>
+                </div>
+                <div class="rightBox"></div>
+            </div>
+            <div class="medicineBox">
+                <div class="topBox"></div>
+                <div class="frontBox | d-flex | justify-content-between">
+                    <div class=" d-flex | w-100 | justify-content-between">
+                        <p class="textContent"><strong>Laboratorio</strong></p>
+                        <p class="textContent">codigo nacional</p>
+                    </div>
+                    <div class=" d-flex | flex-column | w-100 | nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p class="fw-regular">Principios activos</p>
+                    </div>
+                    <div class=" d-flex | w-100 | justify-content-between ">
+                        <p class="textContent">Leyenda</p>
+                        <p class="textContent">Presentacion y cantidad</p>
+                    </div>
+                </div>
+                <div class="rightBox"></div>
+            </div>
+            <div class="medicineBox">
+                <div class="topBox"></div>
+                <div class="frontBox | d-flex | justify-content-between">
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>codigo nacional</p>
+                    </div>
+                    <div class=" d-flex | flex-column | w-100 | nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p class="fw-regular">Principios activos</p>
+                    </div>
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p>Leyenda</p>
+                        <p>Presentacion y cantidad</p>
+                    </div>
+                </div>
+                <div class="rightBox"></div>
+            </div>
+            <div class="medicineBox">
+                <div class="topBox"></div>
+                <div class="frontBox | d-flex | justify-content-between">
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>codigo nacional</p>
+                    </div>
+                    <div class=" d-flex | flex-column | w-100 | nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p class="fw-regular">Principios activos</p>
+                    </div>
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p>Leyenda</p>
+                        <p>Presentacion y cantidad</p>
+                    </div>
+                </div>
+                <div class="rightBox"></div>
+            </div>
+            <div class="medicineBox">
+                <div class="topBox"></div>
+                <div class="frontBox | d-flex | justify-content-between">
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>codigo nacional</p>
+                    </div>
+                    <div class=" d-flex | flex-column | w-100 | nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p class="fw-regular">Principios activos</p>
+                    </div>
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p>Leyenda</p>
+                        <p>Presentacion y cantidad</p>
+                    </div>
+                </div>
+                <div class="rightBox"></div>
+            </div>
+            <div class="medicineBox">
+                <div class="topBox"></div>
+                <div class="frontBox | d-flex | justify-content-between">
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>codigo nacional</p>
+                    </div>
+                    <div class=" d-flex | flex-column | w-100 | nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p class="fw-regular">Principios activos</p>
+                    </div>
+                    <div class=" d-flex | w-100 | justify-content-between | textContent">
+                        <p>Leyenda</p>
+                        <p>Presentacion y cantidad</p>
+                    </div>
+                </div>
+                <div class="rightBox"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Bajo receta -->
+    <section class="Main-MedBajoRec">
+        <header class="text-MedBajoRec">
+            <h3>Medicamentos bajo receta</h3>
+            <p>Esta sección está dedicada a los medicamentos que solo pueden obtenerse con una receta médica, asegurando así un uso responsable y seguro bajo supervisión profesional</p>
+        </header>
+        
+        <div class="list-medicineBox">
+            <div class="MedBajoRec medicineBox">
+                <div class="text-betw textContent">
+                    <p><strong>Laboratorio</strong></p>
+                    <p>Código nacional</p>
+                </div>
+
+                <div class="nameContent">
+                    <h4>Nombre comercial</h4>
+                    <p>Principio activo</p>
+                </div>
+
+                <div class="text-betw textContent">
+                    <p>Leyenda</p>
+                    <p>Presentación y cantidad</p>
+                </div>
+            </div>
+
+            <div class="MedBajoRec medicineBox">
+                <div class="text-betw textContent">
+                    <p><strong>Laboratorio</strong></p>
+                    <p>Código nacional</p>
+                </div>
+
+                <div class="nameContent">
+                    <h4>Nombre comercial</h4>
+                    <p>Principio activo</p>
+                </div>
+
+                <div class="text-betw textContent">
+                    <p>Leyenda</p>
+                    <p>Presentación y cantidad</p>
+                </div>
+            </div>
+
+            <div class="MedBajoRec medicineBox">
+                <div class="text-betw textContent">
+                    <p><strong>Laboratorio</strong></p>
+                    <p>Código nacional</p>
+                </div>
+
+                <div class="nameContent">
+                    <h4>Nombre comercial</h4>
+                    <p>Principio activo</p>
+                </div>
+
+                <div class="text-betw textContent">
+                    <p>Leyenda</p>
+                    <p>Presentación y cantidad</p>
+                </div>
+            </div>
+
+            <div class="MedBajoRec medicineBox">
+                <div class="text-betw textContent">
+                    <p><strong>Laboratorio</strong></p>
+                    <p>Código nacional</p>
+                </div>
+
+                <div class="nameContent">
+                    <h4>Nombre comercial</h4>
+                    <p>Principio activo</p>
+                </div>
+
+                <div class="text-betw textContent">
+                    <p>Leyenda</p>
+                    <p>Presentación y cantidad</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"
+    ></script>
+</body>
+</html>

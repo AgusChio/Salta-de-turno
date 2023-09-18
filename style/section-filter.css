@@ -1,10 +1,17 @@
 .pharmacy-section{
     padding: 0;
+} 
+
+.pharmacy-section header,
+.pharmacy-section .div-search,
+.pharmacy-section .container-cards{
+    padding: 0 1.4rem;
 }
 
 .pharmacy-section header h3{
     padding: 1rem;
     text-align: center;
+    border: none;
 }
 
 .pharmacy-section img{

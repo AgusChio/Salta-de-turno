@@ -63,7 +63,7 @@ footer {
 /*Responsive*/
 
 
-@media (min-width: 736px) and (max-width: 2000px){
+@media (min-width: 736px){
     .container-footer {
         display: flex;
         align-items: flex-start;

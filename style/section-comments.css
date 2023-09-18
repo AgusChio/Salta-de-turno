@@ -6,7 +6,7 @@
 }
 
 .container-general-comments{
-    width: 95%;
+    max-width: 1900px;
 }
 
 .container-comments {

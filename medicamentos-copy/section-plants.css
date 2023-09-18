@@ -107,22 +107,25 @@ h3{
     max-height: 450px;
     border-radius: 2rem;
     overflow: scroll;
+    border: 3px solid var(--color-quaternary);
 }
 .table-plants{
     width: 100%;
-    background-color: var(--color-quaternary);
+    /* background-color: var(--bg-color-container); */
 }
 .table-plants th{
     font-size: 1.3rem;
     text-align: center;
-    border-bottom: 3px solid var(--bg-color-container);
+    border-bottom: 3px solid var(--color-quaternary);
+    color: var(--color-quaternary);
 }
 .table-plants tr{
     font-size: 1rem;
-    border-bottom: 2px dashed #ffffffd3;
+    border-bottom: 2px dashed var(--color-quaternary);
+    color: var(--color-quaternary);
 }
 .border-right-cell{
-    border-right: 3px solid var(--bg-color-container); 
+    border-right: 3px solid var(--color-quaternary); 
 }
 
 @media (width >= 736px){

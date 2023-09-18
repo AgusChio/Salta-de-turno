@@ -1,0 +1,51 @@
+/*SECCION MEDICAMENTOS*/
+/* .List-MedBajoRec{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2rem;
+    flex-wrap: wrap;
+} */
+/*CAJA DE MEDICAMENTO*/
+.MedBajoRec{
+    background-image: url('../assets/images/img-medicamento-bajo-receta.png');
+    background-size: 100% 100%;
+    padding: .7rem .3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.MedBajoRec div{
+    width: 90%;
+}
+/*TEXTO INICIAL DE LA CAJA*/
+/* .text-top-box p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.text-top-box p + p{
+    font-size: 15px;
+    font-weight: 400;
+} */
+/*TEXTO CENTRAL DE LA CAJA*/
+/* .text-med-box h4{
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+}
+.text-med-box p{
+    font-size: 28px;
+    font-weight: 400;
+    margin-top: 0;
+} */
+/*TEXTO FINAL DE LA CAJA*/
+/* .text-bottom-box p{
+    font-size: 15px;
+} */
+
+/*OTRAS CLASES ;-;*/
+.text-betw{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

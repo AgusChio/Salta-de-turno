@@ -1,9 +1,6 @@
 .maps{
     padding: 3rem 1.4rem;
 }
-.maps-title h3{
-    border-bottom: 2px solid;
-}
 .location{
     display: flex;
     justify-content: center;
