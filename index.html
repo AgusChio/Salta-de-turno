@@ -92,7 +92,10 @@
                         <option value="south">Sur</option>
                     </select>
                     <!-- aquí hay que usar js para que aparezca el calendario, sino no puedo poner "fecha" -->
-                    <input type="date" id="fecha" name="fecha" placeholder="dd/mm/aaaa" class="form-select-sm | border | border-dark">
+                    <div class="custom-date-input">
+                        <input type="date" class="form-select-sm | border | border-dark" id="date-input">
+                        <span class="placeholder-date">Fecha</span>
+                    </div>
                     <select class="form-select-sm">
                         <option selected>Obra social</option>
                         <option value="avalian">Avalian</option>
@@ -413,6 +416,7 @@
         </div>
     </footer>
 
+    <script src="./js/index.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

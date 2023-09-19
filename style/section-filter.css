@@ -44,6 +44,26 @@
     border: 1px solid var(--font);
 }
 
+.custom-date-input {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.placeholder-date {
+    position: relative;
+    position: absolute;
+    background-color: #d2ffee;
+    width: 68%;
+    text-align: center;
+    left: 12px;
+    top: 4.5px;
+    padding-left: 0.5rem;
+    pointer-events: none;
+    font-weight: bolder;
+    font-size: 14px;
+}
+
 @media screen and (min-width:600px){
     .div-search{
         flex-direction: row;
