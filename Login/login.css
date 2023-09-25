@@ -1,0 +1,111 @@
+:root {
+    --font-title: 'Roboto', sans-serif;
+    --font-text: 'Poppins', sans-serif;
+    --text-color: #034172;
+    --text-color-light: #174487;
+    --color-primary: #36EDA9;
+    --color-secondary: #338DFF;
+    --color-tertiary: #82D1FF;
+    --color-underline: #4674B7;
+    --bg-color-container: #F1F1F1;
+    --bg-color-comments: #D9D9D9;
+}
+
+body {
+    background-image: url("./bg-login.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 800px 1000px;
+}
+
+.logo img {
+    width: 3.58rem;
+    margin-right: .5rem;
+    filter: drop-shadow(1px 2px 2px #888);
+}
+
+.logo a {
+    color: var(--text-color);
+}
+
+.button-back {
+    color: white;
+    background-color: var(--text-color);
+    letter-spacing: 3px;
+    font-family: var(--font-title);
+    border: none;
+}
+
+.btn-login-title {
+    color: var(--text-color);
+    letter-spacing: 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid var(--text-color);
+}
+
+.btn-register-title {
+    color: var(--bg-color-comments);
+    letter-spacing: 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid var(--bg-color-comments);
+}
+
+.form-login fieldset input {
+    height: 55px;
+    background-color: transparent;
+    box-shadow: 0px 3px 8px 0px rgba(3, 65, 114, 0.20);
+    border-radius: 22px;
+}
+
+.form-login fieldset input:focus {
+    outline: none;
+}
+
+.form-login fieldset input::placeholder {
+    color: #034272af;
+    font-family: var(--font-text);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+.input-iconify {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-iconify input {
+    padding-left: 60px; 
+    border: none;
+}
+
+.input-iconify .iconify {
+    color: var(--text-color);
+    position: absolute;
+    bottom: 15px;
+    left: 15px; 
+}
+
+.img-login{
+    height: 90%;
+}
+
+.container-login-forgot-password a{
+    color: var(--text-color);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+.btn-login{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 22px;
+    font-family: var(--font-text);
+    letter-spacing: 1px;
+    border: none;
+}
