@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="./login.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <header class="p-2">
+        <nav class="navbar | navbar-expand-lg | nav-landing">
+            <div class="container-fluid">
+                <div class="logo | d-flex | align-items-center">
+                    <img src="./assets/images/logo.png" alt="salta de turno">
+                    <a class="navbar-brand | ms-2 | fw-bold" href="index.html">Salta de Turno</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle | navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse | navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pagina Principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Farmacias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Medicamentos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="w-100 | d-flex | main-login | flex-wrap">
+        <div class="container-form-login | w-50">
+            <div class="w-75 | m-auto | mt-5 | d-flex | justify-content-evenly">
+                <button class="btn-login-title | fs-3 | fw-bold | px-3">Inicio de sesión</button>
+                <button class="btn-register-title | fs-3 | fw-bold | px-3">Registro</button>
+            </div>
+            <div class="w-75 | m-auto | mt-5">
+                <form class="form-login">
+                    <fieldset class="mb-3 input-iconify">
+                        <span class="iconify" data-icon="mdi:account" data-width="25" data-height="25"></span>
+                        <input type="user" class="w-100 | mt-4 | rounded-4" name="user" id="user"
+                            placeholder="Usuario">
+                    </fieldset>
+                    <fieldset class="mb-3 input-iconify">
+                        <span class="iconify" data-icon="mdi:card-account-details" data-width="25"
+                            data-height="25"></span>
+                        <input type="dniPassport" class="w-100 | mt-4 | rounded-4"
+                            name="dniPassport" id="dniPassport" placeholder="Dni o Pasaporte">
+                    </fieldset>
+                    <fieldset class="mb-3 input-iconify">
+                        <span class="iconify" data-icon="mdi:form-textbox-password" data-width="25"
+                            data-height="25"></span>
+                        <input type="password" class="w-100 | mt-4 | rounded-4" name="password"
+                            id="password" placeholder="Contraseña">
+                    </fieldset>
+                </form>
+            </div>
+            <div>
+                <div class="w-75 | mt-4 | m-auto | form-check">
+                    <input class="form-check-input" type="checkbox" id="remember">
+                    <label class="form-check-label" for="remember">
+                        Recordarme
+                    </label>
+                </div>
+            </div>
+            <div class="w-75 | m-auto | mt-5 | container-login-forgot-password | d-flex | justify-content-between | align-items-center">
+                <a href="#" class="text-decoration-none">¿Olvidaste tu contraseña?</a>
+                <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold">Iniciar sesión</button>
+            </div>
+        </div>
+
+        <div class="container-img-login | w-50 | d-flex | align-items-center | pe-5">
+            <img src="./img-inicio-sesion.png" alt="Imagen de una computadora con diagramas digitales" class="img-login">
+        </div>
+    </main>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
