@@ -54,3 +54,6 @@
 
 /* Estilos pantas medicinales */
 @import url('section-plants.css');
+
+/* Estilos Login */
+@import url('./login.css');

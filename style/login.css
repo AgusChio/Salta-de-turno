@@ -1,21 +1,13 @@
-:root {
-    --font-title: 'Roboto', sans-serif;
-    --font-text: 'Poppins', sans-serif;
-    --text-color: #034172;
-    --text-color-light: #174487;
-    --color-primary: #36EDA9;
-    --color-secondary: #338DFF;
-    --color-tertiary: #82D1FF;
-    --color-underline: #4674B7;
-    --bg-color-container: #F1F1F1;
-    --bg-color-comments: #D9D9D9;
-}
 
-body {
-    background-image: url("./bg-login.png");
+.body-login {
+    background-image: url("../assets/images/bg-login.png");
     background-repeat: no-repeat;
     background-position: right top;
     background-size: 800px 1000px;
+}
+
+.nav-login{
+    background-color: transparent;
 }
 
 .logo img {
@@ -61,6 +53,7 @@ body {
 
 .form-login fieldset input:focus {
     outline: none;
+    border: 2px dashed var( --color-primary);
 }
 
 .form-login fieldset input::placeholder {
@@ -68,7 +61,7 @@ body {
     font-family: var(--font-text);
     font-size: 1rem;
     letter-spacing: 1px;
-    font-weight: bolder;
+    font-weight:normal;
 }
 
 .input-iconify {
@@ -116,13 +109,13 @@ body {
 }
 
 @media screen and (min-width: 320px) and (max-width: 900px){
-    body{
+    .body-login{
         background-image: none;
     }
-    
+
     .main-login{
         flex-direction: column-reverse;
-        background-image: url("./bg-login-mobile.png");
+        background-image: url("../assets/images/bg-login-mobile.png");
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 90% 50%;
@@ -141,8 +134,12 @@ body {
         margin: auto;
     }
 
-    .main-login .container-form-login{
+    .main-login .container-form-login, .main-login .container-titles-login{
         width: 100% !important;
+    }
+
+    .main-login .container-login-forgot-password a{
+        text-align: center;
     }
 }
 
@@ -153,13 +150,13 @@ body {
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1800px){
-    body{
+    .body-login{
         background-size: 800px 1200px;
     }
 }
 
 @media screen and (min-width: 1800px) and (max-width: 2500px){
-    body{
+    .body-login{
         background-size: 1000px 1200px;
     }
 
