@@ -108,6 +108,7 @@ nav .btn{
 
 .navbar-nav{
     margin-top: 1rem;
+    gap: .4rem;
 }
 
 .nav-link{
@@ -259,7 +260,6 @@ nav .btn{
     .navbar-dropdown{
         width: auto;
         padding: 0;
-        margin-top: -10px; 
         box-shadow: none;
         animation: none;
         opacity: 1;
@@ -270,5 +270,9 @@ nav .btn{
 
     .navbar-dropdown .btn-close{
         display: none;
+    }
+
+    .navbar-nav{
+        margin-top: 0;
     }
 }
