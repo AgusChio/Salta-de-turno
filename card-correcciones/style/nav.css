@@ -1,0 +1,26 @@
+.logo img{
+    width: 3.58rem;
+    margin-right: .5rem;
+    filter: drop-shadow(1px 2px 2px #888);
+}
+
+.logo .navbar-brand,
+.navbar-collapse .btn{
+    font-weight: 500;
+}
+
+.navbar-collapse .btn{
+    padding: .5rem;
+    font-size: .9rem;
+    border-color: var(--color-primary);
+}
+
+.navbar-collapse .btn::after{
+    background: var(--color-primary); 
+}
+
+@media screen and (min-width:992px){
+    .navbar-collapse{
+    justify-content: flex-end;
+    }
+}
