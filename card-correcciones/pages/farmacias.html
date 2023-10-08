@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -24,7 +24,7 @@
                     <div class="logo">
                         <img
                             src="../assets/images/logo.png"
-                            alt="salta de turno"
+                            alt="Salta de Turno"
                         />
                         <a class="navbar-brand | ms-2 | fw-bold" href="../index.html" target="_blank"
                             >Salta de Turno</a
@@ -47,10 +47,13 @@
                     >
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="../index.html" target="_blank">Inicio</a>
+                                <a class="nav-link" href="../index.html">Página principal</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Farmacias</a>
+                                <a class="nav-link" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#cards">Farmacias</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#maps">Mapa</a>
@@ -69,9 +72,9 @@
                                 >
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="nav-link btn">
+                                <a type="button" class="nav-link btn" href="./login.html">
                                     Iniciar sesión
-                                </button>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -87,13 +90,7 @@
                     </h1>
                     <h2 class="fs-2 | fw-light | mb-3">Farmacias</h2>
                     <p class="fs-5 | mb-4">
-                        ¿Cómo estás? ¿Buscas una farmacia cerca de tu casa o en
-                        un área específica? Bueno, aquí encontrarás todo lo que
-                        necesitas saber sobre farmacias de turno, horarios en
-                        diferentes días, obras sociales, y más. También puedes
-                        encontrar información sobre campañas de vacunación y
-                        mucho más. ¡Entra pronto y explora lo que tenemos para
-                        ofrecerte!
+                        ¿Estás interesado en conocer detalles sobre campañas de vacunación u otros servicios de salud relevantes? Estamos aquí para mantenerte informado sobre estos eventos y noticias esenciales. ¡Entra ahora mismo y explora todo lo que tenemos para ti!
                     </p>
                     <a
                         href="#cards"
@@ -115,6 +112,7 @@
             <section id="cards" class="accordion-container">
                 <header class="title-section | pb-4">
                     <h3>Farmacias</h3>
+                    <p class="mt-3">Descubre una amplia variedad de farmacias en diferentes zonas para satisfacer tus necesidades de salud. Las farmacias de Salta Capital ofrecen una gama completa de servicios y productos farmacéuticos para garantizar tu bienestar. Consulta los horarios de atención y encuentra la ubicación más cercana para recibir la atención que necesitas.</p> 
                 </header>
                 <div class="accordion" id="accordionPanelsStayOpen">
                     <div class="accordion-item">
@@ -543,7 +541,7 @@
             <section id="maps" class="maps">
                 <header class="maps-title">
                     <h3>Más farmacias</h3>
-                    <p>
+                    <p class="mt-3 mb-3">
                         Bienvenidos al mapa interactivo que muestra todas las farmacias disponibles en nuestra querida ciudad. Con el objetivo de facilitar el acceso a los servicios de salud y medicamentos, hemos recopilado información detallada sobre la ubicación y los servicios ofrecidos por cada una de las farmacias aquí representadas.
                     </p>
                 </header>
@@ -560,6 +558,7 @@
             <section id="schedule" class="cronograma-anual">
                 <header>
                     <h3>Cronograma Anual</h3>
+                    <p class="mt-3">Explora nuestro cronograma anual de farmacias de turno para mantenerte al tanto de las farmacias disponibles durante todo el año. Saber cuándo y dónde puedes acceder a servicios farmacéuticos es esencial para tu salud y bienestar. Nuestro cronograma te brinda información detallada sobre las farmacias de turno en diferentes zonas.</p>
                 </header>
                 <div class="schedule-table | m-auto">
                     <div class="tabla-meses | mt-5">
@@ -580,88 +579,105 @@
                         <table class="tabla-dias">
                             <thead>
                                 <th class="borde-right">Día</th>
-                                <th>Farmacias</th>
+                                <th class="borde-right">Farmacias</th>
+                                <th>Zona</th>
                             </thead>
                 
                             <tbody>
                                 <tr>
                                     <td class="farma-fecha borde-right">Lunes <strong>1</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
                 
                                 <tr>
                                     <td class="farma-fecha borde-right">Martes <strong>2</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
                 
                                 <tr>
                                     <td class="farma-fecha borde-right ">Miercoles <strong>3</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
                 
                                 <tr>
                                     <td class="farma-fecha borde-right ">Jueves <strong>4</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
                                 
                                 <tr>
                                     <td class="farma-fecha borde-right ">Viernes <strong>5</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Sabado <strong>6</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Domingo <strong>7</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Lunes <strong>8</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Martes <strong>9</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Miercoles <strong>10</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Jueves <strong>11</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Viernes <strong>12</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Sabado <strong>13</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Domingo <strong>14</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Lunes <strong>15</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
             
                                 <tr>
                                     <td class="farma-fecha borde-right ">Martes <strong>16</strong></td>
-                                    <td class="farma-lugar">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar borde-right">Lorem ipsum dolor, sit amet consectetur adipisicing.</td>
+                                    <td class="farma-lugar">Norte</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -672,12 +688,13 @@
             <section id="vacuum" class="container-table-farmacy">
                 <header>
                     <h3 class="title-farmacy">Farmacias que vacunan</h3>
+                    <p class="mt-3">En esta sección, encontrarás información sobre las farmacias que ofrecen servicios de vacunación. Mantenerse al día con las vacunas es esencial para proteger tu salud y la de tu comunidad. Las siguientes farmacias están autorizadas para administrar vacunas y te ofrecen una ubicación conveniente para recibir las vacunas que necesitas.</p>
                 </header>
                 <div class="container-table | mt-5 | m-auto ">
                     <table class="text-light | table-farmacy">
                         <thead>
                             <tr>
-                                <th scope="col" class="p-3 |border-right-cell">Farmacia</th>
+                                <th scope="col" class="p-3 | border-right-cell">Farmacia</th>
                                 <th scope="col" class="p-3">Direccion</th>
                             </tr>
                         </thead>
@@ -773,34 +790,47 @@
                                 data-bs-slide-to="3"
                                 aria-label="Slide 4"
                             ></button>
+                            <button
+                            type="button"
+                            data-bs-target="#carousel"
+                            data-bs-slide-to="4"
+                            aria-label="Slide 5"
+                        ></button>
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img
-                                    src="../assets/images/img_makeup.png"
+                                    src="../assets/images/img-prom-personal-care.png"
                                     class="d-block w-100 img-carousel"
-                                    alt="maquillaje"
+                                    alt="Cuidado Personal"
                                 />
                             </div>
                             <div class="carousel-item">
                                 <img
-                                    src="../assets/images/img_beauty_caree.png"
+                                    src="../assets/images/img-prom-body-care.png"
                                     class="d-block w-100 img-carousel"
-                                    alt="dermocosmética"
+                                    alt="Dermocosmética"
                                 />
                             </div>
                             <div class="carousel-item">
                                 <img
-                                    src="../assets/images/img_personal_caree.png"
+                                    src="../assets/images/img-prom-baby-care.png"
                                     class="d-block w-100 img-carousel"
-                                    alt="cuidado personal"
+                                    alt="Cuidado para bebes"
                                 />
                             </div>
                             <div class="carousel-item">
                                 <img
-                                    src="../assets/images/img_baby_ofert.png"
+                                    src="../assets/images/img-prom-baby-maternity.png"
                                     class="d-block w-100 img-carousel"
-                                    alt="bebés"
+                                    alt="Maternidad"
+                                />
+                            </div>
+                            <div class="carousel-item">
+                                <img
+                                    src="../assets/images/img-prom-best-combos.png"
+                                    class="d-block w-100 img-carousel"
+                                    alt="Mejores combos"
                                 />
                             </div>
                         </div>
@@ -846,10 +876,10 @@
                     class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
                     <h4 class="text-center">Inicio</h4>
                     <ul class="text-center | w-50 | ps-0">
-                        <li><a href="#" class="text-decoration-none">De turno</a></li>
-                        <li><a href="#" class="text-decoration-none">Comentarios</a></li>
+                        <li><a href="../index.html#turno" class="text-decoration-none">De turno</a></li>
+                        <li><a href="../index.html#comments" class="text-decoration-none">Comentarios</a></li>
                         <li><a href="#" class="text-decoration-none">Farmacias</a></li>
-                        <li><a href="#" class="text-decoration-none">Medicamentos</a></li>
+                        <li><a href="./medicamentos.html" class="text-decoration-none">Medicamentos</a></li>
                     </ul>
                 </div>
                 <!-- Farmacias 2-->
@@ -857,11 +887,11 @@
                     class="footer-links farma | d-flex | flex-column | justify-content-center | align-items-center ">
                     <h4 class="text-center">Farmacias</h4>
                     <ul class="text-center | w-50 | ps-0">
-                        <li><a href="#" class="text-decoration-none">Todas las farmacias</a></li>
-                        <li><a href="#" class="text-decoration-none">Mapa</a></li>
-                        <li><a href="#" class="text-decoration-none">Cronograma anual</a></li>
-                        <li><a href="#" class="text-decoration-none">FarmaOnline</a></li>
-                        <li><a href="#" class="text-decoration-none">Farmacias que vacunan</a></li>
+                        <li><a href="#cards" class="text-decoration-none">Todas las farmacias</a></li>
+                        <li><a href="#maps" class="text-decoration-none">Mapa</a></li>
+                        <li><a href="#schedule" class="text-decoration-none">Cronograma anual</a></li>
+                        <li><a href="#farmaonline" class="text-decoration-none">FarmaOnline</a></li>
+                        <li><a href="#vacuum" class="text-decoration-none">Farmacias que vacunan</a></li>
                     </ul>
                 </div>
                 <!-- Medicamentos 3-->
@@ -869,11 +899,11 @@
                     class="footer-links | d-flex | flex-column | justify-content-center | align-items-center | border-dashed">
                     <h4 class="text-center">Medicamentos</h4>
                     <ul class="text-center | w-50 | ps-0">
-                        <li><a href="#" class="text-decoration-none">Venta libre</a></li>
-                        <li><a href="#" class="text-decoration-none">Venta bajo receta</a></li>
-                        <li><a href="#" class="text-decoration-none">Tipos</a></li>
-                        <li><a href="#" class="text-decoration-none">Injectables de venta libre</a></li>
-                        <li><a href="#" class="text-decoration-none">Plantas medicinales</a></li>
+                        <li><a href="./medicamentos.html#free" class="text-decoration-none">Venta libre</a></li>
+                        <li><a href="./medicamentos.html#recipes" class="text-decoration-none">Venta bajo receta</a></li>
+                        <li><a href="./medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
+                        <li><a href="./medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
+                        <li><a href="./medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
                     </ul>
                 </div>
                 <!-- Redes sociales 4-->
@@ -883,11 +913,11 @@
                     <div
                         class="social-link | d-flex | align-items-center | justify-content-center | align-items-center ">
                         <a href="http://www.instagram.com" target="_blank" title="@saltadeturno"><span
-                                class="iconify | p-2 | rounded-3" data-icon="bi:instagram" data-width="40"></span></a>
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="bi:instagram" data-width="40"></span></a>
                         <a href="http://www.facebook.com" target="_blank" title="Salta de Turno"><span
-                                class="iconify | p-2 | rounded-3" data-icon="lucide:facebook" data-width="40"></span></a>
-                        <a href="mailto: saltadeturno@gmail.com" target="_blank" title="saltadeturno@gmail.com"><span
-                                class="iconify | p-2 | rounded-3" data-icon="iconamoon:email-fill"
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="lucide:facebook" data-width="40"></span></a>
+                        <a href="mailto:saltadeturno@gmail.com" target="_blank" title="saltadeturno@gmail.com"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconamoon:email-fill"
                                 data-width="40"></span></a>
                     </div>
                 </div>
