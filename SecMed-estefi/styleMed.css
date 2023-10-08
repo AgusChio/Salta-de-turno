@@ -13,7 +13,7 @@
 
 /*CAJA DE MEDICAMENTO*/
 .MedBajoRec{
-    background-image: url('../SecMed/caja-medicamento-bajo-receta.png');
+    background-image: url('../SecMed-estefi/caja-medicamento-bajo-receta.png');
     background-size: 100% 100%;
     padding: .7rem .3rem;
     display: flex;
