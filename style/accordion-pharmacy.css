@@ -1,8 +1,9 @@
 .accordion-container{
     background-image: linear-gradient(#DCFFF4, #fdfdfd);
 }
-.accordion{
-    max-width: 1900px;
+.accordion,
+.p-section{
+    max-width: 1200px;
     margin: auto;
 } 
 .accordion-item{
@@ -16,7 +17,7 @@
     background-color: transparent;
 }
 .accordion-button:focus{
-    background-color: transparent;
+    box-shadow: none;
 }
 .accordion-body{
     width: 100%;
@@ -26,7 +27,7 @@
 }
 .container-buttons .button-call,
 .container-buttons .button-map{
-    padding: .4rem;
+    padding: .7rem;
 }
 
 @media screen and (min-width:420px) {

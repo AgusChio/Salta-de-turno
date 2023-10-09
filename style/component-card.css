@@ -36,12 +36,17 @@
     top: 0;
     right: 0;
     animation: blink 3s ease-in infinite;
+    border-radius: 1.2rem;
+}
+
+.button-call, .button-map{
+    font-size: .9rem ;
+    border: 2px solid var(--color-secondary);
+    transition: all 0.3s ease-in-out;
 }
 
 .button-call{
-    border: 2px solid var(--color-secondary);
     color: var(--color-secondary);
-    transition: all 0.3s ease-in-out;
 }
 
 .button-call:hover{
@@ -51,10 +56,8 @@
 }
 
 .button-map{
-    border: 2px solid var(--color-secondary);
     background: var(--color-secondary);
     color: #fff;
-    transition: all 0.3s ease-in-out;
 }
 
 .button-map:hover{
@@ -95,7 +98,7 @@
 
     .card-farmacia h2 {
         margin-right: 0;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .card-farmacia img {
