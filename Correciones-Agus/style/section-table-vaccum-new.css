@@ -1,0 +1,65 @@
+.container-table{
+    width: 100%;
+    max-height: 450px;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.166);
+    overflow-y: scroll;
+}
+
+.table-farmacy {
+    width: 100%;
+    background-color: var(--table-color);
+}
+
+.table-farmacy thead{
+    background-color: var(--table-color);
+    position: sticky;
+    top: 0;
+}
+
+.table-farmacy th {
+    background-color: var(--bg-thead-table);
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 3px solid var(--bg-color-container);
+}
+
+.table-farmacy tr {
+    font-size: 1rem;
+    border-bottom: 2px dashed #ffffffd3;
+}
+
+.container-button-table-vacuum a {
+    background-color: var(--bg-color-container);
+    color: var(--text-color-light);
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+}
+
+.border-right-cell {
+    border-right: 3px solid var(--bg-color-container); 
+}
+
+@media (max-width: 900px){ 
+    .table-farmacy th {
+        font-size: 1rem;
+    }
+    .table-farmacy tr {
+        font-size: .8rem;
+    }
+}
+
+@media (min-width: 736px){
+    .container-table{
+        max-width: 1100px;
+        max-height: 550px;
+    }
+    .table-farmacy th{
+        font-size: 1.7rem;
+    }
+    .table-farmacy tr{
+        font-size: 1.3rem;
+    }
+}
