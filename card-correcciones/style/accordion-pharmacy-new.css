@@ -1,5 +1,6 @@
 .accordion-container{
     background-image: linear-gradient(#DCFFF4, #fdfdfd);
+    padding: 0 5vw 0 5vw;
 }
 .accordion{
     max-width: 1900px;

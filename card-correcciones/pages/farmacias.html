@@ -9,7 +9,7 @@
             integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="../style/general.css" />
+        <link rel="stylesheet" href="/card-correcciones/style/general.css" />
         <link
             rel="shortcut icon"
             href="../assets/images/logo.png"
@@ -122,14 +122,15 @@
                                 type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseOne"
-                                aria-expanded="true"
+                                aria-expanded="false"
                                 aria-controls="panelsStayOpen-collapseOne"
                             >
                                 Zona Norte
                             </button>
                         </h4>
                         <div id="panelsStayOpen-collapseOne"
-                            class="accordion-collapse collapse show">
+                            class="accordion-collapse collapse show"
+                            data-bs-parent="#accordionPanelsStayOpen">
                             <div class="accordion-body">
                                 <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
 
@@ -215,7 +216,7 @@
                         <div
                             id="panelsStayOpen-collapseTwo"
                             class="accordion-collapse collapse"
-                        >
+                            data-bs-parent="#accordionPanelsStayOpen">
                             <div class="accordion-body">
                                 <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
                                     
@@ -299,6 +300,7 @@
                         <div
                             id="panelsStayOpen-collapseThree"
                             class="accordion-collapse collapse"
+                            data-bs-parent="#accordionPanelsStayOpen"
                         >
                             <div class="accordion-body">
                                 <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
@@ -383,6 +385,7 @@
                         <div
                             id="panelsStayOpen-collapseFour"
                             class="accordion-collapse collapse"
+                            data-bs-parent="#accordionPanelsStayOpen"
                         >
                             <div class="accordion-body">
                                 <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
@@ -467,6 +470,7 @@
                         <div
                             id="panelsStayOpen-collapseFive"
                             class="accordion-collapse collapse"
+                            data-bs-parent="#accordionPanelsStayOpen"
                         >
                             <div class="accordion-body">
                                 <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
