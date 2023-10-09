@@ -1,0 +1,278 @@
+/* Estilos generales para borrar en el merge */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&family=Roboto:wght@300;400;500&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --bg-nav: #FFF;
+    --bg: #D0FFF2;
+    --under: #4674B7;
+    --font: #0A1E3D;
+    --sites: #034172;
+}
+h1,
+h2,
+h3, 
+nav a,
+nav .btn{
+    color: var(--font);
+    font-family: 'Roboto', sans-serif;
+}
+.btn{
+    background: transparent;
+    border: 1px solid;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+}
+.btn::after{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+.btn:hover::after{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+/* Estilos nav */
+.logo img{
+    width: 3.5rem;
+    margin-right: .5rem;
+    filter: drop-shadow(1px 2px 2px #888);
+}
+
+.logo .navbar-brand,
+.navbar-dropdown .btn{
+    font-weight: 500;
+}
+
+.nav-btn{
+    display: flex;
+    align-items: center;
+}
+
+.icon-settings{
+    cursor: pointer;
+}
+
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.navbar-dropdown{
+    width: 65%;
+    height: 100%;
+    padding: 1.5rem;
+    text-align: right;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--bg-nav);
+    box-shadow: 
+    rgba(100, 100, 111, 0.2)
+    0px 7px 29px 0px;
+    animation: fadeInAnimation 
+    ease-in-out 0.5s forwards;
+}
+
+.navbar-dropdown .btn{
+    padding: .5rem;
+    font-size: .9rem;
+    border-color: #36EDA9;
+}
+
+.navbar-dropdown .btn:hover{
+    color: var(--bg-nav);
+}
+
+.navbar-dropdown .btn::after{
+    background: #36EDA9; 
+}
+
+.navbar-nav{
+    margin-top: 1rem;
+    gap: .4rem;
+}
+
+.nav-link{
+    display: inline-block;
+}
+
+.active{
+    font-weight: bold;
+    border-bottom: 2px solid var(--font);
+}
+
+.settings{
+    background-color: var(--bg-nav);
+    width: 60%;
+    height: 100vh;
+    max-width: 245px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 3;
+    box-shadow: 
+    rgba(100, 100, 111, 0.2)
+    0px 7px 29px 0px;
+    animation: fadeInAnimation 
+    ease-in-out 0.5s forwards;
+}
+
+.close-settings{
+    margin-left: auto;
+}
+
+.none{
+    display: none;
+}
+
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOutAnimation
+        ease-in-out 0.5s forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        width: 245px;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+        width: 245px;
+        visibility: visible;
+    }
+    100% {
+        opacity: 0;
+        width: 0;
+        visibility: hidden;
+    }
+}
+
+/* Switch button  */
+.switch-wrapper{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: space-between;
+}
+
+.switch__label{
+    white-space: nowrap;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 4rem;
+    height: 2rem;
+}
+
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: #ddd;
+    transition: .4s;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 1.5rem;
+    width: 1.5rem;
+    left: .25rem;
+    bottom: .25rem;
+    background-color: var(--sites);
+    transition: .4s;
+}
+
+.switch input:checked + .slider{
+    background-color: #333;
+}
+
+.switch input:checked + .slider:before{
+    background-color: var(--bg-nav);
+}
+
+.switch input:checked + 
+.slider:before {
+    transform: translateX(2rem);
+}
+
+.slider.round{
+    border-radius: 2rem;
+}
+
+.slider.round:before{
+    border-radius: 50%;
+}
+
+@media screen and (min-width:992px){
+    .icon-settings{
+        order: 1;
+    }
+
+    .nav-btn{
+        margin-right: 1rem;
+        gap: 1rem;
+    }
+
+    .navbar-dropdown{
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+        animation: none;
+        opacity: 1;
+        visibility: visible;
+        position: static;
+        display: block;
+    }
+
+    .navbar-dropdown .btn-close{
+        display: none;
+    }
+
+    .navbar-nav{
+        margin-top: 0;
+    }
+}
