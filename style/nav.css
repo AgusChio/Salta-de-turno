@@ -1,3 +1,7 @@
+.navbar{
+    background-color: #FCFCFC;
+}
+
 .logo img{
     width: 3.58rem;
     margin-right: .5rem;
@@ -34,7 +38,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #FFFFFF;
+    background-color: #FCFCFC;
     box-shadow: 
     rgba(100, 100, 111, 0.2)
     0px 7px 29px 0px;
@@ -49,7 +53,7 @@
 }
 
 .navbar-dropdown .btn:hover{
-    color: var(--bg-nav);
+    color: #FCFCFC;
 }
 
 .navbar-dropdown .btn::after{
@@ -71,7 +75,7 @@
 }
 
 .settings{
-    background-color: #FFFFFF;
+    background-color: #FCFCFC;
     width: 60%;
     height: 100vh;
     max-width: 245px;

@@ -19,62 +19,56 @@
 </head>
 <body>
     <header class="container-header-medicine | p-2">
-        <nav class="navbar | navbar-expand-lg | nav-medicine">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <div class="logo">
-                    <img
-                        src="../assets/images/logo.png"
-                        alt="Salta de Turno"
-                    >
-                    <a class="navbar-brand | ms-2 | fw-bold" href="../index.html" target="_blank">Salta de Turno</a>
+                    <img src="../assets/images/logo.png" alt="salta de turno">
+                    <a class="navbar-brand" href="../index.html">Salta de Turno</a>
                 </div>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavDropdown"
-                    aria-controls="navbarNavDropdown"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarNavDropdown"
-                >
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Pagina principal</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#free">Venta libre</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#recipes">Venta bajo receta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#types-med"
-                                >Tipos</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#injectables">Inyectables</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#plants"
-                                >Plantas medicinales</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a type="button" class="nav-link btn" href="./medicamentos.html">
-                                Iniciar sesión
-                            </a>
-                        </li>
-                    </ul>
+                <div class="nav-btn">
+                    <iconify-icon class="icon-settings" icon="solar:settings-linear" width="30" height="30"></iconify-icon>
+                    <button class="navbar-toggler" type="button" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-dropdown none hide" id="navbarNavDropdown">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html#turno">Farmacias del día</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link | active" href="../index.html#contact">Contactanos</a>
+                            </li>
+                            <li class="nav-item | dropdown">
+                                <a class="nav-link dropdown-toggle" href="./farmacias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Farmacias
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./farmacias.html#cards">Farmacias por zona</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#maps">Mapa</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#schedule">Cronograma anual</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#farmaonline">FarmaOnline</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#vacuum">Farmacias que vacunan</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item | dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Medicamentos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#free">Venta libre</a></li>
+                                    <li><a class="dropdown-item" href="#recipes">Venta bajo receta</a></li>
+                                    <li><a class="dropdown-item" href="#types-med">Tipos</a></li>
+                                    <li><a class="dropdown-item" href="#injectables">Inyectables</a></li>
+                                    <li><a class="dropdown-item" href="#plants">Plantas medicinales</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a type="button" class="nav-link btn"
+                                href="./login.html">Iniciar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -103,6 +97,18 @@
             </div>
         </div>
     </header>
+    <aside class="settings none hide">
+        <button type="button" class="btn-close close-settings" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <label class="switch-wrapper">
+            <span class="switch__label">
+                Modo Claro
+            </span>
+            <span class="switch">
+                <input id="check" type="checkbox">
+                <span class="slider round"></span>
+            </span>
+        </label>
+    </aside>
     <main>
         <!-- Venta libre -->
         <section id="free" class="sectionMedicineFree accordion-container">
@@ -433,7 +439,7 @@
                     <div class="plants"><strong>Antiinflamatorias</strong></div>
                     <div class="plants"><strong>Analgésicas</strong></div>
                 </div>
-                <div class="container-table table-plants-border | mt-5 | m-auto">
+                <div class="container-table table-plants-border t-plants | mt-5 | m-auto">
                     <table class="table-plants | table-farmacy | text-light">  
                         <thead>
                             <tr>
@@ -575,5 +581,7 @@
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"
     ></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>

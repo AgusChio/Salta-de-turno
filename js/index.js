@@ -1,20 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Selecciona el elemento del input date y el span del marcador de posición
-  const dateInput = document.getElementById("date-input");
-  const placeholder = document.querySelector(".placeholder-date");
+    const dateInput = document.getElementById("date-input");
+    const placeholder = document.querySelector(".placeholder-date");
 
   // Agrega un evento al input date para mostrar u ocultar el marcador de posición
-  dateInput.addEventListener("focus", function () {
-      placeholder.style.display = "none";
-  });
+    dateInput.addEventListener("focus", function () {
+        placeholder.style.display = "none";
+    });
 
-  dateInput.addEventListener("blur", function () {
-      if (dateInput.value === "") {
-          placeholder.style.display = "block";
-      } else {
-          placeholder.style.display = "none";
-      }
-  });
+    dateInput.addEventListener("blur", function () {
+        (dateInput.value === "") ? placeholder.style.display = "block" : placeholder.style.display = "none"
+        
+    });
 });
 
 

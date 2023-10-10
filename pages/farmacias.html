@@ -19,64 +19,56 @@
     </head>
     <body>
         <header class="container-header | p-2">
-            <nav class="navbar | navbar-expand-lg | nav-pharmacy">
+            <nav class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div class="logo">
-                        <img
-                            src="../assets/images/logo.png"
-                            alt="Salta de Turno"
-                        />
-                        <a class="navbar-brand | ms-2 | fw-bold" href="../index.html" target="_blank"
-                            >Salta de Turno</a
-                        >
+                        <img src="../assets/images/logo.png" alt="salta de turno">
+                        <a class="navbar-brand" href="../index.html">Salta de Turno</a>
                     </div>
-                    <button
-                        class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation"
-                    >
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div
-                        class="collapse navbar-collapse"
-                        id="navbarNavDropdown"
-                    >
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.html">Página principal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#cards">Farmacias</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#maps">Mapa</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#schedule"
-                                    >Cronograma anual</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#farmaonline">FarmaOnline</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#vacuum"
-                                    >Farmacias que vacunan</a
-                                >
-                            </li>
-                            <li class="nav-item">
-                                <a type="button" class="nav-link btn" href="./login.html">
-                                    Iniciar sesión
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="nav-btn">
+                        <iconify-icon class="icon-settings" icon="solar:settings-linear" width="30" height="30"></iconify-icon>
+                        <button class="navbar-toggler" type="button" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="navbar-dropdown none hide" id="navbarNavDropdown">
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.html#turno">Farmacias del día</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link | active" href="../index.html#contact">Contactanos</a>
+                                </li>
+                                <li class="nav-item | dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Farmacias
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#cards">Farmacias por zona</a></li>
+                                        <li><a class="dropdown-item" href="#maps">Mapa</a></li>
+                                        <li><a class="dropdown-item" href="#schedule">Cronograma anual</a></li>
+                                        <li><a class="dropdown-item" href="#farmaonline">FarmaOnline</a></li>
+                                        <li><a class="dropdown-item" href="#vacuum">Farmacias que vacunan</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item | dropdown">
+                                    <a class="nav-link dropdown-toggle" href="./medicamentos.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Medicamentos
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="./medicamentos.html#free">Venta libre</a></li>
+                                        <li><a class="dropdown-item" href="./medicamentos.html#recipes">Venta bajo receta</a></li>
+                                        <li><a class="dropdown-item" href="./medicamentos.html#types-med">Tipos</a></li>
+                                        <li><a class="dropdown-item" href="./medicamentos.html#injectables">Inyectables</a></li>
+                                        <li><a class="dropdown-item" href="./medicamentos.html#plants">Plantas medicinales</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a type="button" class="nav-link btn"
+                                    href="./login.html">Iniciar sesión</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -108,6 +100,18 @@
                 </div>
             </div>
         </header>
+        <aside class="settings none hide">
+            <button type="button" class="btn-close close-settings" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <label class="switch-wrapper">
+                <span class="switch__label">
+                    Modo Claro
+                </span>
+                <span class="switch">
+                    <input id="check" type="checkbox">
+                    <span class="slider round"></span>
+                </span>
+            </label>
+        </aside>
         <main class="pb-5 | main-pharmacy">
             <section id="cards" class="accordion-container">
                 <header class="title-section | pb-4">
@@ -695,49 +699,79 @@
                         <thead>
                             <tr>
                                 <th scope="col" class="p-3 | border-right-cell">Farmacia</th>
-                                <th scope="col" class="p-3">Direccion</th>
+                                <th scope="col" class="p-3">Dirección</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                Lorem Ipsum
+                                    <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="p-3 | border-right-cell">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | d-flex | justify-content-between | align-item-center | td-maps">
+                                    Lorem Ipsum
+                                        <a class="text-decoration-none rounded-3 | fw-bold | button-table-vacuum">Ver Mapa</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -938,5 +972,7 @@
             integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
             crossorigin="anonymous"
         ></script>
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+        <script src="js/nav.js"></script>
     </body>
 </html>
