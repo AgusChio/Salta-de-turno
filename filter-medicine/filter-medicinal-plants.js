@@ -29,3 +29,255 @@ const plants = [
 } 
 
 ]
+
+const digestive = [
+    {
+        id:1,
+        name:"hinojo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"manzanilla",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:3,
+        name:"arcayuyo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:4,
+        name:"romero",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:5,
+        name:"granada",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:6,
+        name:"llantén",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:7,
+        name:"incayuyo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:8,
+        name:"poleo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:9,
+        name:"cedrón",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:10,
+        name:"burro",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
+
+const expectorant = [
+    {
+        id:1,
+        name:"cebolla",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"borraja",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:3,
+        name:"chañar",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:4,
+        name:"incayuyo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:5,
+        name:"janilla chica",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
+
+const diuretic = [
+    {
+        id:1,
+        name:"tuna",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"tusca",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:3,
+        name:"choclo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:4,
+        name:"aloe vera",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
+
+const dermal = [
+    {
+        id:1,
+        name:"ajo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"yerba mecna",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:3,
+        name:"fenogreno",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:4,
+        name:"aloe vera",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
+
+const liverworts = [
+    {
+        id:1,
+        name:"ajenjo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"tuna",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:3,
+        name:"tusca",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:4,
+        name:"llantén",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:5,
+        name:"ruda",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
+
+const antiInflammatory = [
+    {
+        id:1,
+        name:"inanyuyo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"arcayuyo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:3,
+        name:"pata i sapo",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
+
+const analgesics = [
+    {
+        id:1,
+        name:"ruda",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    },
+    {
+        id:2,
+        name:"hediondilla negra",
+        therapeuticApplication:"",
+        preparationApplication:"",
+        plantOrgans:""
+    }
+]
