@@ -1,0 +1,31 @@
+const plants = [
+    {
+    id:1,
+    name:"Digestivas",
+}, 
+    {
+    id:2,
+    name:"Expectorantes",
+}, 
+    {
+    id:3,
+    name:"Diurética",
+}, 
+    {
+    id:4,
+    name:"Dérmicas",
+}, 
+    {
+    id:5,
+    name:"Hepáticas",
+}, 
+    {
+    id:6,
+    name:"Antiinflamatorias",
+}, 
+    {
+    id:7,
+    name:"Analgésicas",
+} 
+
+]
