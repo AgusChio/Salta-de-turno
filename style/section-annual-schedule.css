@@ -11,16 +11,21 @@
 }
 .box-mes{
     border-radius: 1rem;
-    color: var(--table-color);
     text-align: center;
     font-size: 1.5rem;
+    margin: .5rem 0;
+    padding: 1rem;
+}
+.box-mes a{
+    color: var(--text-color);
+    border-radius: 1rem;
     margin: .5rem;
     padding: 1rem;
-    cursor: pointer;
+    border-bottom: 4px solid var(--bg-thead-table);
 }
-.box-mes:hover{
+.box-mes a:hover,.M-actual{
     background-color: var(--table-color);
-    color: #FFFFFF;
+    color: #FFFFFF !important;
 }
 .tabla-anual{
     color: #FFFFFF;
