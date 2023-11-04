@@ -10,7 +10,7 @@
 
 /*Footer*/
 footer {
-    background: #FBFBFB;
+    background: var(--bg-color-main);
 }
 
 
@@ -44,7 +44,7 @@ footer {
 
 .iconify-footer:hover {
     background-color: var(--text-color);
-    color: #ffffff;
+    color: var(--bg-color-main);
     transition: all .3s ease;
 }
 
