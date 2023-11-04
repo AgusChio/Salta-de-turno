@@ -2,7 +2,7 @@ form input,
 form textarea,
 form select {
     background-color: transparent !important;
-    color: #FFFFFF !important;
+    color: var(--text-color) !important;
     transition: 0.3s all linear;
 }
 
@@ -24,7 +24,7 @@ form textarea::placeholder {
     width: 45%;
     background-color: var(--color-secondary);
     border-radius: 20px 0px 0px 20px;
-    box-shadow: 5px 10px 20px #0f0b092f;
+    box-shadow: 5px 10px 20px var(--text-color);
 }
 
 .container-img-contact {
@@ -32,7 +32,7 @@ form textarea::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 10px 20px #0f0b092f;
+    box-shadow: 5px 10px 20px var(--text-color);
     background-color: var(--bg-color-container);
     border-radius: 0px 20px 20px 0px;
 }
@@ -57,7 +57,7 @@ form textarea::placeholder {
 }
 
 .button-submit:hover {
-    color: #fff;
+    color: var(--bg-color-main);
 }
 
 .button-submit::after {
