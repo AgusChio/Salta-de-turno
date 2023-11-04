@@ -15,15 +15,15 @@
 .section-sites .btn{
     width: 55%;
     margin-top: 1rem;
-    color: #FDFDFD;
-    background-color: var(--text-color);
-    border-color: var(--text-color);
+    color: var(--bg-color-container);
+    background-color: var(--text-color-light);
+    border-color: var(--text-color-light);
 }
 .section-sites .btn:hover{
     color: var(--text-color);
 }
 .section-sites .btn::after{
-    background: #FDFDFD; 
+    background: var(--bg-color-main); 
 }
 
 img.img-carousel{
