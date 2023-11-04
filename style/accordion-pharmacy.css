@@ -1,5 +1,5 @@
 .accordion-container{
-    background-image: linear-gradient(#DCFFF4, #fdfdfd);
+    background-image: linear-gradient(var(--bg-color-g-1), var(--bg-color-main));
 }
 .accordion,
 .p-section{
