@@ -17,16 +17,20 @@ body {
     --font-title: 'Roboto', sans-serif;
     --font-text: 'Poppins', sans-serif;
     --text-color: #0A1E3D;
+    --text-color-box:#0A1E3D;
     --text-color-light: #18468B;
     --color-primary: #36EDA9;
     --color-secondary: #338DFF;
     --color-tertiary: #82D1FF;
     --color-quaternary: #28A174;
     --color-underline: #4674B7;
+    --bg-color-main:#ffffff;
     --bg-color-container: #F1F1F1;
     --bg-color-comments: #D9D9D9;
     --bg-thead-table: #022E50;
     --table-color: #034172;
+    --bg-color-g-1:#D2FFEE;
+    --bg-color-g-2:#2984FF;
 }
 
 h1{
@@ -76,11 +80,11 @@ nav .btn{
 }
 
 .main-landing{
-    background: linear-gradient(180deg, #D2FFEE 10%, #2984FF 100%);
+    background: linear-gradient(180deg, var(--bg-color-g-1) 10%, var(--bg-color-g-2) 100%);
 }
 
 .main-pharmacy{
-    background-color: #FDFDFD;
+    background-color: var(--bg-color-main);
 }
 
 .btn{
@@ -112,4 +116,17 @@ nav .btn{
     bottom: 0;
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
+}
+.dark-mode{
+    --text-color: #F1F1F1;
+    --color-secondary:#24afa3;
+    --color-quaternary:#5ac59e;
+    --text-color-light:#75d6be;
+    --bg-color-comments:#585858;
+    --bg-color-container:#034172;
+    --bg-thead-table:#134c78;
+    --table-color: #226ca5;
+    --bg-color-main:#113048;
+    --bg-color-g-1:#034172;
+    --bg-color-g-2:#4674B7;
 }
