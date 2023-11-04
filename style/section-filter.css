@@ -35,6 +35,7 @@
 .form-select-sm{
     margin: 0 .25rem 1rem;
     font-weight: bold;
+    color: var(--text-color);
     background-color: transparent;
     border-color: var(--font);
     border-radius: 2rem;
@@ -53,7 +54,7 @@
 .placeholder-date {
     position: relative;
     position: absolute;
-    background-color: #d2ffee;
+    background-color: var(--bg-color-g-1);
     width: 68%;
     text-align: center;
     left: 12px;
