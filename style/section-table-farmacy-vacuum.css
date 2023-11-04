@@ -28,13 +28,13 @@
 }
 .button-table-vacuum{
     background-color: var(--bg-color-container);
-    color: var(--bg-thead-table);
+    color: var(--text-color);
     cursor: pointer;
     font-size: .75rem;
     padding: .4rem;
 }
 .button-table-vacuum:hover{
-    background-color: var(--bg-thead-table);
+    background-color: var(--text-color);
     color: var(--bg-color-container);
     transition: all 0.3s ease-in-out;
 }
