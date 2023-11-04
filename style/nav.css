@@ -1,5 +1,5 @@
 .navbar{
-    background-color: #FCFCFC;
+    background-color: var(--bg-color-main);
 }
 
 .logo img{
@@ -38,7 +38,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #FCFCFC;
+    background-color: var(--bg-color-main);
     box-shadow: 
     rgba(100, 100, 111, 0.2)
     0px 7px 29px 0px;
@@ -49,15 +49,15 @@
 .navbar-dropdown .btn{
     padding: .5rem;
     font-size: .9rem;
-    border-color: #36EDA9;
+    border-color: var(--color-primary);
 }
 
 .navbar-dropdown .btn:hover{
-    color: #FCFCFC;
+    color: var(--bg-color-main);
 }
 
 .navbar-dropdown .btn::after{
-    background: #36EDA9; 
+    background: var(--color-primary); 
 }
 
 .navbar-nav{
@@ -67,6 +67,7 @@
 
 .nav-link{
     display: inline-block;
+    color: var(--text-color);
 }
 
 .active{
@@ -75,7 +76,7 @@
 }
 
 .settings{
-    background-color: #FCFCFC;
+    background-color: var(--bg-color-container);
     width: 60%;
     height: 100vh;
     max-width: 245px;
@@ -181,7 +182,7 @@
 }
 
 .switch input:checked + .slider{
-    background-color: #333;
+    background-color: var(--bg-color-comments);
 }
 
 .switch input:checked + .slider:before{
