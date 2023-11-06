@@ -16,7 +16,12 @@ $('.icon-settings').addEventListener('click', () => {
     settings.classList.remove('none')
     settings.classList.remove('hide')
     $("#check").addEventListener("input", (e) => {
-        (e.target.checked) ? $('.switch__label').innerText = 'Modo Oscuro' : $('.switch__label').innerText = 'Modo Claro'
+        if(e.target.checked){ 
+            $('.switch__label').innerText = 'Modo Oscuro' 
+            document.body.classList.add('dark-mode') 
+        }else{ 
+            $('.switch__label').innerText = 'Modo Claro'
+            document.body.classList.remove('dark-mode')}
     })
 })
 
