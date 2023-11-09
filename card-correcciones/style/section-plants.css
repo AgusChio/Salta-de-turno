@@ -30,8 +30,15 @@
     color: var(--color-quaternary);
     padding: .3rem;
     cursor: pointer;
+
+    text-decoration: none;
 }
-.plants:hover{
+/* .plants:hover{
+    background-color: var(--color-quaternary);
+    color: #FCFCFC;
+} */
+
+.plants-active{
     background-color: var(--color-quaternary);
     color: #FCFCFC;
 }
@@ -57,11 +64,7 @@
     border-right-color: var(--color-quaternary); 
 }
 
-/* filtro  */
 
-.filter{
-    display: none;
-}
 
 @media (min-width: 736px){
     .plants{
