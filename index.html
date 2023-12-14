@@ -28,10 +28,10 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="#turno">Farmacias del día</a>
+                                <a class="nav-link | active" href="#turno">Farmacias del día</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link | active" href="#contact">Contactanos</a>
+                                <a class="nav-link" href="#contact">Contactanos</a>
                             </li>
                             <li class="nav-item | dropdown">
                                 <a class="nav-link dropdown-toggle" href="./pages/farmacias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -110,134 +110,24 @@
             </header>
             <div class="d-flex | div-search">
                 <form role="search">
-                    <input class="form-control" type="search" placeholder="Busca tu farmacia" aria-label="Search">
+                    <input id="search-input" class="form-control" type="search" placeholder="Busca tu farmacia" aria-label="Search">
                 </form>
                 <div class="d-flex | div-select">
-                    <!-- cambiar a class="form-select-lg con js en el break de 860px" -->
-                    <select class="form-select-sm">
-                        <option selected>Zona</option>
-                        <option value="north">Norte</option>
-                        <option value="east">Este</option>
-                        <option value="west">Oeste</option>
-                        <option value="south">Sur</option>
+                    <select id="zona" class="form-select-sm">
+                        <option selected value="Zona">Zona</option>
+                        <option value="Norte">Norte</option>
+                        <option value="Este">Este</option>
+                        <option value="Centro">Centro</option>
+                        <option value="Oeste">Oeste</option>
+                        <option value="Sur">Sur</option>
                     </select>
-                    <!-- aquí hay que usar js para que aparezca el calendario, sino no puedo poner "fecha" -->
                     <div class="custom-date-input">
                         <input type="date" class="form-select-sm | border | border-dark" id="date-input">
-                        <span class="placeholder-date">Fecha</span>
                     </div>
-                    <select class="form-select-sm">
-                        <option selected>Obra social</option>
-                        <option value="avalian">Avalian</option>
-                        <option value="ips">IPS</option>
-                        <option value="osde">OSDE</option>
-                        <option value="ospe">OSPE</option>
-                        <option value="swiss">Swiss Medical</option>
-                        <option value="pami">PAMI</option>
-                        <option value="iosfa">IOSFA</option>
-                        <option value="boreal">Boreal</option>
-                    </select>
                 </div>
             </div>
 
-            <div class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
-                <div class="card-farmacia">
-                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
-                    <div>
-                        <h2>Nombre de la farmacia</h2>
-                        <div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>
-                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                            <p><strong>Zona:</strong> Sur-oeste</p>
-                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
-                            <p><strong>Cierra:</strong> 22:00hs </p>
-                        </div>
-                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="card-farmacia">
-                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
-                    <div>
-                        <h2>Nombre de la farmacia</h2>
-                        <div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>
-                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                            <p><strong>Zona:</strong> Sur-oeste</p>
-                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
-                            <p><strong>Cierra:</strong> 22:00hs </p>
-                        </div>
-                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-farmacia">
-                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
-                    <div>
-                        <h2>Nombre de la farmacia</h2>
-                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                            <p><strong>Zona:</strong> Sur-oeste</p>
-                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
-                            <p><strong>Cierra:</strong> 22:00hs </p>
-                        </div>
-                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                        </div>
-                    </div>
-                </div>                
-                <div class="card-farmacia">
-                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
-                    <div>
-                        <h2>Nombre de la farmacia</h2>
-                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                            <p><strong>Zona:</strong> Sur-oeste</p>
-                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
-                            <p><strong>Cierra:</strong> 22:00hs </p>
-                        </div>
-                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-farmacia">
-                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
-                    <div>
-                        <h2>Nombre de la farmacia</h2>
-                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                            <p><strong>Zona:</strong> Sur-oeste</p>
-                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
-                            <p><strong>Cierra:</strong> 22:00hs </p>
-                        </div>
-                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-farmacia">
-                    <img src="./assets/images/img-card-farmacia.png" alt="imagen de farmacia"/>
-                    <div>
-                        <h2>Nombre de la farmacia</h2>
-                        <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                            <p><strong>Zona:</strong> Sur-oeste</p>
-                            <p><strong>Dirección:</strong> Manzana 80 lote 4 duplex 7 B°Profesionales </p>
-                            <p><strong>Cierra:</strong> 22:00hs </p>
-                        </div>
-                        <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                            <a href="#" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                            <a href="#" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                        </div>
-                    </div>
-                </div>
+            <div id="container-cards" class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
             </div>
         </section>
 
@@ -365,7 +255,6 @@
     </footer>
 
     <script src="./js/index.js"></script>
-    <script src="./js/medicamentos.js"></script>
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"

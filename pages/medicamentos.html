@@ -37,7 +37,7 @@
                                 <a class="nav-link" href="../index.html#turno">Farmacias del día</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link | active" href="../index.html#contact">Contactanos</a>
+                                <a class="nav-link" href="../index.html#contact">Contactanos</a>
                             </li>
                             <li class="nav-item | dropdown">
                                 <a class="nav-link dropdown-toggle" href="./farmacias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@
                                 </ul>
                             </li>
                             <li class="nav-item | dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle | active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Medicamentos
                                 </a>
                                 <ul class="dropdown-menu">
@@ -431,13 +431,13 @@
             </header>
             <div class="container-table-plants | schedule-table | mt-5 | m-auto ">
                 <div class="table-plants-category | d-flex | flex-wrap | justify-content-center | m-auto">
-                    <div class="plants"><strong>Digestivas</strong></div>
-                    <div class="plants"><strong>Expectorantes</strong></div>
-                    <div class="plants"><strong>Diurética</strong></div>
-                    <div class="plants"><strong>Dérmicas</strong></div>
-                    <div class="plants"><strong>Hepáticas</strong></div>
-                    <div class="plants"><strong>Antiinflamatorias</strong></div>
-                    <div class="plants"><strong>Analgésicas</strong></div>
+                    <div class="plants active-plants" data-category="Digestivas"><strong>Digestivas</strong></div>
+                    <div class="plants" data-category="Expectorantes"><strong>Expectorantes</strong></div>
+                    <div class="plants" data-category="Diuréticas"><strong>Diurética</strong></div>
+                    <div class="plants" data-category="Dérmicas"><strong>Dérmicas</strong></div>
+                    <div class="plants" data-category="Hepáticas"><strong>Hepáticas</strong></div>
+                    <div class="plants" data-category="Antiinflamatorias"><strong>Antiinflamatorias</strong></div>
+                    <div class="plants" data-category="Analgésicas"><strong>Analgésicas</strong></div>
                 </div>
                 <div class="container-table table-plants-border t-plants | mt-5 | m-auto">
                     <table class="table-plants | table-farmacy | text-light">  
@@ -445,67 +445,70 @@
                             <tr>
                                 <th scope="col" class="p-3 | border-right-cell |  border-right-cell-plants">Nombre local</th>
                                 <th scope="col" class="p-3 | border-right-cell |  border-right-cell-plants">Aplicación terapéutica</th>
-                                <!-- <th scope="col" class="p-3 | border-right-cell">Sistemas corporales</th> -->
                                 <th scope="col" class="p-3 | border-right-cell | border-right-cell-plants">Preparación y administración</th>
                                 <th scope="col" class="p-3">Organos vegetales empleados</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="body-table-plants">
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Arcayuyo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Antinflamatorio</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Hinojo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Carminativo. Digestivo. Antiemético</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Manzanilla</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Antiemético</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Infusión de saquitos de té</td>
+                                <td class="p-3">Flores</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Romero</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Cardiotónico. Antipruriginoso. 'Aleja las malas energías'</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión de hojas. Sahumado con tallos y hojas, ajo, famaya, coninchin, jarilla, lavanda y ruda. Mezcla con ruda y ajo</td>
+                                <td class="p-3">Tallos y hojas</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Granada</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Béquico. Antidiarreico. Digestivo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión de la cáscara del fruto con miel de abejas o con frutos tostados de churqui blanco</td>
+                                <td class="p-3">Frutos</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Llantén</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Hepático. Digestivo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Incayuyo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Expectorante. Diurético. Antiinflamatorio</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
                             </tr>
                             <tr>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <!-- <td class="p-3 | border-right-cell">Lorem Ipsum</td> -->
-                                <td class="p-3 | border-right-cell | border-right-cell-plants">Lorem Ipsum</td>
-                                <td class="p-3">Lorem Ipsum</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Poleo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Hipocolesterolemiante</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Cedrón</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Cardiotónico</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Burrito</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
                             </tr>
                         </tbody>
                     </table>
@@ -583,5 +586,6 @@
     ></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
     <script src="../js/nav.js"></script>
+    <script src="../js/medicamentos.js"></script>
 </body>
 </html>

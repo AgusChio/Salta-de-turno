@@ -31,7 +31,8 @@
     padding: .3rem;
     cursor: pointer;
 }
-.plants:hover{
+.plants:hover,
+.active-plants{
     background-color: var(--color-quaternary);
     color: #FCFCFC;
 }
@@ -62,9 +63,9 @@
         font-size: 1.2rem;
         padding: .5rem;
     }
-    .container-table::-webkit-scrollbar{
+    /* .container-table::-webkit-scrollbar{
         display: none;
-    }
+    } */
     .table-plants-category{
         width: 90%;
     }

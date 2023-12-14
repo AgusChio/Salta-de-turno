@@ -30,3 +30,12 @@ $('.close-settings').addEventListener('click', () => {
     settings.classList.add('hide')
 })
 
+// Navbar Active 
+let linkElements = document.querySelectorAll('.nav-link')
+
+for(let i=0; i<linkElements.length-1; i++){
+    linkElements[i].addEventListener('click', () => {
+        $('.active').classList.remove('active')
+        linkElements[i].classList.add('active')
+    })
+}
