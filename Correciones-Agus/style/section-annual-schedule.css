@@ -1,0 +1,117 @@
+.schedule-table{
+    width: 100%;
+    max-width: 1100px;
+}   
+.tabla-meses{
+    display: grid;
+    place-content: space-evenly;
+    place-items: center;
+    grid-template-rows: repeat(2,auto);
+    grid-template-columns: repeat(6,auto);
+}
+.box-mes{
+    border-radius: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: .5rem 0;
+    padding: 1rem;
+}
+.box-mes a{
+    color: var(--text-color);
+    border-radius: 1rem;
+    margin: .5rem;
+    padding: 1rem;
+    border-bottom: 4px solid var(--bg-thead-table);
+}
+.box-mes a:hover,.M-actual{
+    background-color: var(--table-color);
+    color: #FFFFFF !important;
+}
+.tabla-anual{
+    color: #FFFFFF;
+    background-color: var(--table-color);
+    max-height: 550px;
+    margin: 1rem 0;
+    border-radius: 2rem;
+    overflow: auto;
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.166);
+}
+.tabla-dias{
+    border-collapse: collapse;
+    border: hidden;
+}
+.borde-right{
+    border-right: 3px solid var(--bg-color-container);
+}
+.tabla-dias th{
+    padding: 1rem;
+    background-color: var(--bg-thead-table);
+    border-bottom: 2px solid var(--bg-color-container);
+}
+.tabla-dias thead{
+    font-size: 1.7rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+.farma-fecha, 
+.farma-lugar{
+    text-align: center;
+    font-size: 1.3rem;
+    border-spacing: 2px;
+    padding: 4px;
+    border-bottom: 3px dashed #ffffffd3;
+}
+.farma-fecha{
+    padding: 0 20px;
+    min-width: 150px;
+    word-spacing: 6vw;
+}
+.farma-fecha strong{
+    font-size: 1.3rem;
+}
+.farma-lugar{
+    width: 100%;
+}
+
+@media (max-width: 900px){ 
+    .tabla-anual{
+        max-height: 450px;
+    }
+    .tabla-meses{
+        grid-template-columns: repeat(3,auto);
+    }
+    .box-mes{
+        font-size: 1.2rem;
+        padding: .5rem;
+    }
+    .tabla-dias thead{
+        font-size: 1.2rem;
+    }
+    .tabla-dias th{
+        padding: .7rem;
+    }
+    .farma-fecha{
+        min-width: 10px;
+    }
+    .farma-fecha, 
+    .farma-lugar{
+        font-size: .8rem;
+    }
+    .farma-fecha strong{
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 736px){
+    .tabla-anual::-webkit-scrollbar{
+        display: none;
+    }
+}
+
+@media (max-width: 440px) {
+    .box-mes{
+        font-size: 1rem;
+        padding: .3rem;
+    }
+}

@@ -1,0 +1,52 @@
+.sites h2{
+    letter-spacing: 2px;
+    border-bottom: 2px solid;
+}
+.section-sites{
+    max-width: 1900px;
+    margin: auto;
+    padding: 0;
+}
+.section-sites h3{
+    font-size: 1.5rem;
+    letter-spacing: normal;
+    border: none;
+}
+.section-sites .btn{
+    width: 55%;
+    margin-top: 1rem;
+    color: var(--bg-color-container);
+    background-color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+.section-sites .btn:hover{
+    color: var(--text-color);
+}
+.section-sites .btn::after{
+    background: var(--bg-color-main); 
+}
+
+img.img-carousel{
+    height: 120px;
+    width: 100%;
+    object-fit: fill;
+    object-position: center;
+}
+
+@media screen and (width > 1000px){
+    img.img-carousel{
+        height: 210px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .section-sites h3,
+    .section-sites p{
+        order: -2;
+    }
+    .section-sites .btn{
+        width: 12.1rem;
+        order: -1;
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,20 @@
+/*CAJA DE MEDICAMENTO*/
+.MedBajoRec{
+    background-image: url('../assets/images/img-medicamento-bajo-receta.png');
+    background-size: 100% 100%;
+    padding: .7rem .3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-color-box);
+}
+.MedBajoRec div{
+    width: 95%;
+}
+/*OTRAS CLASES ;-;*/
+.text-betw{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}

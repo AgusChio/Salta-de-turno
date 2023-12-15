@@ -1,0 +1,35 @@
+.container-types{
+    min-height: 400px;
+    max-width: 1350px;
+    margin: auto;
+    padding: 0 .5rem;
+    gap: 1rem;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.card-types{
+    align-self: center;
+    min-width: max(250px, 25vmax);
+    height: 350px;
+    border-radius: .4rem;
+    background-color: var(--bg-color-comments);
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    padding: 1.25rem;
+    overflow-y: scroll;
+    transition: all 400ms ease;
+}
+.card-types::-webkit-scrollbar{
+    display: none;
+}
+
+.card-types:hover{
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+@media (min-width: 900px){
+    .container-types{
+        gap: 2rem;
+    }
+}

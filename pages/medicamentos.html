@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+        crossorigin="anonymous"
+    >
+    <link rel="stylesheet" href="../style/general.css" />
+    <link
+        rel="shortcut icon"
+        href="../assets/images/logo.png"
+        type="image/x-icon"
+    >
+    <title>Medicamentos</title>
+</head>
+<body>
+    <header class="container-header-medicine | p-2">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <div class="logo">
+                    <img src="../assets/images/logo.png" alt="salta de turno">
+                    <a class="navbar-brand" href="../index.html">Salta de Turno</a>
+                </div>
+                <div class="nav-btn">
+                    <iconify-icon class="icon-settings" icon="solar:settings-linear" width="30" height="30"></iconify-icon>
+                    <button class="navbar-toggler" type="button" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-dropdown none hide" id="navbarNavDropdown">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html#turno">Farmacias del día</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../index.html#contact">Contactanos</a>
+                            </li>
+                            <li class="nav-item | dropdown">
+                                <a class="nav-link dropdown-toggle" href="./farmacias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Farmacias
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="./farmacias.html#cards">Farmacias por zona</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#maps">Mapa</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#schedule">Cronograma anual</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#farmaonline">FarmaOnline</a></li>
+                                    <li><a class="dropdown-item" href="./farmacias.html#vacuum">Farmacias que vacunan</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item | dropdown">
+                                <a class="nav-link dropdown-toggle | active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Medicamentos
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#free">Venta libre</a></li>
+                                    <li><a class="dropdown-item" href="#recipes">Venta bajo receta</a></li>
+                                    <li><a class="dropdown-item" href="#types-med">Tipos</a></li>
+                                    <li><a class="dropdown-item" href="#injectables">Inyectables</a></li>
+                                    <li><a class="dropdown-item" href="#plants">Plantas medicinales</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a type="button" class="nav-link btn"
+                                href="./login.html">Iniciar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-image-text-header pharmacy | w-100 | d-flex">
+            <div class="container-text-pharmacy | d-flex | flex-column | justify-content-center | p-4">
+                <h1 class="fs-1 | fw-bold | mb-3">
+                    Medicamentos
+                </h1>
+                <h2 class="fs-2 | fw-light | mb-3">Conoce un poco más acerca de los fármacos</h2>
+                <p class="fs-5 | mb-4">
+                    Los fármacos son medicamentos que se utilizan para tratar o prevenir enfermedades y trastornos de salud. Pueden venir en diferentes formas, como pastillas, cápsulas, gotas, parches, inyecciones, etc. La selección del medicamento adecuado depende de muchos factores, incluidas las condiciones médicas, la gravedad de la enfermedad y los posibles efectos secundarios. Es importante seguir las instrucciones del médico y utilizar el fármaco de manera adecuada para obtener los mejores resultados.
+                </p>
+                <a
+                    href="#types-med"
+                    class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-4 | fw-semibold | p-2"
+                    >Ver los tipos de medicamentos</a
+                >
+            </div>
+            <div class="container-image-medicine">
+                <img
+                    src="../assets/images/img-inicio-medicamentos.png"
+                    alt="img-pc"
+                    class="w-100 | h-100"
+                />
+            </div>
+        </div>
+    </header>
+    <aside class="settings none hide">
+        <button type="button" class="btn-close close-settings" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <label class="switch-wrapper">
+            <span class="switch__label">
+                Modo Claro
+            </span>
+            <span class="switch">
+                <input id="check" type="checkbox">
+                <span class="slider round"></span>
+            </span>
+        </label>
+    </aside>
+    <main>
+        <!-- Venta libre -->
+        <section id="free" class="sectionMedicineFree accordion-container">
+            <header>
+                <h3>Medicamentos de venta libre</h3>
+                <p>En esta sección, puedes encontrar los medicamentos de venta libre más comunes. Si no encuentras lo que buscas, por favor, utiliza el botón para acceder al vademécum. </p>
+                <a
+                href="https://www.vademecum.es/"
+                target="_blank"
+                class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-3 | fw-semibold | p-2 " >
+                    Vademécum
+                </a>
+            </header>
+            <div class="list-medicineBox">
+                <div class="medicineBox ">
+                    <div class="topBox"></div>
+                    <div class="frontBox | d-flex | justify-content-between">
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p><strong>Laboratorio</strong></p>
+                            <p>codigo nacional</p>
+                        </div>
+                        <div class=" d-flex | flex-column | w-100 | nameContent">
+                            <h4>Nombre comercial</h4>
+                            <p class="fw-regular">Principios activos</p>
+                        </div>
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p>Leyenda</p>
+                            <p>Presentacion y cantidad</p>
+                        </div>
+                    </div>
+                    <div class="rightBox"></div>
+                </div>
+                <div class="medicineBox">
+                    <div class="topBox"></div>
+                    <div class="frontBox | d-flex | justify-content-between">
+                        <div class=" d-flex | w-100 | justify-content-between">
+                            <p class="textContent"><strong>Laboratorio</strong></p>
+                            <p class="textContent">codigo nacional</p>
+                        </div>
+                        <div class=" d-flex | flex-column | w-100 | nameContent">
+                            <h4>Nombre comercial</h4>
+                            <p class="fw-regular">Principios activos</p>
+                        </div>
+                        <div class=" d-flex | w-100 | justify-content-between ">
+                            <p class="textContent">Leyenda</p>
+                            <p class="textContent">Presentacion y cantidad</p>
+                        </div>
+                    </div>
+                    <div class="rightBox"></div>
+                </div>
+                <div class="medicineBox">
+                    <div class="topBox"></div>
+                    <div class="frontBox | d-flex | justify-content-between">
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p><strong>Laboratorio</strong></p>
+                            <p>codigo nacional</p>
+                        </div>
+                        <div class=" d-flex | flex-column | w-100 | nameContent">
+                            <h4>Nombre comercial</h4>
+                            <p class="fw-regular">Principios activos</p>
+                        </div>
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p>Leyenda</p>
+                            <p>Presentacion y cantidad</p>
+                        </div>
+                    </div>
+                    <div class="rightBox"></div>
+                </div>
+                <div class="medicineBox">
+                    <div class="topBox"></div>
+                    <div class="frontBox | d-flex | justify-content-between">
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p><strong>Laboratorio</strong></p>
+                            <p>codigo nacional</p>
+                        </div>
+                        <div class=" d-flex | flex-column | w-100 | nameContent">
+                            <h4>Nombre comercial</h4>
+                            <p class="fw-regular">Principios activos</p>
+                        </div>
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p>Leyenda</p>
+                            <p>Presentacion y cantidad</p>
+                        </div>
+                    </div>
+                    <div class="rightBox"></div>
+                </div>
+                <div class="medicineBox">
+                    <div class="topBox"></div>
+                    <div class="frontBox | d-flex | justify-content-between">
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p><strong>Laboratorio</strong></p>
+                            <p>codigo nacional</p>
+                        </div>
+                        <div class=" d-flex | flex-column | w-100 | nameContent">
+                            <h4>Nombre comercial</h4>
+                            <p class="fw-regular">Principios activos</p>
+                        </div>
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p>Leyenda</p>
+                            <p>Presentacion y cantidad</p>
+                        </div>
+                    </div>
+                    <div class="rightBox"></div>
+                </div>
+                <div class="medicineBox">
+                    <div class="topBox"></div>
+                    <div class="frontBox | d-flex | justify-content-between">
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p><strong>Laboratorio</strong></p>
+                            <p>codigo nacional</p>
+                        </div>
+                        <div class=" d-flex | flex-column | w-100 | nameContent">
+                            <h4>Nombre comercial</h4>
+                            <p class="fw-regular">Principios activos</p>
+                        </div>
+                        <div class=" d-flex | w-100 | justify-content-between | textContent">
+                            <p>Leyenda</p>
+                            <p>Presentacion y cantidad</p>
+                        </div>
+                    </div>
+                    <div class="rightBox"></div>
+                </div>
+            </div>
+        </section>
+        <!-- Bajo receta -->
+        <section id="recipes" class="Main-MedBajoRec">
+            <header class="text-MedBajoRec">
+                <h3>Medicamentos bajo receta</h3>
+                <p>Esta sección está dedicada a los medicamentos que solo pueden obtenerse con una receta médica, asegurando así un uso responsable y seguro bajo supervisión profesional</p>
+            </header>
+            <div class="list-medicineBox">
+                <div class="MedBajoRec medicineBox">
+                    <div class="text-betw textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>Código nacional</p>
+                    </div>
+
+                    <div class="nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p>Principio activo</p>
+                    </div>
+
+                    <div class="text-betw textContent">
+                        <p>Leyenda</p>
+                        <p>Presentación y cantidad</p>
+                    </div>
+                </div>
+                <div class="MedBajoRec medicineBox">
+                    <div class="text-betw textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>Código nacional</p>
+                    </div>
+    
+                    <div class="nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p>Principio activo</p>
+                    </div>
+    
+                    <div class="text-betw textContent">
+                        <p>Leyenda</p>
+                        <p>Presentación y cantidad</p>
+                    </div>
+                </div>
+                <div class="MedBajoRec medicineBox">
+                    <div class="text-betw textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>Código nacional</p>
+                    </div>
+    
+                    <div class="nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p>Principio activo</p>
+                    </div>
+    
+                    <div class="text-betw textContent">
+                        <p>Leyenda</p>
+                        <p>Presentación y cantidad</p>
+                    </div>
+                </div>
+                <div class="MedBajoRec medicineBox">
+                    <div class="text-betw textContent">
+                        <p><strong>Laboratorio</strong></p>
+                        <p>Código nacional</p>
+                    </div>
+    
+                    <div class="nameContent">
+                        <h4>Nombre comercial</h4>
+                        <p>Principio activo</p>
+                    </div>
+    
+                    <div class="text-betw textContent">
+                        <p>Leyenda</p>
+                        <p>Presentación y cantidad</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tipos de medicamentos -->
+        <section id="types-med">
+            <header class="title-types">
+                <h3>Tipos de medicamentos</h3>
+                <p>Aquí encontraras una diversidad de categorias farmacológicas y terapéuticas, diseñadas para cubrir una amplia gama de necesidades de salud</p>
+            </header>
+            <!-- Cajas -->
+            <div class="container-types | d-flex">
+                <div class="card-types">
+                    <h4 class="fw-bold">Analgésicos</h4>
+                    <p>
+                        Los analgésicos son medicinas que reducen o alivian los dolores de cabeza, musculares, artríticos o muchos otros achaques y dolores Existen muchos tipos diferentes de analgésicos y cada uno tiene sus ventajas y riesgos.
+        
+                    </p>
+                </div>
+                <div class="card-types">
+                    <h4 class="fw-bold">Antialérgicos</h4>
+                    <p>
+                        En esta categoría se agrupan fármacos que tienen la finalidad de combatir los efectos negativos de las reacciones alérgicas o la hipersensibilidad.
+                    </p>
+                </div>
+                <div class="card-types">
+                    <h4 class="fw-bold">Antidiarreicos</h4>
+                    <p>
+                        Los antidiarreicos son tipos de medicamentos que tienen como propósito aliviar y detener los efectos de la diarrea. Los más utilizados actualmente son fármacos que inhiben la motilidad del intestino, lo que favorece la retención para conseguir una mayor consistencia y volumen en las heces. 
+                    </p>
+                </div>
+                <div class="card-types">
+                    <h4 class="fw-bold">Antiinfecciosos</h4>
+                    <p>
+                        Este tipo de medicamentos están recetados para hacer frente a infecciones. Dependiendo del agente infeccioso, se clasifican en antibióticos (contra bacterias), antifúngicos (contra hongos), antivirales (contra virus) y antiparasitarios (contra parásitos).La automedicación no está aconsejada, por lo que siempre se necesita receta médica. El mayor efecto secundario, sobre todo en el caso de los antibióticos, es que ejercen una selección artificial sobre los agentes infecciosos.
+                    </p>
+                </div>
+                <div class="card-types">
+                    <h4 class="fw-bold">Antiinflamatorios</h4>
+                    <p>
+                        Como el propio nombre indica, son fármacos que tienen como finalidad reducir los efecto de la inflamación. Los más recetados son los catalogados como AINES, que además de disminuir la inflamación, tienen efectos analgésicos
+                    </p>
+                </div>
+                <div class="card-types">
+                    <h4 class="fw-bold">Antipiréticos</h4>
+                    <p>
+                        Los fármacos antipiréticos son un tipo de medicamentos que tienen la capacidad de reducir la fiebre. Entre los más conocidos están la aspirina, el ibuprofeno y el paracetamol, que también presentan otras funciones.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Inyectables -->
+        <section id="injectables" class="injectables">
+            <header class="title-syringe">
+                <h3>Inyectables de venta libre</h3>
+                <p>Esta sección se dedica a brindarte información sobre inyectables de venta libre.</p>
+            </header>
+            <div id="container-cards-syringe" class="container-cards-syringe | list-medicineBox | justify-content-center">
+            </div>
+        </section>
+        <!-- Plantas medicinales -->
+        <article id="plants" class="container-plants">
+            <header class="title-plants">
+                <h3>Plantas Medicinales</h3>
+                <p>Aquí encontrarás una amplia variedad de hierbas y plantas cuidadosamente seleccionadas por sus propiedades terapéuticas. Explora los beneficios naturales que estas plantas pueden aportar a tu salud y bienestar, y descubre cómo incorporarlas en tu estilo de vida de forma segura y efectiva.  Si deseas conocer la fuente de información de las plantas medicinales, simplemente haz clic en el siguiente boton.</p>
+                <a href="../assets/pdf/plantas-medicinales.pdf" download="plantas-medicinales.pdf" class="btn | mb-3 | fw-bold" role="button">Descarga las plantas medicinales</a>
+            </header>
+            <div class="container-table-plants | schedule-table | mt-5 | m-auto ">
+                <div class="table-plants-category | d-flex | flex-wrap | justify-content-center | m-auto">
+                    <div class="plants active-plants" data-category="Digestivas"><strong>Digestivas</strong></div>
+                    <div class="plants" data-category="Expectorantes"><strong>Expectorantes</strong></div>
+                    <div class="plants" data-category="Diuréticas"><strong>Diurética</strong></div>
+                    <div class="plants" data-category="Dérmicas"><strong>Dérmicas</strong></div>
+                    <div class="plants" data-category="Hepáticas"><strong>Hepáticas</strong></div>
+                    <div class="plants" data-category="Antiinflamatorias"><strong>Antiinflamatorias</strong></div>
+                    <div class="plants" data-category="Analgésicas"><strong>Analgésicas</strong></div>
+                </div>
+                <div class="container-table table-plants-border t-plants | mt-5 | m-auto">
+                    <table class="table-plants | table-farmacy | text-light">  
+                        <thead>
+                            <tr>
+                                <th scope="col" class="p-3 | border-right-cell |  border-right-cell-plants">Nombre local</th>
+                                <th scope="col" class="p-3 | border-right-cell |  border-right-cell-plants">Aplicación terapéutica</th>
+                                <th scope="col" class="p-3 | border-right-cell | border-right-cell-plants">Preparación y administración</th>
+                                <th scope="col" class="p-3">Organos vegetales empleados</th>
+                            </tr>
+                        </thead>
+                        <tbody id="body-table-plants">
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Arcayuyo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Antinflamatorio</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Hinojo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Carminativo. Digestivo. Antiemético</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Manzanilla</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Antiemético</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Infusión de saquitos de té</td>
+                                <td class="p-3">Flores</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Romero</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Cardiotónico. Antipruriginoso. 'Aleja las malas energías'</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión de hojas. Sahumado con tallos y hojas, ajo, famaya, coninchin, jarilla, lavanda y ruda. Mezcla con ruda y ajo</td>
+                                <td class="p-3">Tallos y hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Granada</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Béquico. Antidiarreico. Digestivo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión de la cáscara del fruto con miel de abejas o con frutos tostados de churqui blanco</td>
+                                <td class="p-3">Frutos</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Llantén</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Hepático. Digestivo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Incayuyo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Expectorante. Diurético. Antiinflamatorio</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Poleo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Hipocolesterolemiante</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Cedrón</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo. Cardiotónico</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Burrito</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Digestivo</td>
+                                <td class="p-3 | border-right-cell | border-right-cell-plants">Decocción o infusión</td>
+                                <td class="p-3">Hojas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer class="d-flex | flex-column">
+        <div class="container-footer">
+            <!-- Inicio 1-->
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
+                <h4 class="text-center">Inicio</h4>
+                <ul class="text-center | w-50 | ps-0">
+                    <li><a href="../index.html#turno" class="text-decoration-none">De turno</a></li>
+                    <li><a href="../index.html#contact" class="text-decoration-none">Contacto</a></li>
+                    <li><a href="./farmacias.html" class="text-decoration-none">Farmacias</a></li>
+                    <li><a href="#" class="text-decoration-none">Medicamentos</a></li>
+                </ul>
+            </div>
+            <!-- Farmacias 2-->
+            <div
+                class="footer-links farma | d-flex | flex-column | justify-content-center | align-items-center ">
+                <h4 class="text-center">Farmacias</h4>
+                <ul class="text-center | w-50 | ps-0">
+                    <li><a href="./farmacias.html#cards" class="text-decoration-none">Todas las farmacias</a></li>
+                    <li><a href="./farmacias.html#maps" class="text-decoration-none">Mapa</a></li>
+                    <li><a href="./farmacias.html#schedule" class="text-decoration-none">Cronograma anual</a></li>
+                    <li><a href="./farmacias.html#farmaonline" class="text-decoration-none">FarmaOnline</a></li>
+                    <li><a href="./farmacias.html#vacuum" class="text-decoration-none">Farmacias que vacunan</a></li>
+                </ul>
+            </div>
+            <!-- Medicamentos 3-->
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center | border-dashed">
+                <h4 class="text-center">Medicamentos</h4>
+                <ul class="text-center | w-50 | ps-0">
+                    <li><a href="#free" class="text-decoration-none">Venta libre</a></li>
+                    <li><a href="#recipes" class="text-decoration-none">Venta bajo receta</a></li>
+                    <li><a href="#types-med" class="text-decoration-none">Tipos</a></li>
+                    <li><a href="#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
+                    <li><a href="#plants" class="text-decoration-none">Plantas medicinales</a></li>
+                </ul>
+            </div>
+            <!-- Redes sociales 4-->
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
+                <h4 class="social">Redes sociales</h4>
+                <div
+                    class="social-link | d-flex | align-items-center | justify-content-center | align-items-center ">
+                    <a href="http://www.instagram.com" target="_blank" title="@saltadeturno"><span
+                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="bi:instagram" data-width="40"></span></a>
+                    <a href="http://www.facebook.com" target="_blank" title="Salta de Turno"><span
+                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="lucide:facebook" data-width="40"></span></a>
+                    <a href="mailto:saltadeturno@gmail.com" target="_blank" title="saltadeturno@gmail.com"><span
+                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconamoon:email-fill"
+                            data-width="40"></span></a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- Derechos de Autor -->
+        <div class="container-copy">
+            <p
+                class="copy | w-75 | text-center | d-flex | justify-content-center | align-items-center | m-auto | p-3 | pt-0">
+                Copyright &copy;2023 Equipo verde - Fundación Pescar</p>
+        </div>
+    </footer>
+
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"
+    ></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/medicamentos.js"></script>
+</body>
+</html>

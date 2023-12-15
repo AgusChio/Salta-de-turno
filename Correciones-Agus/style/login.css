@@ -1,0 +1,167 @@
+
+.body-login {
+    background-image: url("../assets/images/bg-login.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 800px 1000px;
+}
+
+.nav-login{
+    background-color: transparent;
+}
+
+.logo img {
+    width: 3.58rem;
+    margin-right: .5rem;
+    filter: drop-shadow(1px 2px 2px #888);
+}
+
+.logo a {
+    color: var(--text-color);
+}
+
+.button-back {
+    color: white;
+    background-color: var(--text-color);
+    letter-spacing: 3px;
+    font-family: var(--font-title);
+    border: none;
+}
+
+.btn-login-title {
+    color: var(--text-color);
+    letter-spacing: 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid var(--text-color);
+}
+
+.btn-register-title {
+    color: var(--bg-color-comments);
+    letter-spacing: 2px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid var(--bg-color-comments);
+}
+
+.form-login fieldset input {
+    height: 55px;
+    background-color: transparent;
+    box-shadow: 0px 3px 8px 0px rgba(3, 65, 114, 0.20);
+    border-radius: 22px;
+}
+
+.form-login fieldset input:focus {
+    outline: none;
+    border: 2px dashed var( --color-primary);
+}
+
+.form-login fieldset input::placeholder {
+    color: #034272af;
+    font-family: var(--font-text);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight:normal;
+}
+
+.input-iconify {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-iconify input {
+    padding-left: 60px; 
+    border: none;
+}
+
+.input-iconify .iconify {
+    color: var(--text-color);
+    position: absolute;
+    bottom: 15px;
+    left: 15px; 
+}
+
+.container-img-login{
+    justify-content: center;
+}
+
+.img-login{
+    height: 90%;
+}
+
+.container-login-forgot-password a{
+    color: var(--text-color);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+.btn-login{
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 22px;
+    font-family: var(--font-text);
+    letter-spacing: 1px;
+    border: none;
+    box-shadow: 0px 3px 8px 0px rgba(3, 65, 114, 0.20);
+}
+
+@media screen and (min-width: 320px) and (max-width: 900px){
+    .body-login{
+        background-image: none;
+    }
+
+    .main-login{
+        flex-direction: column-reverse;
+        background-image: url("../assets/images/bg-login-mobile.png");
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 90% 50%;
+        margin-bottom: 40px;
+    }
+
+    .img-login{
+        width: 220%;
+    }
+
+    .container-img-login{
+        width: 100% !important;
+        height: 70vh;
+        padding: 0px !important;
+        justify-content: center !important;
+        margin: auto;
+    }
+
+    .main-login .container-form-login, .main-login .container-titles-login{
+        width: 100% !important;
+    }
+
+    .main-login .container-login-forgot-password a{
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 740px) and (max-width: 900px){
+    .main-login{
+        background-size: 95% 60%;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1800px){
+    .body-login{
+        background-size: 800px 1200px;
+    }
+}
+
+@media screen and (min-width: 1800px) and (max-width: 2500px){
+    .body-login{
+        background-size: 1000px 1200px;
+    }
+
+    .container-img-login{
+        justify-content: center;
+        margin: 0px !important;
+    }
+}

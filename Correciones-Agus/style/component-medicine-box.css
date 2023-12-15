@@ -1,0 +1,67 @@
+body{
+    background-color: var(--bg-color-main);
+}
+.sectionMedicineFree{
+    --border-size: 1.5px;
+}
+
+/* vista de la lista de cajas */
+.list-medicineBox{
+    max-width: 1350px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+.medicineBox{
+    width: max(300px, 25vmax);
+    height: max(200px, 13vmax);
+    position: relative;
+}
+
+.frontBox{
+    background-color: #FCFCFC;
+    width: 100%;
+    height: 100%;
+    border: var(--border-size) solid var(--text-color-box);
+    flex-direction: column;
+    padding: .3rem;
+}
+
+.topBox{
+    background-color: var(--color-secondary) ;
+    width: 100%;
+    height: 10px;
+    transform: skewX(-55deg) translateX(7px);
+    border-top: var(--border-size) solid var(--text-color-box);
+    border-left: var(--border-size) solid var(--text-color-box);
+}
+
+.rightBox{
+    background-color: #6ECEF2;
+    width: 14px;
+    height: 100%;
+    position: absolute;
+    top: 5px;
+    right: -14px;
+    transform: skewY(-35deg);
+    border: var(--border-size) solid var(--text-color-box);
+    border-left: none;
+}
+
+.nameContent{
+    line-height: 5px;
+}
+
+.nameContent h4{
+    font-weight: 600;
+}
+
+.textContent{
+    font-size: .75rem;
+}
+
+
+
