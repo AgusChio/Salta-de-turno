@@ -1,3 +1,37 @@
+// Inyectables
+function cargarInyectables () {
+    fetch ('https://api-salta-de-turno.onrender.com/api/inyectables')
+    .then(response => {
+        if(!response.ok){
+            throw new Error ('HTTP error: ' + response.status)
+        }
+        return response.json()
+    })
+    .then(data => {
+        if (!data || !Array.isArray(data)){
+            throw new Error ('Los datos recibidos no son válidos')
+        }
+        const containerSyringe = document.querySelector("#container-cards-syringe")
+        data.forEach(({nombreInyectable, principioActivo, descripcion}) => {
+            const card = document.createElement("div")
+            card.className = "card-syringe d-flex align-items-center p-3 rounded-4"
+            card.innerHTML = `
+                <div class="syringe-img">
+                    <img src="../assets/images/syringe.png" alt="Dibujo de jeringa">
+                </div>
+                <div>
+                    <h4 class="fw-bold">${nombreInyectable}</h4>
+                    <h6 class="fw-semibold">${principioActivo}</h6>
+                    <p class="mb-0">${descripcion}</p>
+                </div>` 
+            containerSyringe.appendChild(card)
+        })
+    })
+    .catch(error => {
+        console.error("Hubo un problema con la operación: " + error.message)
+    })
+}
+
 // Plantas medicinales 
 function cargarPlantas () {
     fetch ('https://api-salta-de-turno.onrender.com/api/plantasmedicinales')
@@ -37,7 +71,10 @@ function cargarPlantas () {
     })
 }
 
-document.addEventListener("DOMContentLoaded", cargarPlantas)
+document.addEventListener("DOMContentLoaded", () => {
+    cargarPlantas()
+    cargarInyectables()
+})
 
 fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
         .then(response =>{

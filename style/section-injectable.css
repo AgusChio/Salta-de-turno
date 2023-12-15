@@ -5,6 +5,11 @@
     gap: .5rem;
     border: 2px solid var(--text-color);
     box-shadow: 10px 10px 10px #00000010;
+    overflow: auto;
+}
+
+.card-syringe::-webkit-scrollbar{
+    display: none;
 }
 
 .syringe-img{
