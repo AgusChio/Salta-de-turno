@@ -146,7 +146,11 @@ const filters = (data) => {
         const all = turnosZone.filter(({nombre}) =>
             nombre.toLowerCase().includes(searchTerm)
     )
-        cargarFarmacias(all)
+        all.length != 0 ? cargarFarmacias(all) : contenedorFarmacias.innerHTML = `
+            <div class="div-search">
+                <p class="fw-semibold">No se encontraron resultados. Por favor, prueba con otra búsqueda.</p>
+                <figure class="w-75 | m-auto"><img src="./assets/images/img-notFound.png" alt="img-notFound"></figure>
+            </div>`
     }
 }
 
@@ -165,4 +169,32 @@ function cargarFarmaciasYFiltros() {
         })
 }
 
-document.addEventListener("DOMContentLoaded", cargarFarmaciasYFiltros)
+const form = document.querySelector('#form')
+const btn = document.querySelector('.button-submit')
+
+document.addEventListener("DOMContentLoaded", () => {
+    cargarFarmaciasYFiltros()
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+    
+        btn.innerText = 'Enviando...'
+    
+        const serviceID = 'default_service'
+        const templateID = 'template_z5jpplf'
+    
+        emailjs.sendForm(serviceID, templateID, this).then(() => {
+            btn.innerText = 'Enviar'
+            $("#modal-container").style.display = "block"
+            resetForm(form)
+            $("#btn-close-modal").addEventListener("click", () => {
+                $("#modal-container").style.display = "none"
+            })
+        }, (err) => {
+            btn.innerText = 'Enviar'
+            alert(JSON.stringify(err))
+        })
+    })
+    function resetForm(form) {
+        form.reset()
+    }
+})

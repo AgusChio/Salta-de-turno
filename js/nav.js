@@ -1,5 +1,15 @@
 const $ = (selector) => document.querySelector(selector)
 
+// localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    const modoAlmacenado = localStorage.getItem('modo')
+    if (modoAlmacenado === 'oscuro') {
+        document.body.classList.add('dark-mode')
+        $('#check').checked = true
+        $('.switch__label').innerText = 'Modo Oscuro'
+    }
+})
+
 $('.navbar-toggler').addEventListener('click', () => {
     $('.navbar-dropdown').classList.remove('none')
     $('.navbar-dropdown').classList.remove('hide')
@@ -19,9 +29,12 @@ $('.icon-settings').addEventListener('click', () => {
         if(e.target.checked){ 
             $('.switch__label').innerText = 'Modo Oscuro' 
             document.body.classList.add('dark-mode') 
+            localStorage.setItem('modo', 'oscuro')
         }else{ 
             $('.switch__label').innerText = 'Modo Claro'
-            document.body.classList.remove('dark-mode')}
+            document.body.classList.remove('dark-mode')
+            localStorage.setItem('modo', 'claro')
+        }
     })
 })
 
@@ -39,3 +52,17 @@ for(let i=0; i<linkElements.length-1; i++){
         linkElements[i].classList.add('active')
     })
 }
+
+// Scroll
+const navbar = $(".navbar")
+const navbarDrop = $(".navbar-dropdown")
+document.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        navbar.style.backgroundColor = 'var(--bg-nav-scroll)'
+        if (window.innerWidth >= 992)
+            navbarDrop.style.backgroundColor = 'transparent'
+    } else {
+        navbarDrop.style.backgroundColor = 'var(--bg-color-main)'
+        navbar.style.backgroundColor = 'var(--bg-color-main)'
+    }
+})
