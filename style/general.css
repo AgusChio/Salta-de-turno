@@ -31,6 +31,7 @@ body {
     --table-color: #034172;
     --bg-color-g-1:#D2FFEE;
     --bg-color-g-2:#2984FF;
+    --bg-nav-scroll: #ffffffe9;
 }
 
 h1{
@@ -129,4 +130,5 @@ nav .btn{
     --bg-color-main:#113048;
     --bg-color-g-1:#034172;
     --bg-color-g-2:#4674B7;
+    --bg-nav-scroll: #113048e9;
 }

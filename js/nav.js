@@ -39,3 +39,17 @@ for(let i=0; i<linkElements.length-1; i++){
         linkElements[i].classList.add('active')
     })
 }
+
+// Scroll
+const navbar = $(".navbar")
+const navbarDrop = $(".navbar-dropdown")
+document.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        navbar.style.backgroundColor = 'var(--bg-nav-scroll)'
+        if (window.innerWidth >= 992)
+            navbarDrop.style.backgroundColor = 'transparent'
+    } else {
+        navbarDrop.style.backgroundColor = 'var(--bg-color-main)'
+        navbar.style.backgroundColor = 'var(--bg-color-main)'
+    }
+})

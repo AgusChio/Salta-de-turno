@@ -146,7 +146,11 @@ const filters = (data) => {
         const all = turnosZone.filter(({nombre}) =>
             nombre.toLowerCase().includes(searchTerm)
     )
-        cargarFarmacias(all)
+        all.length != 0 ? cargarFarmacias(all) : contenedorFarmacias.innerHTML = `
+            <div class="div-search">
+                <p class="fw-semibold">No se encontraron resultados. Por favor, prueba con otra búsqueda.</p>
+                <figure class="w-75 | m-auto"><img src="./assets/images/img-notFound.png" alt="img-notFound"></figure>
+            </div>`
     }
 }
 
