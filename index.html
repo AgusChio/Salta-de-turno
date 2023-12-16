@@ -9,6 +9,11 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/general.css">
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+    emailjs.init('4OS4vcxrQkT2fEZdC')
+    </script>
 </head>
 
 <body>
@@ -137,7 +142,7 @@
             
             <div class="container-form-img | m-auto | d-flex | justify-content-center | mb-5">
                 <div class="container-form-contact | text-white | p-2">
-                    <form class="p-2">
+                    <form id="form" class="p-2">
                         <fieldset class="d-flex | flex-column | mb-4">
                             <p>Seleccione una de las siguientes opciones en función de nuestros tipos de consulta</p>
     
@@ -180,13 +185,20 @@
                                 placeholder="Tu mensaje" class="mt-1 | rounded-2 | border | border-none | p-1"
                                 required></textarea>
                         </fieldset>
+
+                        <div class="w-75 | d-flex | justify-content-center | align-items-center | m-auto | pb-2">
+                            <button class="button-submit | p-2 | text-decoration-none | fw-bold">Enviar</button>
+                        </div>
                     </form>
-                    <div class="w-75 | d-flex | justify-content-center | align-items-center | m-auto | pb-2">
-                        <button class="button-submit | p-2 | text-decoration-none | fw-bold">Enviar</button>
-                    </div>
                 </div>
                 <div class="container-img-contact | p-4">
                     <img src="./assets/images/img-contact.png" class="img-contact" alt="Imagen de una mujer atendiendo uan consulta holografica">
+                </div>
+            </div>
+            <div class="modal-form" id="modal-container">
+                <div class="modal-content">
+                    <span class="close" id="btn-close-modal">&times;</span>
+                    <p>Su mensaje se envió con éxito</p>
                 </div>
             </div>
         </section>

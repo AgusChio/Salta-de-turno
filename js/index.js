@@ -169,4 +169,32 @@ function cargarFarmaciasYFiltros() {
         })
 }
 
-document.addEventListener("DOMContentLoaded", cargarFarmaciasYFiltros)
+const form = document.querySelector('#form')
+const btn = document.querySelector('.button-submit')
+
+document.addEventListener("DOMContentLoaded", () => {
+    cargarFarmaciasYFiltros()
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+    
+        btn.innerText = 'Enviando...'
+    
+        const serviceID = 'default_service'
+        const templateID = 'template_z5jpplf'
+    
+        emailjs.sendForm(serviceID, templateID, this).then(() => {
+            btn.innerText = 'Enviar'
+            $("#modal-container").style.display = "block"
+            resetForm(form)
+            $("#btn-close-modal").addEventListener("click", () => {
+                $("#modal-container").style.display = "none"
+            })
+        }, (err) => {
+            btn.innerText = 'Enviar'
+            alert(JSON.stringify(err))
+        })
+    })
+    function resetForm(form) {
+        form.reset()
+    }
+})
