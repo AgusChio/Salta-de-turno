@@ -63,6 +63,21 @@
 	width: 2.5rem;
 }
 
+.form-check-input:checked {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+}
+
+.form-check-label{
+    color: var(--text-color);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: normal;
+    background-color: transparent !important;
+    cursor: pointer;
+}
+
 .social-container a{
     color: var(--text-color);
 }

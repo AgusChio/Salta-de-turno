@@ -8,7 +8,7 @@ const signupLoginLink = formLogin.querySelectorAll(".btn-title");
 signupLoginLink.forEach((link) => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
-        if (link.getAttribute("data-form") === "login"){
+        if (link.getAttribute("data-form") === "login") {
             removeClass(".login", "none");
             addClass(".signup", "none");
             link.classList.remove("btn-title-off");
@@ -34,6 +34,16 @@ function togglePasswordVisibility(passwordFieldId) {
         passwordIcon.setAttribute('data-icon', 'mdi:eye');
     }
 }
+
+function handleAcceptTerms() {
+    $('#acept').checked = true;
+
+    const modalElement = $('#staticBackdrop');
+    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+    modalInstance.hide();
+}
+
+$('#staticBackdrop .btn-success').addEventListener('click', handleAcceptTerms);
 
 // Validaciones
 const validateEmail = (email) => {
@@ -64,16 +74,21 @@ const checkField = (id, errorClass, validationFunc, emptyCheck = false) => {
 
 const checkPasswordsMatch = () => {
     const password = $("#password-signup").value;
-    const confirmPassword = $("#confirm-password").value;
-    if (password !== confirmPassword) {
-        removeClass(".password-match-error", "none");
-        addClass("#confirm-password", "invalid");
+    const confirmPassword = $("#password-signup-confirm").value;
+    if (password === confirmPassword) {
+        $(".password-match-error").classList.add("none");
+        $("#password-signup-confirm").classList.remove("invalid");
     } else {
-        addClass(".password-match-error", "none");
-        removeClass("#confirm-password", "invalid");
+        $(".password-match-error").classList.remove("none");
+        $("#password-signup-confirm").classList.add("invalid");
     }
+    updateButtonState();
 };
 
+$("#password-signup").addEventListener("input", checkPasswordsMatch);
+$("#password-signup-confirm").addEventListener("input", checkPasswordsMatch);
+
+//Promesas
 $("#form-login").addEventListener("submit", async (e) => {
     e.preventDefault();
     checkField("#name", ".name-error", validateEmpty, true);
@@ -86,7 +101,7 @@ $("#form-login").addEventListener("submit", async (e) => {
         try {
             const response = await fetch('https://api-salta-de-turno.onrender.com/api/auth/login', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
             });
 
@@ -116,10 +131,31 @@ $("#form-login").addEventListener("submit", async (e) => {
 
 $("#form-signup").addEventListener("submit", async (e) => {
     e.preventDefault();
-    checkField("#email-login", ".email-error", validateEmail);
-    checkField("#password", ".password-error", validatePassword);
-    checkField("#confirm-password", ".password-match-error", validatePassword);
+    checkField("#name", ".name-error", validateEmpty, true);
+    checkField("#password-signup", ".password-error", validatePassword);
     checkPasswordsMatch();
+
+    const terminosYCondiciones = $('#acept').checked;
+    if (!terminosYCondiciones) {
+        Swal.fire({
+            title: 'Error',
+            text: 'Es necesario que acepte los términos y condiciones para registrarse.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+        return;
+    }
+
+    const emailSignup = $("#email-signup").value;
+    if (!validateEmail(emailSignup)) {
+        Swal.fire({
+            title: 'Error',
+            text: 'El email ingresado no es válido.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+        return;
+    }
 
     if (Array.from($(".container-form-login .invalid")).length === 0) {
         const name = $("#name").value;
@@ -135,7 +171,7 @@ $("#form-signup").addEventListener("submit", async (e) => {
         try {
             const response = await fetch('https://api-salta-de-turno.onrender.com/api/auth/register', {
                 method: 'POST',
-                headers: {'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, password, status, google, apiKey, rol, modoOscuro, terminosYCondiciones })
             });
 
@@ -163,32 +199,31 @@ $("#form-signup").addEventListener("submit", async (e) => {
     }
 });
 
-$("#name").addEventListener("keyup", () => checkField("#name", ".name-error", validateEmpty, true));
-$("#email-login").addEventListener("keyup", () => checkField("#email-login", ".email-error", validateEmail, true));
-$("#password-signup").addEventListener("keyup", () => checkField("#password-signup", ".password-error", validatePassword));
-$("#email-signup").addEventListener("keyup", () => checkField("#email-signup", ".email-error", validateEmail, true));
-$("#password-signup-confirm").addEventListener("keyup", checkPasswordsMatch);
 
 const updateButtonState = () => {
     const allLoginFieldsFilled = Array.from(document.querySelectorAll('#form-login input:not([type="checkbox"])')).every(input => input.value.trim() !== '');
     const allLoginFieldsValid = Array.from(document.querySelectorAll('#form-login .invalid')).length === 0;
-    const isRememberChecked = $('#remember').checked;
-    $('#login-button').disabled = !(allLoginFieldsFilled && allLoginFieldsValid && isRememberChecked);
+    $('#login-button').disabled = !(allLoginFieldsFilled && allLoginFieldsValid);
     $('#login-button').classList.toggle('btn-login', !$('#login-button').disabled);
     $('#login-button').classList.toggle('btn-login-disabled', $('#login-button').disabled);
 
     const allSignupFieldsFilled = Array.from(document.querySelectorAll('#form-signup input:not([type="checkbox"])')).every(input => input.value.trim() !== '');
     const allSignupFieldsValid = Array.from(document.querySelectorAll('#form-signup .invalid')).length === 0;
-    const isTermsAccepted = $('#acept').checked;
-    $('#signup-button').disabled = !(allSignupFieldsFilled && allSignupFieldsValid && isTermsAccepted);
+
+    $('#signup-button').disabled = !(allSignupFieldsFilled && allSignupFieldsValid);
     $('#signup-button').classList.toggle('btn-login', !$('#signup-button').disabled);
     $('#signup-button').classList.toggle('btn-login-disabled', $('#signup-button').disabled);
-};
 
-$('#remember').addEventListener('change', updateButtonState);
-$('#acept').addEventListener('change', updateButtonState);
+};
 
 document.addEventListener('DOMContentLoaded', updateButtonState);
 document.querySelectorAll('#form-login input, #form-signup input').forEach(input => {
     input.addEventListener('keyup', updateButtonState);
 });
+
+$("#name").addEventListener("keyup", () => checkField("#name", ".name-error", validateEmpty, true));
+$("#email-login").addEventListener("keyup", () => checkField("#email-login", ".email-error", validateEmail, true));
+$("#password-signup").addEventListener("keyup", () => checkField("#password-signup", ".password-error", validatePassword));
+$("#password-signup").addEventListener("keyup", checkPasswordsMatch);
+$("#password-signup-confirm").addEventListener("keyup", checkPasswordsMatch);
+

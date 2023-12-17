@@ -69,10 +69,13 @@
                             </span>
                         </fieldset>
                         <fieldset class="mb-3 input-iconify">
-                            <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25" data-height="25"></span>
-                            <input type="password" class="w-100 | mt-4 | rounded-4" name="password" id="password" placeholder="Contraseña">
-                            <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye" onclick="togglePasswordVisibility('password')"></span>
-                        </fieldset>                        
+                            <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
+                                data-height="25"></span>
+                            <input type="password" class="w-100 | mt-4 | rounded-4" name="password" id="password"
+                                placeholder="Contraseña">
+                            <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
+                                onclick="togglePasswordVisibility('password')"></span>
+                        </fieldset>
                         <div>
                             <div class="mt-5 | form-check">
                                 <input class="form-check-input" type="checkbox" id="remember">
@@ -84,7 +87,8 @@
                         <div
                             class="mt-4 | mb-2 | container-login-forgot-password | d-flex | justify-content-between | align-items-center">
                             <a href="#" class="text-decoration-none | fs-6">¿Olvidaste tu contraseña?</a>
-                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit" id="login-button">Iniciar
+                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit"
+                                id="login-button">Iniciar
                                 sesión</button>
                         </div>
                     </form>
@@ -145,13 +149,81 @@
                         <div>
                             <div class="mt-5 | form-check">
                                 <input class="form-check-input" type="checkbox" id="acept">
-                                <label class="form-check-label acept-terms" for="acept">
+                                <a class="form-check-label acept-terms" data-bs-toggle="modal"
+                                    data-bs-target="#staticBackdrop">
                                     Acepto los términos y condiciones
-                                </label>
+                                </a>
+                                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                    aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Términos y Condiciones de Uso para Salta de Turno</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ol>
+                                                    <li><strong>1. Aceptación de Términos</strong></li>
+                                                    <p>Al acceder y utilizar el sitio web Salta de Turno, usted acepta cumplir
+                                                        con estos Términos y Condiciones de Uso. Si no está de acuerdo con
+                                                        alguno de los términos aquí presentados, por favor absténgase de
+                                                        utilizar nuestro sitio web.</p>
+
+                                                    <li><strong>2. Uso de la Información</strong></li>
+                                                    <p>La información proporcionada en Salta de Turno, especialmente en lo que
+                                                        respecta a medicamentos y farmacias, es solo para fines informativos. No
+                                                        promovemos la automedicación y siempre recomendamos la consulta con un
+                                                        profesional de la salud calificado antes de tomar cualquier medicamento.</p>
+
+                                                    <li><strong>3. No Automedicación</strong></li>
+                                                    <p>Usted acepta no utilizar la información proporcionada en Salta de Turno
+                                                        para automedicarse o tratar condiciones médicas sin previa consulta con
+                                                        un médico. Entiende que la automedicación puede ser peligrosa y se
+                                                        compromete a buscar asesoramiento médico profesional para cualquier
+                                                        condición de salud.</p>
+                                                    
+                                                    <li><strong>4. Recetas Médicas</strong></li>
+                                                    <p>Reconoce que ciertos medicamentos requieren una receta médica y se
+                                                        compromete a no adquirir medicamentos de venta bajo receta sin la debida
+                                                        autorización de un profesional de la salud.</p>
+
+                                                    <li><strong>5. Responsabilidad</strong></li>
+                                                    <p>Salta de Turno no se hace responsable de las consecuencias que puedan
+                                                        surgir del uso indebido de la información proporcionada en el sitio web.
+                                                        Usted será el único responsable de las decisiones tomadas con base en el
+                                                        contenido de este sitio web.</p>
+                                                    
+                                                    <li><strong>6. Enlaces a Terceros</strong></li>
+                                                    <p>Este sitio web puede contener enlaces a sitios web operados por
+                                                        terceros. Estos enlaces se proporcionan para su conveniencia y no
+                                                        significan que endosamos o aceptamos responsabilidad por el contenido o
+                                                        uso de estos sitios web.</p>
+
+                                                    <li><strong>7. Cambios a los Términos</strong></li>
+                                                    <p>Salta de Turno se reserva el derecho de modificar estos Términos y
+                                                        Condiciones en cualquier momento. Cualquier cambio será efectivo
+                                                        inmediatamente después de su publicación en el sitio web.</p>
+
+                                                    <li><strong>8. Contacto</strong></li>
+                                                    Si tiene preguntas sobre estos Términos y Condiciones, por favor
+                                                        contáctenos a través de los canales proporcionados en nuestro sitio web.
+                                                </ol>
+
+                                                <p>Al utilizar Salta de Turno, usted acepta estos términos en su totalidad.</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success">Acepto</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-4 | mb-2">
-                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit" id="signup-button">Registrarse</button>
+                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit"
+                                id="signup-button">Registrarse</button>
                         </div>
                     </form>
                 </div>
