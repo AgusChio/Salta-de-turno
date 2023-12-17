@@ -49,35 +49,29 @@
             </div>
             <div id="login" class="login">
                 <div class="w-75 | m-auto | mt-5">
-                    <form class="form-login">
+                    <form class="form-login" id="form-login">
                         <div class="social-container | m-auto">
                             <a class="text-decoration-none" href="#"><iconify-icon icon="ri:google-fill"
                                     class="social"></iconify-icon>Accede con Google</a>
                         </div>
-                        <fieldset class="mb-3 input-iconify">
-                            <span class="iconify iconify-left" data-icon="mdi:account" data-width="25"
+                        <span class="error | error-login | none">
+                            <iconify-icon icon="jam:alert"></iconify-icon>
+                            <p class="error-text">El mail o la contraseña son incorrectas.</p>
+                        </span>
+                        <fieldset class="mb-3 input-iconify input-email">
+                            <span class="iconify iconify-left" data-icon="ic:round-alternate-email" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="user" id="user"
-                                placeholder="Usuario">
-                            <span class="error user-login-error none">
+                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email-login" id="email-login"
+                                placeholder="Correo Electronico">
+                            <span class="error | email-error | none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
-                                <p class="error-text">Usuario inválido</p>
+                                <p class="error-text">Por favor, ingrese un mail valido</p>
                             </span>
                         </fieldset>
-                        <!-- <fieldset class="mb-3 input-iconify">
-                            <span class="iconify" data-icon="mdi:card-account-details" data-width="25"
-                                data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4"
-                                name="dniPassport" id="dniPassport" placeholder="Dni o Pasaporte">
-                        </fieldset> -->
                         <fieldset class="mb-3 input-iconify">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25" data-height="25"></span>
                             <input type="password" class="w-100 | mt-4 | rounded-4" name="password" id="password" placeholder="Contraseña">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye" onclick="togglePasswordVisibility('password')"></span>
-                            <span class="error password-login-error none">
-                                <iconify-icon icon="jam:alert"></iconify-icon>
-                                <p class="error-text">Contraseña inválida</p>
-                            </span>
                         </fieldset>                        
                         <div>
                             <div class="mt-5 | form-check">
@@ -90,13 +84,13 @@
                         <div
                             class="mt-4 | mb-2 | container-login-forgot-password | d-flex | justify-content-between | align-items-center">
                             <a href="#" class="text-decoration-none | fs-6">¿Olvidaste tu contraseña?</a>
-                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit">Iniciar
+                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit" id="login-button">Iniciar
                                 sesión</button>
                         </div>
                     </form>
                 </div>
             </div>
-            <div id="signup" class="signup none">
+            <div id="signup" class="signup | none">
                 <div class="w-75 | m-auto | mt-5">
                     <form class="form-login" action="#" id="form-signup">
                         <div class="social-container | m-auto">
@@ -116,28 +110,18 @@
                         <fieldset class="mb-3 input-iconify input-email">
                             <span class="iconify iconify-left" data-icon="ic:round-alternate-email" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email" id="email"
+                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email-signup" id="email-signup"
                                 placeholder="Correo Electronico">
                             <span class="error | email-error | none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un mail valido</p>
                             </span>
                         </fieldset>
-                        <fieldset class="mb-3 | input-iconify | input-user">
-                            <span class="iconify | iconify-left" data-icon="mdi:account" data-width="25"
-                                data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="user-signup" id="user-signup"
-                                placeholder="Usuario">
-                            <span class="error user-error none">
-                                <iconify-icon icon="jam:alert"></iconify-icon>
-                                <p class="error-text">Por favor, ingrese un nombre de usuario válido</p>
-                            </span>
-                        </fieldset>
                         <fieldset class="mb-3 input-iconify input-password">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
                             <input type="password" class="w-100 mt-4 rounded-4" name="password-signup"
-                                id="password-signup" placeholder="Contraseña">
+                                id="password-signup" placeholder="Contraseña" min="8">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password-signup')"></span>
                             <span class="error password-error none">
@@ -167,7 +151,7 @@
                             </div>
                         </div>
                         <div class="mt-4 | mb-2">
-                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit">Registrarse</button>
+                            <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit" id="signup-button">Registrarse</button>
                         </div>
                     </form>
                 </div>
