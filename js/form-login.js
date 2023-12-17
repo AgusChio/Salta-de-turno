@@ -74,25 +74,92 @@ const checkPasswordsMatch = () => {
     }
 };
 
-$("#form-signup").addEventListener("submit", (e) => {
+$("#form-login").addEventListener("submit", async (e) => {
     e.preventDefault();
     checkField("#name", ".name-error", validateEmpty, true);
-    checkField("#email-signup", ".email-error", validateEmail);
-    checkField("#password-signup", ".password-error", validatePassword);
-    checkPasswordsMatch();
+    checkField("#email-login", ".email-error", validateEmail);
 
     if (Array.from($(".container-form-login .invalid")).length === 0) {
-        console.log('Formulario de registro enviado con éxito');
+        const email = $("#email-login").value;
+        const password = $("#password").value;
+
+        try {
+            const response = await fetch('https://api-salta-de-turno.onrender.com/api/auth/login', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ email, password })
+            });
+
+            if (!response.ok) {
+                throw new Error('Error en el login');
+            }
+
+            const data = await response.json();
+            Swal.fire({
+                title: 'Inicio de Sesión Exitoso',
+                text: 'Bienvenido a Salta de Turno!',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            }).then(() => {
+                window.location.href = '/index.html'; // Reemplaza con tu URL de destino
+            });
+        } catch (error) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un problema al iniciar sesión. Por favor, intenta de nuevo.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+        }
     }
 });
 
-$("#form-login").addEventListener("submit", (e) => {
+$("#form-signup").addEventListener("submit", async (e) => {
     e.preventDefault();
     checkField("#email-login", ".email-error", validateEmail);
     checkField("#password", ".password-error", validatePassword);
+    checkField("#confirm-password", ".password-match-error", validatePassword);
+    checkPasswordsMatch();
 
     if (Array.from($(".container-form-login .invalid")).length === 0) {
-        console.log('Formulario de inicio de sesión enviado con éxito');
+        const name = $("#name").value;
+        const email = $("#email-signup").value;
+        const password = $("#password-signup").value;
+        const status = true;
+        const google = false;
+        const apiKey = "";
+        const rol = "user";
+        const modoOscuro = false;
+        const terminosYCondiciones = $('#acept').checked;
+
+        try {
+            const response = await fetch('https://api-salta-de-turno.onrender.com/api/auth/register', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ name, email, password, status, google, apiKey, rol, modoOscuro, terminosYCondiciones })
+            });
+
+            if (!response.ok) {
+                throw new Error('Error en el registro');
+            }
+
+            const data = await response.json();
+            Swal.fire({
+                title: 'Registro Exitoso',
+                text: '¡Tu cuenta ha sido creada exitosamente!',
+                icon: 'success',
+                confirmButtonText: 'Ok'
+            }).then(() => {
+                window.location.href = '/index.html';
+            });
+        } catch (error) {
+            Swal.fire({
+                title: 'Error',
+                text: 'Hubo un problema al registrarse. Por favor, intenta de nuevo.',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+            });
+        }
     }
 });
 
