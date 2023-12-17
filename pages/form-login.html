@@ -49,11 +49,11 @@
             </div>
             <div id="login" class="login">
                 <div class="w-75 | m-auto | mt-5">
-                    <form class="form-login" id="form-login">
-                        <div class="social-container | m-auto">
+                    <form class="form-login" id="form-login" onsubmit="setRememberMeCookie();">
+                        <!-- <div class="social-container | m-auto">
                             <a class="text-decoration-none" href="#"><iconify-icon icon="ri:google-fill"
                                     class="social"></iconify-icon>Accede con Google</a>
-                        </div>
+                        </div> -->
                         <span class="error | error-login | none">
                             <iconify-icon icon="jam:alert"></iconify-icon>
                             <p class="error-text">El mail o la contraseña son incorrectas.</p>
@@ -94,13 +94,13 @@
                     </form>
                 </div>
             </div>
-            <div id="signup" class="signup | none">
+            <div id="signup" class="signup | none container-form-signUp">
                 <div class="w-75 | m-auto | mt-5">
                     <form class="form-login" action="#" id="form-signup">
-                        <div class="social-container | m-auto">
+                        <!-- <div class="social-container | m-auto">
                             <a class="text-decoration-none" href="#"><iconify-icon icon="ri:google-fill"
                                     class="social"></iconify-icon>Registrate con Google</a>
-                        </div>
+                        </div> -->
                         <fieldset class="mb-3 input-iconify input-name">
                             <span class="iconify iconify-left" data-icon="mdi:card-account-details" data-width="25"
                                 data-height="25"></span>
@@ -233,13 +233,6 @@
         <div class="container-img-login | w-50 | d-flex | align-items-center | pe-5">
             <img src="../assets/images/img-inicio-sesion.png" alt="Imagen de una computadora con diagramas digitales"
                 class="img-login">
-        </div>
-
-        <div class="modal-form none" id="modal-signup">
-            <div class="modal-contentt">
-                <span class="close" id="btn-close-signup">&times;</span>
-                <p>Gracias por registrarse</p>
-            </div>
         </div>
     </main>
 

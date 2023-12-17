@@ -11,23 +11,23 @@ const currentMonth = today.getMonth()
 const currentDay = today.getDate()
 const currentYear = today.getFullYear()
 
-function cargarFarmaciasDeTurno () {
-    return fetch ('https://api-salta-de-turno.onrender.com/api/farmacias')
-    .then(response => {
-        if(!response.ok){
-            throw new Error ('HTTP error: ' + response.status)
-        }
-        return response.json()
-    })
-    .then(apiData => {
-        if (!apiData.farmacias || !Array.isArray(apiData.farmacias)){
-            throw new Error ('Los datos recibidos no son válidos')
-        }
-        return apiData.farmacias
-    })
-    .catch(error => {
-        console.error("Hubo un problema con la operación: " + error.message)
-    })
+function cargarFarmaciasDeTurno() {
+    return fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('HTTP error: ' + response.status)
+            }
+            return response.json()
+        })
+        .then(apiData => {
+            if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
+                throw new Error('Los datos recibidos no son válidos')
+            }
+            return apiData.farmacias
+        })
+        .catch(error => {
+            console.error("Hubo un problema con la operación: " + error.message)
+        })
 }
 
 function obtenerHorarioDeCierre(horario) {
@@ -89,24 +89,24 @@ const obtenerTurnos = (day, month, year, data) => {
         }
         return false
     })
-    return farmaciasDeTurno = [...deTurno24,...deTurno]
+    return farmaciasDeTurno = [...deTurno24, ...deTurno]
 }
 
 const cargarFarmacias = (farmacias) => {
     contenedorFarmacias.innerHTML = ''
-    const farmaciasActivas = farmacias.filter(({estado}) => estado === "Activo")
-    farmaciasActivas.forEach(({nombre, direccion, telefono, ubicacion, horario, imagen, Zona}) => {
+    const farmaciasActivas = farmacias.filter(({ estado }) => estado === "Activo")
+    farmaciasActivas.forEach(({ nombre, direccion, telefono, ubicacion, horario, imagen, Zona }) => {
         const horarioHoy = obtenerHorarioDeCierre(horario)
         const card = document.createElement("div")
         let alertPronto = ''
         card.className = "card-farmacia"
-        if(!imagen)
+        if (!imagen)
             imagen = "../assets/images/img-card-farmacia.png"
         horarioHoy.cierrePronto ?
             alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
-        : 
+            :
             alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
-        
+
         card.innerHTML = `
             <img src="${imagen}" alt="imagen de farmacia"/>
             <div>
@@ -132,20 +132,20 @@ const filters = (data) => {
     const yearInput = dateSelected.getFullYear()
     const turnosInput = obtenerTurnos(dayInput, monthInput, yearInput, data)
     const searchTerm = search.value.toLowerCase()
-    const turnosSearch = turnosInput.filter(({nombre}) =>
+    const turnosSearch = turnosInput.filter(({ nombre }) =>
         nombre.toLowerCase().includes(searchTerm)
     )
-    
-    if (zone.value === 'Zona' && searchTerm === '') 
+
+    if (zone.value === 'Zona' && searchTerm === '')
         cargarFarmacias(turnosInput)
-    else if (zone.value === 'Zona' && searchTerm != ''){
+    else if (zone.value === 'Zona' && searchTerm != '') {
         cargarFarmacias(turnosSearch)
     }
     else {
-        const turnosZone = turnosInput.filter(({Zona}) => zone.value === Zona)
-        const all = turnosZone.filter(({nombre}) =>
+        const turnosZone = turnosInput.filter(({ Zona }) => zone.value === Zona)
+        const all = turnosZone.filter(({ nombre }) =>
             nombre.toLowerCase().includes(searchTerm)
-    )
+        )
         all.length != 0 ? cargarFarmacias(all) : contenedorFarmacias.innerHTML = `
             <div class="div-search">
                 <p class="fw-semibold">No se encontraron resultados. Por favor, prueba con otra búsqueda.</p>
@@ -174,14 +174,14 @@ const btn = document.querySelector('.button-submit')
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarFarmaciasYFiltros()
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault()
-    
+
         btn.innerText = 'Enviando...'
-    
+
         const serviceID = 'default_service'
         const templateID = 'template_z5jpplf'
-    
+
         emailjs.sendForm(serviceID, templateID, this).then(() => {
             btn.innerText = 'Enviar'
             $("#modal-container").style.display = "block"
@@ -198,3 +198,28 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset()
     }
 })
+
+//LogOut
+function checkLoginStatus() {
+    console.log('Cookie username:', document.cookie.includes('username='));
+    var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
+
+    var loginLink = document.getElementById('login-link');
+    var logoutLink = document.getElementById('logout-link');
+
+    if (isLoggedIn) {
+        loginLink.style.display = 'none';
+        logoutLink.style.display = 'block';
+    } else {
+        loginLink.style.display = 'block';
+        logoutLink.style.display = 'none';
+    }
+}
+
+function logout() {
+    document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    checkLoginStatus();
+}
+
+// Asegúrate de llamar a checkLoginStatus cuando la ventana se cargue
+window.onload = checkLoginStatus;

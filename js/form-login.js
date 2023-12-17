@@ -157,7 +157,10 @@ $("#form-signup").addEventListener("submit", async (e) => {
         return;
     }
 
-    if (Array.from($(".container-form-login .invalid")).length === 0) {
+    console.log($(".container-form-signUp"));
+    console.log(Array.from($(".container-form-signUp")).length);
+
+    if (Array.from($(".container-form-signUp")).length === 0) {
         const name = $("#name").value;
         const email = $("#email-signup").value;
         const password = $("#password-signup").value;
@@ -227,3 +230,19 @@ $("#password-signup").addEventListener("keyup", () => checkField("#password-sign
 $("#password-signup").addEventListener("keyup", checkPasswordsMatch);
 $("#password-signup-confirm").addEventListener("keyup", checkPasswordsMatch);
 
+
+
+// function recordarme
+function setRememberMeCookie() {
+    var username = document.getElementById('email-login').value; // Asumiendo que es un campo de correo electrónico
+    var rememberMeChecked = document.getElementById('remember').checked;
+
+    if (rememberMeChecked) {
+        var currentDate = new Date();
+
+        currentDate.setTime(currentDate.getTime() + (14 * 24 * 60 * 60 * 1000));
+
+        var expires = "expires=" + currentDate.toUTCString();
+        document.cookie = "username=" + username + "; " + expires + "; path=/";
+    }
+}
