@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarInyectables()
 })
 
+// medicamentos venta libre/venta bajo receta
 fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
     .then(response => {
         if (!response.ok) {
