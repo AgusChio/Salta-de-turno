@@ -11,11 +11,11 @@ function checkLoginStatus() {
     if (isLoggedIn) {
         medicamentosLink.dataset.bsToggle = 'dropdown';
         medicamentosDropdown.innerHTML = `
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#free">Venta libre</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#recipes">Venta bajo receta</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#types-med">Tipos</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#injectables">Inyectables</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#plants">Plantas medicinales</a></li>
+        <li><a class="dropdown-item" href="./medicamentos.html#free">Venta libre</a></li>
+        <li><a class="dropdown-item" href="./medicamentos.html#recipes">Venta bajo receta</a></li>
+        <li><a class="dropdown-item" href="./medicamentos.html#types-med">Tipos</a></li>
+        <li><a class="dropdown-item" href="./medicamentos.html#injectables">Inyectables</a></li>
+        <li><a class="dropdown-item" href="./medicamentos.html#plants">Plantas medicinales</a></li>
         `;
     } else {
         medicamentosLink.dataset.bsToggle = 'dropdown';
