@@ -111,6 +111,7 @@ function checkLoginStatus() {
 function logout() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     checkLoginStatus();
+    window.location.href = '../index.html';
 }
 
 window.onload = checkLoginStatus;

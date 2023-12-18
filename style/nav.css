@@ -8,9 +8,14 @@
     filter: drop-shadow(1px 2px 2px #888);
 }
 
-.logo .navbar-brand,
 .navbar-collapse .btn{
     font-weight: 500;
+}
+
+.navbar-brand{
+    color: var(--text-color-light);
+    font-family: var(--font-title);
+    font-weight: 700;
 }
 
 .nav-btn{
@@ -44,6 +49,10 @@
     0px 7px 29px 0px;
     animation: fadeInAnimation 
     ease-in-out 0.5s forwards;
+}
+
+.dropdown-item-noLogued{
+    white-space: wrap !important;
 }
 
 .navbar-dropdown .btn{
