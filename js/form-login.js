@@ -114,6 +114,7 @@ $("#form-login").addEventListener("submit", async (e) => {
                 title: 'Inicio de Sesión Exitoso',
                 text: 'Bienvenido a Salta de Turno!',
                 icon: 'success',
+                timer: 3000,
                 confirmButtonText: 'Ok'
             }).then(() => {
                 window.location.href = '/index.html'; // Reemplaza con tu URL de destino
@@ -187,6 +188,7 @@ $("#form-signup").addEventListener("submit", async (e) => {
                 title: 'Registro Exitoso',
                 text: '¡Tu cuenta ha sido creada exitosamente!',
                 icon: 'success',
+                timer: 3000,
                 confirmButtonText: 'Ok'
             }).then(() => {
                 window.location.href = '/index.html';

@@ -92,6 +92,14 @@ const obtenerTurnos = (day, month, year, data) => {
     return farmaciasDeTurno = [...deTurno24, ...deTurno]
 }
 
+const mostrarMensajeNoResultados = () => {
+    contenedorFarmacias.innerHTML = `
+        <div class="div-search">
+            <p class="fw-semibold">No se encontraron resultados. Por favor, prueba con otra búsqueda.</p>
+            <figure class="w-75 | m-auto"><img src="./assets/images/img-notFound.png" alt="img-notFound"></figure>
+        </div>`
+}
+
 const cargarFarmacias = (farmacias) => {
     contenedorFarmacias.innerHTML = ''
     const farmaciasActivas = farmacias.filter(({ estado }) => estado === "Activo")
@@ -109,7 +117,7 @@ const cargarFarmacias = (farmacias) => {
 
         card.innerHTML = `
             <img src="${imagen}" alt="imagen de farmacia"/>
-            <div>
+            <div class="w-100">
                 <h2>${nombre}</h2>
                 ${alertPronto}
                 <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
@@ -132,25 +140,20 @@ const filters = (data) => {
     const yearInput = dateSelected.getFullYear()
     const turnosInput = obtenerTurnos(dayInput, monthInput, yearInput, data)
     const searchTerm = search.value.toLowerCase()
-    const turnosSearch = turnosInput.filter(({ nombre }) =>
-        nombre.toLowerCase().includes(searchTerm)
-    )
 
-    if (zone.value === 'Zona' && searchTerm === '')
-        cargarFarmacias(turnosInput)
-    else if (zone.value === 'Zona' && searchTerm != '') {
-        cargarFarmacias(turnosSearch)
-    }
-    else {
-        const turnosZone = turnosInput.filter(({ Zona }) => zone.value === Zona)
-        const all = turnosZone.filter(({ nombre }) =>
+    if (zone.value === 'Zona' && searchTerm === '') {
+        cargarFarmacias(turnosInput);
+    } else {
+        const filteredTurnos = turnosInput.filter(({ Zona, nombre }) =>
+            (zone.value === 'Zona' || zone.value === Zona) &&
             nombre.toLowerCase().includes(searchTerm)
         )
-        all.length != 0 ? cargarFarmacias(all) : contenedorFarmacias.innerHTML = `
-            <div class="div-search">
-                <p class="fw-semibold">No se encontraron resultados. Por favor, prueba con otra búsqueda.</p>
-                <figure class="w-75 | m-auto"><img src="./assets/images/img-notFound.png" alt="img-notFound"></figure>
-            </div>`
+
+        if (filteredTurnos.length > 0) {
+            cargarFarmacias(filteredTurnos)
+        } else {
+            mostrarMensajeNoResultados()
+        }
     }
 }
 
@@ -173,31 +176,39 @@ const form = document.querySelector('#form')
 const btn = document.querySelector('.button-submit')
 
 document.addEventListener("DOMContentLoaded", () => {
-    cargarFarmaciasYFiltros()
+    cargarFarmaciasYFiltros();
     form.addEventListener('submit', function (e) {
-        e.preventDefault()
+        e.preventDefault();
+        btn.innerText = 'Enviando...';
 
-        btn.innerText = 'Enviando...'
-
-        const serviceID = 'default_service'
-        const templateID = 'template_z5jpplf'
+        const serviceID = 'default_service';
+        const templateID = 'template_z5jpplf';
 
         emailjs.sendForm(serviceID, templateID, this).then(() => {
-            btn.innerText = 'Enviar'
-            $("#modal-container").style.display = "block"
-            resetForm(form)
-            $("#btn-close-modal").addEventListener("click", () => {
-                $("#modal-container").style.display = "none"
-            })
+            btn.innerText = 'Enviar';
+            resetForm(form);
+            // Muestra la alerta SweetAlert
+            Swal.fire({
+                title: '¡Enviado!',
+                text: 'Tu mensaje ha sido enviado correctamente.',
+                icon: 'success',
+                timer: 3000, // Tiempo en milisegundos
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                }
+            });
         }, (err) => {
-            btn.innerText = 'Enviar'
-            alert(JSON.stringify(err))
-        })
-    })
+            btn.innerText = 'Enviar';
+            alert(JSON.stringify(err));
+        });
+    });
+
     function resetForm(form) {
-        form.reset()
+        form.reset();
     }
-})
+});
 
 function checkLoginStatus() {
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
