@@ -173,31 +173,39 @@ const form = document.querySelector('#form')
 const btn = document.querySelector('.button-submit')
 
 document.addEventListener("DOMContentLoaded", () => {
-    cargarFarmaciasYFiltros()
+    cargarFarmaciasYFiltros();
     form.addEventListener('submit', function (e) {
-        e.preventDefault()
+        e.preventDefault();
+        btn.innerText = 'Enviando...';
 
-        btn.innerText = 'Enviando...'
-
-        const serviceID = 'default_service'
-        const templateID = 'template_z5jpplf'
+        const serviceID = 'default_service';
+        const templateID = 'template_z5jpplf';
 
         emailjs.sendForm(serviceID, templateID, this).then(() => {
-            btn.innerText = 'Enviar'
-            $("#modal-container").style.display = "block"
-            resetForm(form)
-            $("#btn-close-modal").addEventListener("click", () => {
-                $("#modal-container").style.display = "none"
-            })
+            btn.innerText = 'Enviar';
+            resetForm(form);
+            // Muestra la alerta SweetAlert
+            Swal.fire({
+                title: '¡Enviado!',
+                text: 'Tu mensaje ha sido enviado correctamente.',
+                icon: 'success',
+                timer: 3000, // Tiempo en milisegundos
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer);
+                    toast.addEventListener('mouseleave', Swal.resumeTimer);
+                }
+            });
         }, (err) => {
-            btn.innerText = 'Enviar'
-            alert(JSON.stringify(err))
-        })
-    })
+            btn.innerText = 'Enviar';
+            alert(JSON.stringify(err));
+        });
+    });
+
     function resetForm(form) {
-        form.reset()
+        form.reset();
     }
-})
+});
 
 function checkLoginStatus() {
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
