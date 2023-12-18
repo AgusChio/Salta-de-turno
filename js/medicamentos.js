@@ -112,5 +112,4 @@ function logout() {
     checkLoginStatus();
 }
 
-// Asegúrate de llamar a checkLoginStatus cuando la ventana se cargue
 window.onload = checkLoginStatus;
