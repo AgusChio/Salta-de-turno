@@ -51,6 +51,10 @@
     ease-in-out 0.5s forwards;
 }
 
+.dropdown-item-noLogued{
+    white-space: wrap !important;
+}
+
 .navbar-dropdown .btn{
     padding: .5rem;
     font-size: .9rem;
