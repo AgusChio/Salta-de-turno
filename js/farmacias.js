@@ -25,6 +25,13 @@ function checkLoginStatus() {
     }
 }
 
+// farmacias
+const contenedorFarmacias = document.querySelector("#container-cards")
+const zone = document.querySelector("#zona")
+
+// cargar acordeon
+
+
 // Función para manejar el cierre de sesión
 function logout() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";

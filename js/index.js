@@ -118,7 +118,7 @@ const cargarFarmacias = (farmacias) => {
         card.innerHTML = `
             <img src="${imagen}" alt="imagen de farmacia"/>
             <div class="w-100">
-                <h2>${nombre}</h2>
+                <h2>Farmacia ${nombre}</h2>
                 ${alertPronto}
                 <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
                     <p><strong>Zona:</strong> ${Zona}</p>
