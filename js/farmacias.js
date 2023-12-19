@@ -4,6 +4,7 @@ function checkLoginStatus() {
     var logoutLink = document.getElementById('logout-link');
     var medicamentosLink = document.getElementById('medicamentos-link');
     var medicamentosDropdown = document.getElementById('medicamentos-dropdown');
+    var footerMedicamentosLinks = document.getElementById('footer-links-medicamentos');
 
     loginLink.style.display = isLoggedIn ? 'none' : 'block';
     logoutLink.style.display = isLoggedIn ? 'block' : 'none';
@@ -11,15 +12,24 @@ function checkLoginStatus() {
     if (isLoggedIn) {
         medicamentosLink.dataset.bsToggle = 'dropdown';
         medicamentosDropdown.innerHTML = `
-        <li><a class="dropdown-item" href="./medicamentos.html#free">Venta libre</a></li>
-        <li><a class="dropdown-item" href="./medicamentos.html#recipes">Venta bajo receta</a></li>
-        <li><a class="dropdown-item" href="./medicamentos.html#types-med">Tipos</a></li>
-        <li><a class="dropdown-item" href="./medicamentos.html#injectables">Inyectables</a></li>
-        <li><a class="dropdown-item" href="./medicamentos.html#plants">Plantas medicinales</a></li>
-        `;
+            <li><a class="dropdown-item" href="./pages/medicamentos.html#free">Venta libre</a></li>
+            <li><a class="dropdown-item" href="./pages/medicamentos.html#recipes">Venta bajo receta</a></li>
+            <li><a class="dropdown-item" href="./pages/medicamentos.html#types-med">Tipos</a></li>
+            <li><a class="dropdown-item" href="./pages/medicamentos.html#injectables">Inyectables</a></li>
+            <li><a class="dropdown-item" href="./pages/medicamentos.html#plants">Plantas medicinales</a></li>`; // Contenido para usuarios logueados
+        footerMedicamentosLinks.innerHTML = `
+            <li><a href="./pages/medicamentos.html#free" class="text-decoration-none">Venta libre</a></li>
+            <li><a href="./pages/medicamentos.html#recipes" class="text-decoration-none">Venta bajo receta</a></li>
+            <li><a href="./pages/medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
+            <li><a href="./pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
+            <li><a href="./pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
+        `; 
     } else {
         medicamentosLink.dataset.bsToggle = 'dropdown';
         medicamentosDropdown.innerHTML = `
+            <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
+        `;
+        footerMedicamentosLinks.innerHTML = `
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
     }

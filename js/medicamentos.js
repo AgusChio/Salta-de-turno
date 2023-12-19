@@ -218,6 +218,17 @@ function checkLoginStatus() {
     }
 }
 
+//Evita que se pueda acceder a la página de medicamentos si no se está logueado
+window.addEventListener('load', function() {
+    var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
+
+    var path = window.location.pathname;
+
+    if (path.endsWith('/medicamentos.html') && !isLoggedIn) {
+        window.location.href = '/pages/form-login.html';
+    }
+});
+
 function logout() {
     document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     checkLoginStatus();
