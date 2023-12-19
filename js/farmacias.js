@@ -26,88 +26,98 @@ function checkLoginStatus() {
 }
 
 // farmacias
-const contenedorAcordeon = document.querySelector(".accordion")
-const acordeonFarmacias = document.querySelectorAll(".accordion-collapse")
-
-
-function cargarFarmacias() {
-    return fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('HTTP error: ' + response.status)
-            }
-            return response.json()
-        })
-        .then(apiData => {
-            if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
-                throw new Error('Los datos recibidos no son válidos')
-            }
-            return apiData.farmacias
-        })
-        .catch(error => {
-            console.error("Hubo un problema con la operación: " + error.message)
-        })
+async function cargarFarmacias() {
+    try {
+        const response = await fetch('https://api-salta-de-turno.onrender.com/api/farmacias');
+        if (!response.ok) {
+            throw new Error('HTTP error: ' + response.status);
+        }
+        const apiData = await response.json();
+        if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
+            throw new Error('Los datos recibidos no son válidos');
+        }
+        return apiData.farmacias;
+    } catch (error) {
+        console.error("Hubo un problema con la operación: " + error.message);
+    }
 }
 
-// cargar acordeon
-const cargarAcordeon = (farmacias) => {
-    acordeonFarmacias.innerHTML = ''
-    const todasFarmacias = farmacias
-    acordeonFarmacias.forEach(farmacia => {
-        todasFarmacias.forEach(({nombre, direccion, telefono, ubicacion, horario, imagen, Zona}) =>{
-            const horarioHoy = obtenerHorarioDeCierre(horario)
-            const acordeon = document.createElement("div")
-            acordeon.className = "accordion-body"
-            if (!imagen)
-                imagen = "../assets/images/img-card-farmacia.png"
-            horarioHoy.cierrePronto ?
-                alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
-                :
-                alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
+async function cargarAcordeonFarmacias() {
+    try {
+        const farmacias = await cargarFarmacias();
+        if (farmacias) {
+            document.querySelectorAll('.container-cards').forEach(container => container.innerHTML = '');
 
-            acordeon.innerHTML =  `
-                <div id="container-cards" class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
-                <img src="${imagen}" alt="imagen de farmacia"/>
+            farmacias.forEach(farmacia => {
+                if (farmacia.Zona) { // Comprobar que la propiedad Zona existe
+                    const card = document.createElement('div');
+                    card.className = 'card-farmacia';
+                    card.innerHTML = `
+                        <img src="${farmacia.imagen || '../assets/images/img-card-farmacia.png'}" />
+                        <div>
+                            <h2>${farmacia.nombre}</h2>
+                            <div class="w-100 d-flex flex-column justify-content-center text-start">
+                                <p><strong>Dirección:</strong> ${farmacia.direccion}</p>
+                                <p><strong>Cierra:</strong> ${obtenerHorarioDeCierre(farmacia.horario).cierre}</p>
+                            </div>
+                            <div class="container-buttons w-100 mt-3 d-flex justify-content-between">
+                                <a href="#" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
+                                <a href="#" class="button-map fw-bold text-decoration-none rounded-3">Ver mapa</a>
+                            </div>
+                        </div>`;
 
-                <div class="w-100">
-                    <h2>Farmacia ${nombre}</h2>
-                    ${alertPronto}
-                    <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                        <p><strong>Zona:</strong> ${Zona}</p>
-                        <p><strong>Dirección:</strong> ${direccion}</p>
-                        <p><strong>Horarios:</strong> ${horario}</p>
-                    </div>
-                    <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                        <a href="${telefono}" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                        <a href="${ubicacion}" target="__BLANK" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                    </div>
-                </div>`
-            acordeonFarmacias.appendChild(acordeon)
-        })
-
-    })
+                    const containerId = `container-zona-${farmacia.Zona.toLowerCase()}`;
+                    const container = document.getElementById(containerId);
+                    if (container) {
+                        container.appendChild(card);
+                    }
+                }
+            });
+        }
+    } catch (error) {
+        console.error("Error al cargar farmacias en el acordeón: ", error);
+    }
 }
 
-// filtro por zona
-// const filtroZona = (data) =>{
-//     const searchTerm = search.value.toLowerCase()
 
-//     if(zona.value === 'Zona' && searchTerm === '') {
-//         cargarAcordeon();
-//     }
-// }
+function obtenerHorarioDeCierre(horario) {
+    const ahora = new Date();
+    const diaSemana = ahora.getDay();
+    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
 
-function cargarAcordeonyFiltro() {
-    cargarFarmacias()
-    .then(farmaciasData => {
-        // filtroZona(farmaciasData)
-        // zona.addEventListener("change", () => filtroZona(farmaciasData))
-        cargarAcordeon(farmaciasData)
-    })
-    .catch(error => {
-        console.error("Error durante la carga de datos:", error)
-    })
+    let cierreHoy, cierrePronto = false;
+
+    try {
+        if (esFinDeSemana) {
+            cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')]
+        } else {
+            cierreHoy = horario.semana.cierre;
+        }
+
+        if (cierreHoy === '00:00') {
+            cierreHoy = '23:59'
+        }
+
+        const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
+        const horaCierre = horasCierre + minutosCierre / 60;
+        const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
+
+        if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
+            cierrePronto = true;
+        }
+    } catch (error) {
+        return {
+            cierre: 'ABIERTO 24 HORAS',
+            cierrePronto: false
+        }
+    }
+
+    return {
+        cierre: cierreHoy,
+        cierrePronto: cierrePronto
+    }
 }
+
 
 function obtenerNombreDia(fecha) {
     const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
@@ -176,8 +186,8 @@ function cargarCronogramaParaMesActual() {
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarCronogramaParaMesActual();
-    cargarAcordeonyFiltro();
-
+    cargarAcordeonFarmacias(); // Añadir esta línea
+    checkLoginStatus();
 });
 
 
