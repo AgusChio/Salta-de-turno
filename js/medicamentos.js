@@ -97,7 +97,8 @@ function cargarMedicamentos(){
 }
 
 const cargarMedicamentos = (medicamentos) => {
-    contenedorMedicamentos.innerHTML
+    contenedorMedicamentos.innerHTML = ''
+    medicamentos.forEach(({nombreComercial, principioActivo, presentacion, cantidad, codigoNacional, tipoMedicamento, categoria }))
 
 }
 

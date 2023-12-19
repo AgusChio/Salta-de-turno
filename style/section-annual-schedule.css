@@ -23,10 +23,12 @@
     padding: 1rem;
     border-bottom: 4px solid var(--bg-thead-table);
 }
-.box-mes a:hover,.M-actual{
+.box-mes a:hover,
+.active-month{
     background-color: var(--table-color);
     color: #FFFFFF !important;
 }
+
 .tabla-anual{
     color: #FFFFFF;
     background-color: var(--table-color);
@@ -103,11 +105,11 @@
     }
 }
 
-@media (min-width: 736px){
+/* @media (min-width: 736px){
     .tabla-anual::-webkit-scrollbar{
         display: none;
     }
-}
+} */
 
 @media (max-width: 440px) {
     .box-mes{
