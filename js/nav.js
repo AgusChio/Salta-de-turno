@@ -32,7 +32,7 @@ $('.icon-settings').addEventListener('click', () => {
             localStorage.setItem('modo', 'oscuro')
         }else{ 
             $('.switch__label').innerText = 'Modo Claro'
-            document.body.classList.remove('dark-mode')
+            document.body.classList.remove('dark-mode') 
             localStorage.setItem('modo', 'claro')
         }
     })

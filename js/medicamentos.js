@@ -78,21 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // medicamentos venta libre/venta bajo receta
 function cargarMedicamentos(){
-    fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
+    return fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
     .then(response => {
         if (!response.ok) {
             throw new Error("HTTP error" + response.status);
         }
         return response.json();
     })
-    .then(data => {
-        console.log(data);
+    .then(apiData => {
+        if(!apiData.medicamentos || !Array.isArray(apiData.medicamentos)){
+            throw new Error('Los datos recibidos no son validos')
+        }
+        return apiData.medicamentos
     })
     .catch(error => {
         console.error(error);
     })
 }
 
+const cargarMedicamentos = (medicamentos) => {
+    contenedorMedicamentos.innerHTML
+
+}
 
 
 function checkLoginStatus() {
