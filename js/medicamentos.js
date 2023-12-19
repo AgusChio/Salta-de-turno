@@ -86,16 +86,114 @@ function cargarMedicamentos(){
         if(!apiData.medicamentos || !Array.isArray(apiData.medicamentos)){
             throw new Error('Los datos recibidos no son validos')
         }
-        const cargarMedicamentos = (medicamentos) => {
-            contenedorMedicamentos.innerHTML = ''
-            medicamentos.forEach(({nombreComercial, principioActivo, presentacion, cantidad, codigoNacional, tipoMedicamento, categoria }))
-        
-        }
+        const contenedorVentaLibre = document.getElementById("contenedor-venta-libre");
+        const contenedorBajoReceta = document.getElementById("contenedor-bajo-receta");
+
+        apiData.medicamentos.forEach(medicamento => {
+            const card = document.createElement("div");
+            card.className = "medicineBox";
+            card.innerHTML = `
+            <div class="topBox"></div>
+            <div class="frontBox | d-flex | justify-content-between">
+            <div class="d-flex | w-100 | justify-content-between | textContent">
+                <p><strong>${medicamento.codigoNacional}</strong></p>
+                <p>${medicamento.presentacion + " " + medicamento.cantidad }</p>
+            </div>
+            <div class=" d-flex | flex-column | w-100 | nameContent">
+                <h4>${medicamento.nombreComercial}</h4>
+                <p class="fw-regular line-height-medicamento">${medicamento.principioActivo}</p>
+            </div>
+            <div class=" d-flex | w-100 | justify-content-between | textContent">
+                <p>${medicamento.descripcion}</p>
+            </div>
+        </div>
+                <div class="rightBox"></div>
+            `;
+
+            if (medicamento.categoria === 'Venta libre') {
+                contenedorVentaLibre.appendChild(card);
+            } else if (medicamento.categoria === 'Bajo receta') {
+                contenedorBajoReceta.appendChild(card);
+            }
+        });
     })
     .catch(error => {
         console.error(error);
     })
 }
+
+function cargarMedicamentosVentaLibre(apiData) {
+    const contenedorVentaLibre = document.getElementById("contenedor-venta-libre");
+    apiData.medicamentos.filter(m => m.categoria === 'Venta libre').forEach(medicamento => {
+        const card = document.createElement("div");
+            card.className = "medicineBox";
+            card.innerHTML = `
+            <div class="topBox"></div>
+            <div class="frontBox | d-flex | justify-content-between">
+            <div class="d-flex | w-100 | justify-content-between | textContent">
+                <p><strong>${medicamento.codigoNacional}</strong></p>
+                <p>${medicamento.presentacion + " " + medicamento.cantidad }</p>
+            </div>
+            <div class=" d-flex | flex-column | w-100 | nameContent">
+                <h4>${medicamento.nombreComercial}</h4>
+                <p class="fw-regular line-height-medicamento">${medicamento.principioActivo}</p>
+            </div>
+            <div class=" d-flex | w-100 | justify-content-between | textContent">
+                <p class="descripcion-medicamento">${medicamento.descripcion}</p>
+            </div>
+        </div>
+                <div class="rightBox"></div>
+            `;
+        contenedorVentaLibre.appendChild(card);
+    });
+}
+
+function cargarMedicamentosBajoReceta(apiData) {
+    const contenedorBajoReceta = document.getElementById("contenedor-bajo-receta");
+    apiData.medicamentos.filter(m => m.categoria === 'Bajo receta').forEach(medicamento => {
+        const card = document.createElement("div");
+        card.className = "MedBajoRec medicineBox";
+        card.innerHTML = `
+        <div class="text-betw textContent">
+            <p><strong>${medicamento.atc}</strong></p>
+            <p>${medicamento.presentacion + " " + medicamento.cantidad }</p>
+        </div>
+
+        <div class="nameContent">
+            <h4>${medicamento.nombreComercial}</h4>
+            <p>${medicamento.principioActivo}</p>
+        </div>
+
+        <div class="text-betw textContent">
+        <p class="descripcion-medicamento">${medicamento.descripcion}</p>
+        </div>
+    </div>
+        `;
+        contenedorBajoReceta.appendChild(card);
+    });
+}
+
+function cargarMedicamentos(){
+    fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("HTTP error" + response.status);
+        }
+        return response.json();
+    })
+    .then(apiData => {
+        if(!apiData.medicamentos || !Array.isArray(apiData.medicamentos)){
+            throw new Error('Los datos recibidos no son validos')
+        }
+        cargarMedicamentosVentaLibre(apiData);
+        cargarMedicamentosBajoReceta(apiData);
+    })
+    .catch(error => {
+        console.error(error);
+    })
+}
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarPlantas()

@@ -5,6 +5,27 @@ body{
     --border-size: 1.5px;
 }
 
+.line-height-medicamento{
+    line-height: 1.5rem;
+}
+
+#contenedor-venta-libre {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+#contenedor-bajo-receta {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+.descripcion-medicamento {
+    max-height: 90px; 
+    overflow-y: auto;
+    margin: 0;
+    padding: 5px;
+}
+
 /* vista de la lista de cajas */
 .list-medicineBox{
     max-width: 1350px;
@@ -63,5 +84,10 @@ body{
     font-size: .75rem;
 }
 
-
+@media screen and (max-width: 768px){
+    .descripcion-medicamento {
+        max-height: 50px; 
+    }
+    
+}
 
