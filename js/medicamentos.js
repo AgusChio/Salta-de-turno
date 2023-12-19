@@ -71,14 +71,11 @@ function cargarPlantas() {
         })
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    cargarPlantas()
-    cargarInyectables()
-})
+
 
 // medicamentos venta libre/venta bajo receta
 function cargarMedicamentos(){
-    return fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
+    fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
     .then(response => {
         if (!response.ok) {
             throw new Error("HTTP error" + response.status);
@@ -89,18 +86,22 @@ function cargarMedicamentos(){
         if(!apiData.medicamentos || !Array.isArray(apiData.medicamentos)){
             throw new Error('Los datos recibidos no son validos')
         }
-        return apiData.medicamentos
+        const cargarMedicamentos = (medicamentos) => {
+            contenedorMedicamentos.innerHTML = ''
+            medicamentos.forEach(({nombreComercial, principioActivo, presentacion, cantidad, codigoNacional, tipoMedicamento, categoria }))
+        
+        }
     })
     .catch(error => {
         console.error(error);
     })
 }
 
-const cargarMedicamentos = (medicamentos) => {
-    contenedorMedicamentos.innerHTML = ''
-    medicamentos.forEach(({nombreComercial, principioActivo, presentacion, cantidad, codigoNacional, tipoMedicamento, categoria }))
-
-}
+document.addEventListener("DOMContentLoaded", () => {
+    cargarPlantas()
+    cargarInyectables()
+    cargarMedicamentos()
+})
 
 
 function checkLoginStatus() {

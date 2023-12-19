@@ -210,6 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
 function checkLoginStatus() {
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
     var loginLink = document.getElementById('login-link');

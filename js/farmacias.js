@@ -26,8 +26,9 @@ function checkLoginStatus() {
 }
 
 // farmacias
-const contenedorFarmacias = document.querySelector("#container-cards")
-const zona = document.querySelectorAll("#zona")
+const contenedorAcordeon = document.querySelector(".accordion")
+const acordeonFarmacias = document.querySelectorAll(".accordion-collapse")
+
 
 function cargarFarmacias() {
     return fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
@@ -52,55 +53,61 @@ function cargarFarmacias() {
 const cargarAcordeon = (farmacias) => {
     acordeonFarmacias.innerHTML = ''
     const todasFarmacias = farmacias
-    todasFarmacias.forEach(({nombre, direccion, telefono, ubicacion, horario, imagen, Zona}) =>{
-        const acordeon = document.createElement("div")
-        acordeon.className = "accordion"
-        if (!imagen)
-        imagen = "../assets/images/img-card-farmacia.png"
-        acordeon.innerHTML =  `
-        <div class="accordion-body">
-            <div id="container-cards" class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
-            <img src="${imagen}" alt="imagen de farmacia"/>
-            <div class="w-100">
-                <h2>Farmacia ${nombre}</h2>
-                <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
-                    <p><strong>Zona:</strong> ${Zona}</p>
-                    <p><strong>Dirección:</strong> ${direccion}</p>
-                    <p><strong>Horarios:</strong> ${horario}</p>
-                </div>
-                <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                    <a href="${telefono}" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
-                    <a href="${ubicacion}" target="__BLANK" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
-                </div>
-            </div>
-        </div> `
-        acordeonFarmacias.appendChild(acordeon)
+    acordeonFarmacias.forEach(farmacia => {
+        todasFarmacias.forEach(({nombre, direccion, telefono, ubicacion, horario, imagen, Zona}) =>{
+            const horarioHoy = obtenerHorarioDeCierre(horario)
+            const acordeon = document.createElement("div")
+            acordeon.className = "accordion-body"
+            if (!imagen)
+                imagen = "../assets/images/img-card-farmacia.png"
+            horarioHoy.cierrePronto ?
+                alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
+                :
+                alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
+
+            acordeon.innerHTML =  `
+                <div id="container-cards" class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
+                <img src="${imagen}" alt="imagen de farmacia"/>
+
+                <div class="w-100">
+                    <h2>Farmacia ${nombre}</h2>
+                    ${alertPronto}
+                    <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
+                        <p><strong>Zona:</strong> ${Zona}</p>
+                        <p><strong>Dirección:</strong> ${direccion}</p>
+                        <p><strong>Horarios:</strong> ${horario}</p>
+                    </div>
+                    <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
+                        <a href="${telefono}" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                        <a href="${ubicacion}" target="__BLANK" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
+                    </div>
+                </div>`
+            acordeonFarmacias.appendChild(acordeon)
+        })
+
     })
 }
 
 // filtro por zona
-const filtroZona = (data) =>{
-    const searchTerm = search.value.toLowerCase()
+// const filtroZona = (data) =>{
+//     const searchTerm = search.value.toLowerCase()
 
-    if(zona.value === 'Zona' && searchTerm === '') {
-        cargarAcordeon();
-    }
-}
+//     if(zona.value === 'Zona' && searchTerm === '') {
+//         cargarAcordeon();
+//     }
+// }
 
 function cargarAcordeonyFiltro() {
     cargarFarmacias()
     .then(farmaciasData => {
-        filtroZona(farmaciasData)
-        zona.addEventListener("change", () => filtroZona(farmaciasData))
+        // filtroZona(farmaciasData)
+        // zona.addEventListener("change", () => filtroZona(farmaciasData))
+        cargarAcordeon(farmaciasData)
     })
     .catch(error => {
         console.error("Error durante la carga de datos:", error)
     })
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    cargarAcordeonyFiltro();
-});
 
 function obtenerNombreDia(fecha) {
     const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
@@ -110,7 +117,7 @@ function obtenerNombreDia(fecha) {
 function cargarCronogramaParaMes(mes) {
     const bodyTable = document.querySelector("#dias-zona");
 
-    cargarFarmaciasDeTurno()
+    cargarFarmacias()
         .then(farmacias => {
             bodyTable.innerHTML = '';
             const farmaciasActivas = farmacias.filter(({ estado }) => estado === "Activo");
@@ -169,6 +176,8 @@ function cargarCronogramaParaMesActual() {
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarCronogramaParaMesActual();
+    cargarAcordeonyFiltro();
+
 });
 
 
