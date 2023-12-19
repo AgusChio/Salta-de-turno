@@ -1,5 +1,5 @@
 .container-header{
-    background-image: url('../assets/images/back-pharmacy.png');
+    background-image: var(--img-pharmacy-start);
     background-size: cover;
 }
 .nav-pharmacy{
