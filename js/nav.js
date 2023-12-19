@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark-mode')
         $('#check').checked = true
         $('.switch__label').innerText = 'Modo Oscuro'
+        $("#imgArriba").setAttribute("src", "./assets/images/olas-oscuro-arriba.png")
     }
 })
 
@@ -29,10 +30,12 @@ $('.icon-settings').addEventListener('click', () => {
         if(e.target.checked){ 
             $('.switch__label').innerText = 'Modo Oscuro' 
             document.body.classList.add('dark-mode') 
+            $("#imgArriba").setAttribute("src", "./assets/images/olas-oscuro-arriba.png")
             localStorage.setItem('modo', 'oscuro')
         }else{ 
             $('.switch__label').innerText = 'Modo Claro'
-            document.body.classList.remove('dark-mode') 
+            document.body.classList.remove('dark-mode')
+            $("#imgArriba").setAttribute("src", "./assets/images/wave-white.png")
             localStorage.setItem('modo', 'claro')
         }
     })
