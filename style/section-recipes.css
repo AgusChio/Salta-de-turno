@@ -8,6 +8,17 @@
     justify-content: space-between;
     color: var(--text-color-box);
 }
+
+.MedVentaLibre{
+    background-image: url('../assets/images/img-medicamento-venta-libre.png');
+    background-size: 100% 100%;
+    padding: .7rem 2rem .7rem .7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-color-box);
+}
+
 .MedBajoRec div{
     width: 95%;
 }
@@ -17,4 +28,65 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-size: .75rem;
+}
+
+body{
+    background-color: var(--bg-color-main);
+}
+.sectionMedicineFree{
+    --border-size: 1.5px;
+}
+
+.line-height-medicamento{
+    line-height: 1.5rem;
+}
+
+#contenedor-venta-libre {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+#contenedor-bajo-receta {
+    max-height: 400px; 
+    overflow-y: auto;
+}
+
+.descripcion-medicamento {
+    max-height: 90px; 
+    overflow-y: auto;
+    margin: 0;
+    padding: 5px;
+}
+
+/* vista de la lista de cajas */
+.list-medicineBox{
+    max-width: 1350px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.medicineBox{
+    width: max(300px, 25vmax);
+    height: max(230px, 13vmax);
+    position: relative;
+}
+
+.nameContent{
+    line-height: 5px;
+}
+
+.nameContent h4{
+    font-weight: 600;
+}
+
+@media screen and (max-width: 768px){
+    .descripcion-medicamento {
+        max-height: 50px; 
+    }
+    
 }

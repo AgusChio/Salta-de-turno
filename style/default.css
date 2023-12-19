@@ -37,13 +37,7 @@
 /* Estilos Footer */
 @import url("section-footer.css");
 
-/* Estilos seccion medicamentos de venta libre */
-@import url("component-medicine-box.css");
-
-/* Estilos medicamentos de venta libre */
-@import url('component-medicine-box.css');
-
-/* Estilos medicamentos bajo recetas */
+/* Estilos medicamentos bajo recetas y venta libre */
 @import url('section-recipes.css');
 
 /* Estilos tipos de medicamentos */
