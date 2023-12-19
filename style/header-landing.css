@@ -21,13 +21,7 @@
     border: 2px solid var(--color-secondary);
     transition: all 0.3s ease-in-out;
 }
-#imgAbajo{
-    content: var(--img-ola-index-arriba);
-}
 
-#imgArriba{
-    content: var(--img-ola-index-abajo)
-}
 
 @media (max-width: 900px) {
     .container-image-text-header {
