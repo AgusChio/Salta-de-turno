@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const check = document.querySelector(('#check'))
         const switchLabel = document.querySelector(('.switch__label'))
         const imgArriba = $$("#imgArriba")
-        if (imgArriba && check && switchLabel) {
+        const imgAbajo = $$("#imgAbajo")
+        if (imgArriba && imgAbajo && check && switchLabel) {
             switchLabel.innerText = 'Modo Oscuro'
             check.checked = true
             imgArriba.setAttribute("src", "./assets/images/olas-oscuro-arriba.png")
+            imgAbajo.setAttribute("src", "./assets/images/olas-oscuro-abajo.png")
         } 
     }
 })
@@ -39,22 +41,29 @@ if ($$('.icon-settings')) {
                 $$('.switch__label').innerText = 'Modo Oscuro' 
                 document.body.classList.add('dark-mode') 
                 const imgArriba = $$("#imgArriba");
-                if (imgArriba) {
+                const imgAbajo = $$("#imgAbajo");
+                if (imgArriba, imgAbajo) {
                     imgArriba.setAttribute("src", "./assets/images/olas-oscuro-arriba.png");
+                    imgAbajo.setAttribute("src", "./assets/images/olas-oscuro-abajo.png");
                 }
                 localStorage.setItem('modo', 'oscuro')
             }else{ 
                 $$('.switch__label').innerText = 'Modo Claro'
                 document.body.classList.remove('dark-mode')
                 const imgArriba = $$("#imgArriba");
-                if (imgArriba) {
+                const imgAbajo = $$("#imgAbajo");
+                if (imgArriba, imgAbajo) {
                     imgArriba.setAttribute("src", "./assets/images/wave-white.png");
+                    imgAbajo.setAttribute("src","./assets/images/wave-blue.png");
                 }
                 localStorage.setItem('modo', 'claro')
             }
         })
     })
 }
+
+
+
 
 if ($$('.close-settings')) {
     $$('.close-settings').addEventListener('click', () => {

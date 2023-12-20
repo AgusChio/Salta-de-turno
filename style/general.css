@@ -34,6 +34,7 @@ body {
     --bg-color-g-2: #2984FF;
     --bg-nav-scroll: #ffffffe9;
     --color-shadow: rgba(3, 65, 114, 0.20);
+    --img-pharmacy: url('../assets/images/back-pharmacy.png')
 }
 
 h1 {
@@ -141,6 +142,7 @@ nav .btn {
     --bg-color-g-2: #4674B7;
     --bg-nav-scroll: #113048e9;
     --color-shadow: rgba(161, 161, 161, 0.2);
+    --img-pharmacy: url('../assets/images/Imagen-fondo-inicio-oscuro.png');
 }
 
 @keyframes ldio-8ty988q2u8f {
