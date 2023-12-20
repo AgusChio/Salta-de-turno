@@ -95,7 +95,7 @@ $("#form-login").addEventListener("submit", async (e) => {
     checkField("#email-login", ".email-error", validateEmail);
 
     if (Array.from($(".container-form-login .invalid")).length === 0) {
-        const email = $("#email-login").value;
+        const email = $("#email-login").value.toLowerCase();
         const password = $("#password").value;
 
         try {
@@ -117,7 +117,7 @@ $("#form-login").addEventListener("submit", async (e) => {
                 timer: 3000,
                 confirmButtonText: 'Ok'
             }).then(() => {
-                window.location.href = '/index.html'; // Reemplaza con tu URL de destino
+                window.location.href = '/index.html';
             });
         } catch (error) {
             Swal.fire({
@@ -133,7 +133,6 @@ $("#form-login").addEventListener("submit", async (e) => {
 $("#form-signup").addEventListener("submit", async (e) => {
     e.preventDefault();
     checkField("#name", ".name-error", validateEmpty, true);
-    checkField("#password-signup", ".password-error", validatePassword);
     checkField("#email-signup", ".email-error", validateEmail);
     checkPasswordsMatch();
 
@@ -161,7 +160,7 @@ $("#form-signup").addEventListener("submit", async (e) => {
 
     if (Array.from($(".container-form-signUp")).length === 0) {
         const name = $("#name").value;
-        const email = $("#email-signup").value;
+        const email = $("#email-signup").value.toLowerCase(); 
         const password = $("#password-signup").value;
         const apiKey = "";
         const rol = "user";

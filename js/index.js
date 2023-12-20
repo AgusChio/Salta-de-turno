@@ -169,6 +169,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function checkLoginStatus() {
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
+    console.log("Está logueado:", isLoggedIn);
+    console.log("Cookie 'username':", document.cookie.split('; ').find(row => row.startsWith('username=')));
     var loginLink = document.getElementById('login-link');
     var logoutLink = document.getElementById('logout-link');
     var medicamentosLink = document.getElementById('medicamentos-link');
