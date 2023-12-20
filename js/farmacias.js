@@ -6,32 +6,38 @@ function checkLoginStatus() {
     var medicamentosDropdown = document.getElementById('medicamentos-dropdown');
     var footerMedicamentosLinks = document.getElementById('footer-links-medicamentos');
 
-    loginLink.style.display = isLoggedIn ? 'none' : 'block';
-    logoutLink.style.display = isLoggedIn ? 'block' : 'none';
+    if (loginLink && logoutLink && medicamentosLink && medicamentosDropdown && footerMedicamentosLinks) {
+        var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
 
-    if (isLoggedIn) {
-        medicamentosLink.dataset.bsToggle = 'dropdown';
-        medicamentosDropdown.innerHTML = `
+        loginLink.style.display = isLoggedIn ? 'none' : 'block';
+        logoutLink.style.display = isLoggedIn ? 'block' : 'none';
+    }
+
+    if (medicamentosLink && medicamentosDropdown && footerMedicamentosLinks) {
+        if (isLoggedIn) {
+            medicamentosLink.dataset.bsToggle = 'dropdown';
+            medicamentosDropdown.innerHTML = `
             <li><a class="dropdown-item" href="./pages/medicamentos.html#free">Venta libre</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#recipes">Venta bajo receta</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#types-med">Tipos</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#injectables">Inyectables</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#plants">Plantas medicinales</a></li>`; // Contenido para usuarios logueados
-        footerMedicamentosLinks.innerHTML = `
+            footerMedicamentosLinks.innerHTML = `
             <li><a href="./pages/medicamentos.html#free" class="text-decoration-none">Venta libre</a></li>
             <li><a href="./pages/medicamentos.html#recipes" class="text-decoration-none">Venta bajo receta</a></li>
             <li><a href="./pages/medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
             <li><a href="./pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
             <li><a href="./pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
-        `; 
-    } else {
-        medicamentosLink.dataset.bsToggle = 'dropdown';
-        medicamentosDropdown.innerHTML = `
+        `;
+        } else {
+            medicamentosLink.dataset.bsToggle = 'dropdown';
+            medicamentosDropdown.innerHTML = `
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
-        footerMedicamentosLinks.innerHTML = `
+            footerMedicamentosLinks.innerHTML = `
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
+        }
     }
 }
 
@@ -103,7 +109,7 @@ async function cargarAcordeonFarmacias() {
                     let alertPronto = ''
                     horarioHoy.cierrePronto ?
                         alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
-                    :
+                        :
                         alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
                     card.className = 'card-farmacia';
                     card.innerHTML = `
@@ -240,9 +246,20 @@ function cargarCronogramaParaMesActual() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    cargarCronogramaParaMesActual();
-    cargarAcordeonFarmacias();
-    checkLoginStatus();
+    mostrarLoader();
+
+    Promise.all([
+        cargarCronogramaParaMesActual(),
+        cargarAcordeonFarmacias(),
+        checkLoginStatus()
+    ])
+        .then(() => {
+            setTimeout(ocultarLoader, 2000);
+        })
+        .catch((error) => {
+            console.error("Error durante la carga de datos:", error);
+            ocultarLoader();
+        });
 });
 
 
@@ -254,3 +271,23 @@ function logout() {
 }
 
 window.onload = checkLoginStatus;
+
+function mostrarLoader() {
+    const contenedorFarmacias = document.querySelector('#contenedor-loader');
+    const loaderHTML = `
+        <div class="loadingio-spinner-ripple-xm2ty3k97d">
+            <div class="ldio-8ty988q2u8f">
+                <div></div>
+                <div></div>
+            </div>
+        </div>`;
+    if (contenedorFarmacias) {
+        contenedorFarmacias.innerHTML = loaderHTML;
+    }
+}
+function ocultarLoader() {
+    const loader = document.querySelector('.loadingio-spinner-ripple-xm2ty3k97d');
+    if (loader) {
+        loader.remove();
+    }
+}

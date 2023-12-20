@@ -12,22 +12,26 @@ const currentDay = today.getDate()
 const currentYear = today.getFullYear()
 
 function cargarFarmaciasDeTurno() {
-    return fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
+    mostrarLoader();
+    return new Promise(resolve => setTimeout(resolve, 2000)) 
+    .then(() => fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
         .then(response => {
             if (!response.ok) {
-                throw new Error('HTTP error: ' + response.status)
+                throw new Error('HTTP error: ' + response.status);
             }
-            return response.json()
+            return response.json();
         })
         .then(apiData => {
             if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
-                throw new Error('Los datos recibidos no son válidos')
+                throw new Error('Los datos recibidos no son válidos');
             }
-            return apiData.farmacias
+            setTimeout(ocultarLoader, 2000);
+            return apiData.farmacias;
         })
         .catch(error => {
-            console.error("Hubo un problema con la operación: " + error.message)
-        })
+            setTimeout(ocultarLoader, 2000);
+            console.error("Hubo un problema con la operación: " + error.message);
+        }));
 }
 
 
@@ -214,3 +218,21 @@ function logout() {
 }
 
 window.onload = checkLoginStatus;
+
+function mostrarLoader() {
+    const loaderHTML = `
+    <div class="loadingio-spinner-ripple-xm2ty3k97d">
+        <div class="ldio-8ty988q2u8f">
+            <div></div>
+            <div></div>
+        </div>
+    </div>`;
+    contenedorFarmacias.innerHTML = loaderHTML;
+}
+
+function ocultarLoader() {
+    const loader = document.querySelector('.loadingio-spinner-ripple-tpkdqvqcrsb');
+    if (loader) {
+        loader.remove();
+    }
+}

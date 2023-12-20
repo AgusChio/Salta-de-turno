@@ -185,22 +185,23 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("No se encontró el elemento 'search-input-medicamento-bajo-receta'");
     }
-});
-
-// Eventos de escucha para la búsqueda
-document.addEventListener("DOMContentLoaded", () => {
-    cargarMedicamentos();
 
     document.getElementById("search-input-medicamento-libre").addEventListener("input", buscarEnVentaLibre);
     document.getElementById("search-input-medicamento-bajo-receta").addEventListener("input", buscarBajoReceta);
 });
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    cargarPlantas()
-    cargarInyectables()
-    cargarMedicamentos()
-})
+document.addEventListener("DOMContentLoaded", async () => {
+    mostrarLoader();
+    try {
+        await Promise.all([cargarMedicamentos(), cargarPlantas(), cargarInyectables()]);
+        setTimeout(ocultarLoader, 2000);
+    } catch (error) {
+        console.error("Error durante la carga de datos:", error);
+        ocultarLoader();
+    }
+});
+
 
 
 function checkLoginStatus() {
@@ -225,3 +226,24 @@ function logout() {
 }
 
 window.onload = checkLoginStatus;
+
+function mostrarLoader() {
+    const contenedorLoader = document.querySelector('#contenedor-loader');
+    const loaderHTML = `
+        <div class="loadingio-spinner-ripple-xm2ty3k97d">
+            <div class="ldio-8ty988q2u8f">
+                <div></div>
+                <div></div>
+            </div>
+        </div>`;
+    if (contenedorLoader) {
+        contenedorLoader.innerHTML = loaderHTML;
+    }
+}
+
+function ocultarLoader() {
+    const loader = document.querySelector('.loadingio-spinner-ripple-xm2ty3k97d');
+    if (loader) {
+        loader.remove();
+    }
+}
