@@ -72,35 +72,47 @@ function cargarPlantas() {
 }
 
 
-
 // medicamentos venta libre/venta bajo receta
+let medicamentosVentaLibre = [];
+let medicamentosBajoReceta = [];
+
+// Función para cargar los medicamentos desde la API
 function cargarMedicamentos() {
     fetch('https://api-salta-de-turno.onrender.com/api/medicamentos')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("HTTP error" + response.status);
-        }
-        return response.json();
-    })
-    .then(apiData => {
-        if (!apiData.medicamentos || !Array.isArray(apiData.medicamentos)) {
-            throw new Error('Los datos recibidos no son válidos');
-        }
-        
-        const contenedorVentaLibre = document.getElementById("contenedor-venta-libre");
-        const contenedorBajoReceta = document.getElementById("contenedor-bajo-receta");
-
-        apiData.medicamentos.forEach(medicamento => {
-            const card = document.createElement("div");
-            card.className = "medicineBox"; 
-            if (medicamento.categoria === 'Venta libre') {
-                card.classList.add("MedVentaLibre");
-            } else if (medicamento.categoria === 'Bajo receta') {
-                card.classList.add("MedBajoRec");
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("HTTP error" + response.status);
             }
+            return response.json();
+        })
+        .then(apiData => {
+            if (!apiData.medicamentos || !Array.isArray(apiData.medicamentos)) {
+                throw new Error('Los datos recibidos no son válidos');
+            }
+
+            medicamentosVentaLibre = apiData.medicamentos.filter(m => m.categoria === 'Venta libre');
+            medicamentosBajoReceta = apiData.medicamentos.filter(m => m.categoria === 'Bajo receta');
+
+            renderizarMedicamentos(medicamentosVentaLibre, "contenedor-venta-libre");
+            renderizarMedicamentos(medicamentosBajoReceta, "contenedor-bajo-receta");
+        })
+        .catch(error => {
+            console.error("Hubo un problema con la operación fetch: " + error.message);
+        });
+}
+
+// Función para renderizar medicamentos en el contenedor correspondiente
+function renderizarMedicamentos(medicamentos, contenedorId) {
+    const contenedor = document.getElementById(contenedorId);
+    contenedor.innerHTML = '';
+
+    if (medicamentos.length > 0) {
+        medicamentos.forEach(medicamento => {
+            const card = document.createElement("div");
+            card.className = "medicineBox " + (medicamento.categoria === 'Venta libre' ? "MedVentaLibre" : "MedBajoRec");
             card.innerHTML = `
                 <div class="text-betw">
-                    <p><strong>${medicamento.atc || medicamento.codigoNacional}</strong></p>
+                    <p class="text-start m-0"><strong>${medicamento.atc || medicamento.codigoNacional}</strong></p>
                     <p class="text-end m-0">${medicamento.presentacion + " " + medicamento.cantidad}</p>
                 </div>
                 <div class="nameContent">
@@ -111,18 +123,58 @@ function cargarMedicamentos() {
                     <p class="descripcion-medicamento">${medicamento.descripcion}</p>
                 </div>
             `;
-
-            if (medicamento.categoria === 'Venta libre') {
-                contenedorVentaLibre.appendChild(card);
-            } else if (medicamento.categoria === 'Bajo receta') {
-                contenedorBajoReceta.appendChild(card);
-            }
+            contenedor.appendChild(card);
         });
-    })
-    .catch(error => {
-        console.error("Hubo un problema con la operación fetch: " + error.message);
-    });
+    } else {
+        mostrarMensajeNoEncontrado(contenedorId);
+    }
 }
+
+// Funciones de búsqueda
+function buscarEnVentaLibre() {
+    const textoBusqueda = document.getElementById("search-input-medicamento-libre").value;
+    if (textoBusqueda.trim() === '') {
+        renderizarMedicamentos(medicamentosVentaLibre, "contenedor-venta-libre");
+    } else {
+        const resultados = medicamentosVentaLibre.filter(m =>
+            m.nombreComercial.toLowerCase().includes(textoBusqueda.toLowerCase()) ||
+            m.principioActivo.toLowerCase().includes(textoBusqueda.toLowerCase())
+        );
+        renderizarMedicamentos(resultados, "contenedor-venta-libre");
+    }
+}
+
+function buscarBajoReceta() {
+    const textoBusqueda = document.getElementById("search-input-medicamento-bajo-receta").value;
+    if (textoBusqueda.trim() === '') {
+        renderizarMedicamentos(medicamentosBajoReceta, "contenedor-bajo-receta");
+    } else {
+        const resultados = medicamentosBajoReceta.filter(m =>
+            m.nombreComercial.toLowerCase().includes(textoBusqueda.toLowerCase()) ||
+            m.principioActivo.toLowerCase().includes(textoBusqueda.toLowerCase())
+        );
+        renderizarMedicamentos(resultados, "contenedor-bajo-receta");
+    }
+}
+
+// Función para mostrar mensaje de no encontrado
+function mostrarMensajeNoEncontrado(contenedorId) {
+    const contenedor = document.getElementById(contenedorId);
+    contenedor.innerHTML = `
+        <div class="mensaje-no-encontrado text-center">
+            <img src="../assets/images/img-notFound.png" alt="No encontrado">
+            <p>No se encontró el medicamento que buscaba.</p>
+        </div>
+    `;
+}
+
+// Eventos de escucha para la búsqueda
+document.addEventListener("DOMContentLoaded", () => {
+    cargarMedicamentos();
+
+    document.getElementById("search-input-medicamento-libre").addEventListener("input", buscarEnVentaLibre);
+    document.getElementById("search-input-medicamento-bajo-receta").addEventListener("input", buscarBajoReceta);
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {

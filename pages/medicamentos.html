@@ -119,10 +119,16 @@
                 <h3>Medicamentos de venta libre</h3>
                 <p>En esta sección, puedes encontrar los medicamentos de venta libre más comunes. Si no encuentras lo
                     que buscas, por favor, utiliza el botón para acceder al vademécum. </p>
-                <a href="https://www.vademecum.es/" target="_blank"
-                    class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-3 | fw-semibold | p-2 ">
-                    Vademécum
-                </a>
+                    <div class="d-flex | justify-content-between | p-2">
+                        <a href="https://www.vademecum.es/" target="_blank"
+                            class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-3 | fw-semibold | p-2 ">
+                            Vademécum
+                        </a>
+                        <form role="search">
+                            <input id="search-input-medicamento-libre" class="form-control" type="search" placeholder="Busca el medicamento"
+                                aria-label="Search">
+                        </form>
+                    </div>
             </header>
             <div class="list-medicineBox" id="contenedor-venta-libre"></div>
             </div>
@@ -133,10 +139,16 @@
                 <h3>Medicamentos bajo receta</h3>
                 <p>Esta sección está dedicada a los medicamentos que solo pueden obtenerse con una receta médica,
                     asegurando así un uso responsable y seguro bajo supervisión profesional</p>
-                    <a href="https://www.vademecum.es/" target="_blank"
-                    class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-3 | fw-semibold | p-2 ">
-                    Vademécum
-                </a>
+                    <div class="d-flex | justify-content-between | p-2">
+                        <a href="https://www.vademecum.es/" target="_blank"
+                            class="bbtn btn-pharmacy | text-decoration-none | text-center | rounded-3 | fw-semibold | p-2 ">
+                            Vademécum
+                        </a>
+                        <form role="search">
+                            <input id="search-input-medicamento-bajo-receta" class="form-control" type="search" placeholder="Busca el medicamento"
+                                aria-label="Search">
+                        </form>
+                    </div>
             </header>
             <div class="list-medicineBox" id="contenedor-bajo-receta">
             </div>
@@ -328,7 +340,7 @@
             </div>
         </article>
     </main>
-    
+
     <footer class="d-flex | flex-column">
         <div class="container-footer">
             <!-- Inicio 1-->
