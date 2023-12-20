@@ -182,7 +182,7 @@
 }
 
 .modal-content{
-    background-color: var(--bg-color-main) !important;
+    max-width: max(330px, 330vmax);
 }
 
 
