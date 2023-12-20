@@ -58,8 +58,8 @@
                         <fieldset class="mb-3 input-iconify input-email">
                             <span class="iconify iconify-left" data-icon="ic:round-alternate-email" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email-login" id="email-login"
-                                placeholder="Correo Electronico">
+                            <input type="text" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="email-login" id="email-login" placeholder="Correo Electronico">
                             <span class="error | email-error | none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un mail valido</p>
@@ -68,8 +68,8 @@
                         <fieldset class="mb-3 input-iconify">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
-                            <input type="password" class="w-100 | mt-4 | rounded-4" name="password" id="password"
-                                placeholder="Contraseña">
+                            <input type="password" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="password" id="password" placeholder="Contraseña">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password')"></span>
                         </fieldset>
@@ -83,7 +83,36 @@
                         </div>
                         <div
                             class="mt-4 | mb-2 | container-login-forgot-password | d-flex | justify-content-between | align-items-center">
-                            <a href="#" class="text-decoration-none | fs-6">¿Olvidaste tu contraseña?</a>
+                            <a href="#" class="text-decoration-none | fs-6" data-bs-toggle="modal"
+                                data-bs-target="#forgotPassword">¿Olvidaste tu contraseña?</a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="forgotPassword" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="forgotPasswordLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="forgotPasswordLabel">¿Olvidaste tu
+                                                contraseña?</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Actualmente, estamos desarrollando la funcionalidad de recuperación de
+                                            contraseña para mejorar tu experiencia. Lamentamos los inconvenientes que
+                                            esto pueda causar. Si has olvidado tu contraseña, te invitamos a
+                                            contactarnos a través de nuestra sección de contacto en la página web.
+                                            Apreciamos tu paciencia y comprensión, y te agradecemos por elegir nuestros
+                                            servicios. ¡Muchas gracias! </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-bs-dismiss="modal">Salir</button>
+                                                <button type="button" id="goToContactButton" class="btn btn-success">Ir a contactos</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit"
                                 id="login-button">Iniciar
                                 sesión</button>
@@ -101,8 +130,8 @@
                         <fieldset class="mb-3 input-iconify input-name">
                             <span class="iconify iconify-left" data-icon="mdi:card-account-details" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="name" id="name"
-                                placeholder="Nombre y Apellido">
+                            <input type="text" class="w-100 | mt-4 | rounded-4 | placeholder-login-register" name="name"
+                                id="name" placeholder="Nombre y Apellido">
                             <span class="error name-error none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un nombre válido</p>
@@ -111,8 +140,8 @@
                         <fieldset class="mb-3 input-iconify input-email">
                             <span class="iconify iconify-left" data-icon="ic:round-alternate-email" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email-signup" id="email-signup"
-                                placeholder="Correo Electronico">
+                            <input type="text" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="email-signup" id="email-signup" placeholder="Correo Electronico">
                             <span class="error | email-error | none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un mail valido</p>
@@ -121,8 +150,8 @@
                         <fieldset class="mb-3 input-iconify input-password">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
-                            <input type="password" class="w-100 mt-4 rounded-4" name="password-signup"
-                                id="password-signup" placeholder="Contraseña" min="8">
+                            <input type="password" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="password-signup" id="password-signup" placeholder="Contraseña" min="8">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password-signup')"></span>
                             <span class="error password-error none">
@@ -134,8 +163,9 @@
                         <fieldset class="mb-3 input-iconify input-password">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
-                            <input type="password" class="w-100 mt-4 rounded-4" name="password-signup-confirm"
-                                id="password-signup-confirm" placeholder="Confirmar contraseña">
+                            <input type="password" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="password-signup-confirm" id="password-signup-confirm"
+                                placeholder="Confirmar contraseña">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password-signup-confirm')"></span>
                             <span class="error password-match-error none">

@@ -219,6 +219,10 @@
     .main-login .container-login-forgot-password a{
         text-align: center;
     }
+
+    .placeholder-login-register::placeholder{
+        font-size: 12px !important;
+    }
 }
 
 @media screen and (min-width: 740px) and (max-width: 900px){

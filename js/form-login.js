@@ -258,3 +258,7 @@ function setRememberMeCookie() {
         document.cookie = "username=" + username + "; " + expires + "; path=/";
     }
 }
+
+document.getElementById('goToContactButton').addEventListener('click', function() {
+    window.location.href = '../index.html#contact';
+});
