@@ -168,6 +168,25 @@ function mostrarMensajeNoEncontrado(contenedorId) {
     `;
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    cargarMedicamentos();
+
+    const inputVentaLibre = document.getElementById("search-input-medicamento-libre");
+    const inputBajoReceta = document.getElementById("search-input-medicamento-bajo-receta");
+
+    if (inputVentaLibre) {
+        inputVentaLibre.addEventListener("input", buscarEnVentaLibre);
+    } else {
+        console.error("No se encontró el elemento 'search-input-medicamento-libre'");
+    }
+
+    if (inputBajoReceta) {
+        inputBajoReceta.addEventListener("input", buscarBajoReceta);
+    } else {
+        console.error("No se encontró el elemento 'search-input-medicamento-bajo-receta'");
+    }
+});
+
 // Eventos de escucha para la búsqueda
 document.addEventListener("DOMContentLoaded", () => {
     cargarMedicamentos();
@@ -185,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function checkLoginStatus() {
-    console.log('Cookie username:', document.cookie.includes('username='));
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
 
     var loginLink = document.getElementById('login-link');
