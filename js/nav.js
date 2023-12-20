@@ -16,14 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 })
 
-$$('.navbar-toggler').addEventListener('click', () => {
-    $('.navbar-dropdown').classList.remove('none')
-    $('.navbar-dropdown').classList.remove('hide')
-})
+if($$('.navbar-toggler') && $$('.navbar-dropdown')){
+    $$('.navbar-toggler').addEventListener('click', () => {
+        $$('.navbar-dropdown').classList.remove('none')
+        $$('.navbar-dropdown').classList.remove('hide')
+    })
+}
 
 $$('.btn-close').addEventListener('click', () => {
-    $('.navbar-dropdown').classList.add('none')
-    $('.navbar-dropdown').classList.add('hide')
+    $$('.navbar-dropdown').classList.add('none')
+    $$('.navbar-dropdown').classList.add('hide')
 })
 
 const settings = document.querySelector('.settings')
@@ -66,7 +68,7 @@ let linkElements = document.querySelectorAll('.nav-link')
 
 for(let i=0; i<linkElements.length-1; i++){
     linkElements[i].addEventListener('click', () => {
-        $('.active').classList.remove('active')
+        $$('.active').classList.remove('active')
         linkElements[i].classList.add('active')
     })
 }
@@ -79,7 +81,7 @@ document.addEventListener('scroll', () => {
         navbar.style.backgroundColor = 'var(--bg-nav-scroll)'
         if (window.innerWidth >= 992)
             navbarDrop.style.backgroundColor = 'transparent'
-    } else {
+    } else if(navbarDrop) {
         navbarDrop.style.backgroundColor = 'var(--bg-color-main)'
         navbar.style.backgroundColor = 'var(--bg-color-main)'
     }

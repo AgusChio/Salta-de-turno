@@ -30,43 +30,6 @@ function cargarFarmaciasDeTurno() {
         })
 }
 
-function obtenerHorarioDeCierre(horario) {
-    const ahora = new Date();
-    const diaSemana = ahora.getDay();
-    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
-
-    let cierreHoy, cierrePronto = false;
-
-    try {
-        if (esFinDeSemana) {
-            cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')]
-        } else {
-            cierreHoy = horario.semana.cierre;
-        }
-
-        if (cierreHoy === '00:00') {
-            cierreHoy = '23:59'
-        }
-
-        const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
-        const horaCierre = horasCierre + minutosCierre / 60;
-        const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
-
-        if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
-            cierrePronto = true;
-        }
-    } catch (error) {
-        return {
-            cierre: 'ABIERTO 24 HORAS',
-            cierrePronto: false
-        }
-    }
-
-    return {
-        cierre: cierreHoy,
-        cierrePronto: cierrePronto
-    }
-}
 
 const obtenerTurnos = (day, month, year, data) => {
     const deTurno24 = data.filter(({ abierto24Horas }) => abierto24Horas)
@@ -103,23 +66,16 @@ const mostrarMensajeNoResultados = () => {
 const cargarFarmacias = (farmacias) => {
     contenedorFarmacias.innerHTML = ''
     const farmaciasActivas = farmacias.filter(({ estado }) => estado === "Activo")
-    farmaciasActivas.forEach(({ nombre, direccion, telefono, ubicacion, horario, imagen, Zona }) => {
-        const horarioHoy = obtenerHorarioDeCierre(horario)
+    farmaciasActivas.forEach(({ nombre, direccion, telefono, ubicacion, imagen, Zona }) => {
         const card = document.createElement("div")
-        let alertPronto = ''
         card.className = "card-farmacia"
         if (!imagen)
             imagen = "../assets/images/img-card-farmacia.png"
-        horarioHoy.cierrePronto ?
-            alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
-            :
-            alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
 
         card.innerHTML = `
             <img src="${imagen}" alt="imagen de farmacia"/>
             <div class="w-100">
                 <h2>Farmacia ${nombre}</h2>
-                ${alertPronto}
                 <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
                     <p><strong>Zona:</strong> ${Zona}</p>
                     <p><strong>Dirección:</strong> ${direccion}</p>
