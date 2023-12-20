@@ -13,7 +13,7 @@
 }
 
 .navbar-brand{
-    color: var(--text-color-light);
+    color: var(--text-color-light) !important;
     font-family: var(--font-title);
     font-weight: 700;
 }
@@ -76,12 +76,12 @@
 
 .nav-link{
     display: inline-block;
-    color: var(--text-color);
+    color: var(--text-color) !important;
 }
 
 .active{
     font-weight: bold;
-    border-bottom: 2px solid var(--bs-navbar-active-color);
+    border-bottom: 2px solid var(--text-color);
 }
 
 .settings{

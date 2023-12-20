@@ -52,6 +52,44 @@ async function cargarFarmacias() {
     }
 }
 
+function obtenerHorarioDeCierre(horario) {
+    const ahora = new Date();
+    const diaSemana = ahora.getDay();
+    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
+
+    let cierreHoy, cierrePronto = false;
+
+    try {
+        if (esFinDeSemana) {
+            cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')]
+        } else {
+            cierreHoy = horario.semana.cierre;
+        }
+
+        if (cierreHoy === '00:00') {
+            cierreHoy = '23:59'
+        }
+
+        const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
+        const horaCierre = horasCierre + minutosCierre / 60;
+        const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
+
+        if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
+            cierrePronto = true;
+        }
+    } catch (error) {
+        return {
+            cierre: 'ABIERTO 24 HORAS',
+            cierrePronto: false
+        }
+    }
+
+    return {
+        cierre: cierreHoy,
+        cierrePronto: cierrePronto
+    }
+}
+
 async function cargarAcordeonFarmacias() {
     try {
         const farmacias = await cargarFarmacias();
@@ -61,11 +99,18 @@ async function cargarAcordeonFarmacias() {
             farmacias.forEach(farmacia => {
                 if (farmacia.Zona) { // Comprobar que la propiedad Zona existe
                     const card = document.createElement('div');
+                    const horarioHoy = obtenerHorarioDeCierre(farmacia.horario);
+                    let alertPronto = ''
+                    horarioHoy.cierrePronto ?
+                        alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
+                    :
+                        alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
                     card.className = 'card-farmacia';
                     card.innerHTML = `
                         <img src="${farmacia.imagen || '../assets/images/img-card-farmacia.png'}" />
                         <div>
                             <h2>${farmacia.nombre}</h2>
+                            ${alertPronto}
                             <div class="w-100 d-flex flex-column justify-content-center text-start">
                                 <p><strong>Dirección:</strong> ${farmacia.direccion}</p>
                                 <p><strong>Cierra:</strong> ${obtenerHorarioDeCierre(farmacia.horario).cierre}</p>

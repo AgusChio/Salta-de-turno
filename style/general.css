@@ -19,6 +19,7 @@ body {
     --text-color: #0A1E3D;
     --text-color-box:#0A1E3D;
     --text-color-light: #18468B;
+    --text-color-placeholder: #034272af;
     --color-primary: #36EDA9;
     --color-secondary: #338DFF;
     --color-tertiary: #82D1FF;
@@ -32,6 +33,7 @@ body {
     --bg-color-g-1:#D2FFEE;
     --bg-color-g-2:#2984FF;
     --bg-nav-scroll: #ffffffe9;
+    --color-shadow: rgba(3, 65, 114, 0.20);
 }
 
 h1{
@@ -123,6 +125,7 @@ nav .btn{
     --color-secondary:#24afa3;
     --color-quaternary:#5ac59e;
     --text-color-light:#75d6be;
+    --text-color-placeholder: #dbdbdbda;
     --bg-color-comments:#585858;
     --bg-color-container:#034172;
     --bg-thead-table:#134c78;
@@ -131,4 +134,5 @@ nav .btn{
     --bg-color-g-1:#034172;
     --bg-color-g-2:#4674B7;
     --bg-nav-scroll: #113048e9;
+    --color-shadow: rgba(161, 161, 161, 0.2);
 }
