@@ -17,6 +17,7 @@ body {
     --font-title: 'Roboto', sans-serif;
     --font-text: 'Poppins', sans-serif;
     --text-color: #0A1E3D;
+    --text-color-n: #18468B;
     --text-color-box: #0A1E3D;
     --text-color-light: #18468B;
     --text-color-placeholder: #034272af;
@@ -129,6 +130,7 @@ nav .btn {
 
 .dark-mode {
     --text-color: #F1F1F1;
+    --text-color-n: #4674B7;
     --color-secondary: #24afa3;
     --color-quaternary: #5ac59e;
     --text-color-light: #75d6be;
