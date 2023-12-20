@@ -10,9 +10,11 @@
     flex-direction: column-reverse;
 }
 .container-text-pharmacy h2{
-    color: var(--color-quaternary);
+    /* color: var(--color-quaternary); */
+    color: var(--text-color-);
 }
 .container-text-pharmacy p{
+    color: var(--bg-color-g-2);
     font-family: var(--font-title);
 }
 
