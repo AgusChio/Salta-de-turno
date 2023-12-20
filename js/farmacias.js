@@ -52,41 +52,77 @@ async function cargarFarmacias() {
     }
 }
 
-function obtenerHorarioDeCierre(horario) {
+function obtenerHorariosDeApertura(horario) {
     const ahora = new Date();
     const diaSemana = ahora.getDay();
     const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
+    let aperturaHoy, aperturaHoy2 = false;
 
-    let cierreHoy, cierrePronto = false;
+    if (esFinDeSemana) {
+        aperturaHoy = horario.finDeSemana['apertura' + (diaSemana === 0 ? '2' : '')];
+        aperturaHoy2 = horario.finDeSemana['apertura2' + (diaSemana === 0 ? '2' : '')];
+    } else {
+        aperturaHoy = horario.semana['apertura' + (diaSemana === 0 ? '2' : '')] || horario.semana.apertura;
+        aperturaHoy2 = horario.semana['apertura2' + (diaSemana === 0 ? '2' : '')] || horario.semana.apertura2;
+    }
+    
+    const result = {
+        apertura: aperturaHoy
+    };
+
+    if (aperturaHoy2) {
+        result.apertura2 = aperturaHoy2;
+    }
+
+    return result;
+}
+
+function obtenerHorariosDeCierre(horario) {
+    const ahora = new Date();
+    const diaSemana = ahora.getDay();
+    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
+    let cierreHoy, cierreHoy2, cierrePronto = false;
 
     try {
-        if (esFinDeSemana) {
-            cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')]
+        if (horario && (esFinDeSemana ? horario.finDeSemana : horario.semana)) {
+            if (esFinDeSemana) {
+                cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')];
+                cierreHoy2 = horario.finDeSemana['cierre2' + (diaSemana === 0 ? '2' : '')];
+            } else {
+                cierreHoy = horario.semana['cierre' + (diaSemana === 0 ? '2' : '')] || horario.semana.cierre;
+                cierreHoy2 = horario.semana['cierre2' + (diaSemana === 0 ? '2' : '')] || horario.semana.cierre2;
+            }
+
+            if (cierreHoy === '00:00') {
+                cierreHoy = '23:59';
+            }
+
+            const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
+            const horaCierre = horasCierre + minutosCierre / 60;
+            const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
+
+            if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
+                cierrePronto = true;
+            }
         } else {
-            cierreHoy = horario.semana.cierre;
+            throw new Error('Propiedades no definidas');
         }
 
-        if (cierreHoy === '00:00') {
-            cierreHoy = '23:59'
+        const result = {
+            cierre: cierreHoy
+        };
+
+        if (cierreHoy2) {
+            result.cierre2 = cierreHoy2;
+            result.cierrePronto = cierrePronto;
         }
 
-        const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
-        const horaCierre = horasCierre + minutosCierre / 60;
-        const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
-
-        if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
-            cierrePronto = true;
-        }
+        return result;
     } catch (error) {
         return {
             cierre: 'ABIERTO 24 HORAS',
             cierrePronto: false
-        }
-    }
-
-    return {
-        cierre: cierreHoy,
-        cierrePronto: cierrePronto
+        };
     }
 }
 
@@ -99,25 +135,40 @@ async function cargarAcordeonFarmacias() {
             farmacias.forEach(farmacia => {
                 if (farmacia.Zona) { // Comprobar que la propiedad Zona existe
                     const card = document.createElement('div');
-                    const horarioHoy = obtenerHorarioDeCierre(farmacia.horario);
-                    let alertPronto = ''
-                    horarioHoy.cierrePronto ?
-                        alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
-                    :
-                        alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
+                    const horarioHoy = obtenerHorariosDeCierre(farmacia.horario);
+                    const horarioApertura = obtenerHorariosDeApertura(farmacia.horario);
                     card.className = 'card-farmacia';
                     card.innerHTML = `
                         <img src="${farmacia.imagen || '../assets/images/img-card-farmacia.png'}" />
                         <div>
                             <h2>${farmacia.nombre}</h2>
-                            ${alertPronto}
+                            ${horarioHoy.cierrePronto ?
+                                `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
+                            :
+                                `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`}
                             <div class="w-100 d-flex flex-column justify-content-center text-start">
                                 <p><strong>Dirección:</strong> ${farmacia.direccion}</p>
-                                <p><strong>Cierra:</strong> ${obtenerHorarioDeCierre(farmacia.horario).cierre}</p>
+                                ${horarioHoy.cierre === 'ABIERTO 24 HORAS' ?
+                                `<p class="text-danger"><strong>ABIERTO 24 HORAS</strong></p>`
+                                : horarioHoy.cierre ?
+                                    `<div class="d-flex gap-3">
+                                        <p><strong>Abre:</strong> ${horarioApertura.apertura}</p>
+                                        <p><strong>Cierra:</strong> ${horarioHoy.cierre}</p>
+                                    </div>`
+                                : `
+                                <div class="d-flex gap-3">
+                                        <p><strong>Abre:</strong> ---</p>
+                                        <p><strong>Cierra:</strong> ---</p>
+                                </div>` }
+                                ${horarioApertura.apertura2 ? `
+                                <div class="d-flex gap-3">
+                                        <p><strong>Abre:</strong> ${horarioApertura.apertura2}</p>
+                                        <p><strong>Cierra:</strong> ${horarioHoy.cierre2}</p>
+                                </div>` : '' }
                             </div>
                             <div class="container-buttons w-100 mt-3 d-flex justify-content-between">
-                                <a href="#" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
-                                <a href="#" class="button-map fw-bold text-decoration-none rounded-3">Ver mapa</a>
+                                <a href="${farmacia.telefono}" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
+                                <a href="${farmacia.ubicacion}" target="__BLANK" class="button-map fw-bold text-decoration-none rounded-3">Ver mapa</a>
                             </div>
                         </div>`;
 
