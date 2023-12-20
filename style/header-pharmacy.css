@@ -10,8 +10,7 @@
     flex-direction: column-reverse;
 }
 .container-text-pharmacy h2{
-    /* color: var(--color-quaternary); */
-    color: var(--text-color-);
+    color: var(--text-color-box);
 }
 .container-text-pharmacy p{
     color: var(--bg-color-g-2);
