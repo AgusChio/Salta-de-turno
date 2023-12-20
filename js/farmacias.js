@@ -196,7 +196,7 @@ function cargarCronogramaParaMesActual() {
 
 document.addEventListener("DOMContentLoaded", () => {
     cargarCronogramaParaMesActual();
-    cargarAcordeonFarmacias(); // Añadir esta línea
+    cargarAcordeonFarmacias();
     checkLoginStatus();
 });
 
