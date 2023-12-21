@@ -165,7 +165,6 @@ $("#form-signup").addEventListener("submit", async (e) => {
         return;
     }
 
-    
     const emailSignup = $("#email-signup").value;
     if (!validateEmail(emailSignup)) {
         Swal.fire({
@@ -176,7 +175,6 @@ $("#form-signup").addEventListener("submit", async (e) => {
         });
         return;
     }
-
 
     if (Array.from($(".container-form-signUp")).length === 0) {
         const name = $("#name").value;
