@@ -36,7 +36,7 @@
     margin: 0 .25rem 1rem;
     font-weight: bold;
     color: var(--text-color);
-    background-color: transparent;
+    background-color: var(--bg-input);
     border-color: var(--font);
     border-radius: 2rem;
 }

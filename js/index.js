@@ -85,7 +85,7 @@ const cargarFarmacias = (farmacias) => {
                     <p><strong>Dirección:</strong> ${direccion}</p>
                 </div>
                 <div class="container-buttons | w-100 | mt-3 | d-flex | justify-content-between">
-                    <a href="${telefono}" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
+                    <a href="tel:+${telefono}" class="button-call | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Llamar</a>
                     <a href="${ubicacion}" target="__BLANK" class="button-map | fw-bold | text-decoration-none | p-2 | ps-4 | pe-4 | rounded-3">Ver mapa</a>
                 </div>
             </div>`

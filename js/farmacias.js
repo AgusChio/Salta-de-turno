@@ -173,7 +173,7 @@ async function cargarAcordeonFarmacias() {
                                 </div>` : '' }
                             </div>
                             <div class="container-buttons w-100 mt-3 d-flex justify-content-between">
-                                <a href="${farmacia.telefono}" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
+                                <a href="tel:+${farmacia.telefono}" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
                                 <a href="${farmacia.ubicacion}" target="__BLANK" class="button-map fw-bold text-decoration-none rounded-3">Ver mapa</a>
                             </div>
                         </div>`;
