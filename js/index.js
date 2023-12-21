@@ -13,25 +13,25 @@ const currentYear = today.getFullYear()
 
 function cargarFarmaciasDeTurno() {
     mostrarLoader();
-    return new Promise(resolve => setTimeout(resolve, 2000)) 
-    .then(() => fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('HTTP error: ' + response.status);
-            }
-            return response.json();
-        })
-        .then(apiData => {
-            if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
-                throw new Error('Los datos recibidos no son válidos');
-            }
-            setTimeout(ocultarLoader, 2000);
-            return apiData.farmacias;
-        })
-        .catch(error => {
-            setTimeout(ocultarLoader, 2000);
-            console.error("Hubo un problema con la operación: " + error.message);
-        }));
+    return new Promise(resolve => setTimeout(resolve, 2000))
+        .then(() => fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('HTTP error: ' + response.status);
+                }
+                return response.json();
+            })
+            .then(apiData => {
+                if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
+                    throw new Error('Los datos recibidos no son válidos');
+                }
+                setTimeout(ocultarLoader, 2000);
+                return apiData.farmacias;
+            })
+            .catch(error => {
+                setTimeout(ocultarLoader, 2000);
+                console.error("Hubo un problema con la operación: " + error.message);
+            }));
 }
 
 
@@ -173,15 +173,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function checkLoginStatus() {
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
-    console.log("Está logueado:", isLoggedIn);
-    console.log("Cookie 'username':", document.cookie.split('; ').find(row => row.startsWith('username=')));
+    var usernameCookie = document.cookie.split(';').find(row => row.trim().startsWith('username='));
+    var fullnameCookie = document.cookie.split(';').find(row => row.trim().startsWith('fullname='));
+
+    var email = usernameCookie ? decodeURIComponent(usernameCookie.split('=')[1]) : '';
+    var fullname = fullnameCookie ? decodeURIComponent(fullnameCookie.split('=')[1]) : '';
+
     var loginLink = document.getElementById('login-link');
     var logoutLink = document.getElementById('logout-link');
     var medicamentosLink = document.getElementById('medicamentos-link');
     var medicamentosDropdown = document.getElementById('medicamentos-dropdown');
     var footerMedicamentosLinks = document.getElementById('footer-links-medicamentos');
-    const fullnamecontact = document.getElementById("fullnamecontact");
-    const emailcontact = document.getElementById("emailcontact");
+    var usernameCookie = document.cookie.split(';').find(row => row.startsWith('username='));
+    var fullnameCookie = document.cookie.split(';').find(row => row.startsWith('fullname='));
 
     loginLink.style.display = isLoggedIn ? 'none' : 'block';
     logoutLink.style.display = isLoggedIn ? 'block' : 'none';
@@ -200,11 +204,18 @@ function checkLoginStatus() {
             <li><a href="./pages/medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
             <li><a href="./pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
             <li><a href="./pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
-        `; 
-        fullnamecontact.value = "fulanito";
-        emailcontact.value = "pepito";
-        fullnamecontact.disabled = true;
-        emailcontact.disabled = true;
+        `;
+
+        const fullnamecontact = document.getElementById("fullnamecontact");
+        const emailcontact = document.getElementById("emailcontact");
+
+        if (fullnamecontact && emailcontact) {
+            fullnamecontact.value = fullname;
+            emailcontact.value = email;
+
+            fullnamecontact.disabled = true;
+            emailcontact.disabled = true;
+        }
     } else {
         medicamentosLink.dataset.bsToggle = 'dropdown';
         medicamentosDropdown.innerHTML = `
@@ -214,8 +225,6 @@ function checkLoginStatus() {
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
     }
-
-
 }
 
 // Función para manejar el cierre de sesión

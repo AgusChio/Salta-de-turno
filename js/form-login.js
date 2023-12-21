@@ -115,6 +115,8 @@ $("#form-login").addEventListener("submit", async (e) => {
                 });
             } else {
                 const data = await response.json();
+                document.cookie = `username=${encodeURIComponent(data.user.email)}; path=/;`;
+                document.cookie = `fullname=${encodeURIComponent(data.user.fullName)}; path=/;`;
                 document.cookie = `username=${email}; path=/; expires=${new Date(new Date().getTime() + 86400 * 1000).toUTCString()};`;
                 Swal.fire({
                     title: 'Inicio de Sesión Exitoso',
@@ -192,6 +194,8 @@ $("#form-signup").addEventListener("submit", async (e) => {
                 }
             } else {
                 const data = await response.json();
+                document.cookie = `username=${encodeURIComponent(data.user.email)}; path=/;`;
+                document.cookie = `fullname=${encodeURIComponent(data.user.fullName)}; path=/;`;
                 document.cookie = `username=${emailSignup}; path=/; expires=${new Date(new Date().getTime() + 86400 * 1000).toUTCString()};`;
                 Swal.fire({
                     title: 'Registro Exitoso',
