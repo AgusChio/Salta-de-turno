@@ -165,6 +165,18 @@ $("#form-signup").addEventListener("submit", async (e) => {
         return;
     }
 
+    
+    const emailSignup = $("#email-signup").value;
+    if (!validateEmail(emailSignup)) {
+        Swal.fire({
+            title: 'Error',
+            text: 'El email ingresado no es válido.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
+        return;
+    }
+
 
     if (Array.from($(".container-form-signUp")).length === 0) {
         const name = $("#name").value;
