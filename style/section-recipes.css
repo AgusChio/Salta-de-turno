@@ -1,3 +1,7 @@
+.search-input::placeholder{
+    color: var(--text-color);
+}
+
 /*CAJA DE MEDICAMENTO*/
 .MedBajoRec{
     background-image: url('../assets/images/img-medicamento-bajo-receta.png');

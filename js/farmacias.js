@@ -17,17 +17,17 @@ function checkLoginStatus() {
         if (isLoggedIn) {
             medicamentosLink.dataset.bsToggle = 'dropdown';
             medicamentosDropdown.innerHTML = `
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#free">Venta libre</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#recipes">Venta bajo receta</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#types-med">Tipos</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#injectables">Inyectables</a></li>
-            <li><a class="dropdown-item" href="./pages/medicamentos.html#plants">Plantas medicinales</a></li>`; // Contenido para usuarios logueados
+            <li><a class="dropdown-item" href="../pages/medicamentos.html#free">Venta libre</a></li>
+            <li><a class="dropdown-item" href="../pages/medicamentos.html#recipes">Venta bajo receta</a></li>
+            <li><a class="dropdown-item" href="../pages/medicamentos.html#types-med">Tipos</a></li>
+            <li><a class="dropdown-item" href="../pages/medicamentos.html#injectables">Inyectables</a></li>
+            <li><a class="dropdown-item" href="../pages/medicamentos.html#plants">Plantas medicinales</a></li>`; // Contenido para usuarios logueados
             footerMedicamentosLinks.innerHTML = `
-            <li><a href="./pages/medicamentos.html#free" class="text-decoration-none">Venta libre</a></li>
-            <li><a href="./pages/medicamentos.html#recipes" class="text-decoration-none">Venta bajo receta</a></li>
-            <li><a href="./pages/medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
-            <li><a href="./pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
-            <li><a href="./pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
+            <li><a href="../pages/medicamentos.html#free" class="text-decoration-none">Venta libre</a></li>
+            <li><a href="../pages/medicamentos.html#recipes" class="text-decoration-none">Venta bajo receta</a></li>
+            <li><a href="../pages/medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
+            <li><a href="../pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
+            <li><a href="../pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
         `;
         } else {
             medicamentosLink.dataset.bsToggle = 'dropdown';

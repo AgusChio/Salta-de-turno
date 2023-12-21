@@ -185,6 +185,10 @@
     max-width: max(330px, 330vmax);
 }
 
+.modal.fade .modal-content{
+    background-color: var(--bg-color-main);
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 900px){
     .body-login{

@@ -9,9 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const switchLabel = document.querySelector(('.switch__label'))
         const imgArriba = $$("#imgArriba")
         const imgAbajo = $$("#imgAbajo")
-        if (imgArriba && imgAbajo && check && switchLabel) {
+        if (document.title != "Inicio de sesión"){
             switchLabel.innerText = 'Modo Oscuro'
             check.checked = true
+        }
+        if (imgArriba && imgAbajo) {
             imgArriba.setAttribute("src", "./assets/images/olas-oscuro-arriba.png")
             imgAbajo.setAttribute("src", "./assets/images/olas-oscuro-abajo.png")
         } 
@@ -61,8 +63,6 @@ if ($$('.icon-settings')) {
         })
     })
 }
-
-
 
 
 if ($$('.close-settings')) {
