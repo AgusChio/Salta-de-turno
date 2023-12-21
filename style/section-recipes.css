@@ -76,7 +76,7 @@ body{
 
 .medicineBox{
     width: max(300px, 25vmax);
-    height: max(230px, 13vmax);
+    height: max(230px, 0vmax);
     position: relative;
 }
 
