@@ -94,10 +94,10 @@ $("#form-login").addEventListener("submit", async (e) => {
     checkField("#name", ".name-error", validateEmpty, true);
     checkField("#email-login", ".email-error", validateEmail);
 
-    if (Array.from($(".container-form-login .invalid")).length === 0) {
-        const email = $("#email-login").value;
-        const password = $("#password").value;
+    const email = $("#email-login").value.toLowerCase();
+    const password = $("#password").value;
 
+    if (Array.from($(".container-form-login .invalid")).length === 0) {
         try {
             const response = await fetch('https://api-salta-de-turno.onrender.com/api/auth/login', {
                 method: 'POST',
@@ -106,19 +106,26 @@ $("#form-login").addEventListener("submit", async (e) => {
             });
 
             if (!response.ok) {
-                throw new Error('Error en el login');
+                const errorData = await response.json();
+                Swal.fire({
+                    title: 'Error',
+                    text: errorData.message || 'Error en el login',
+                    icon: 'error',
+                    confirmButtonText: 'Ok'
+                });
+            } else {
+                const data = await response.json();
+                document.cookie = `username=${email}; path=/; expires=${new Date(new Date().getTime() + 86400 * 1000).toUTCString()};`;
+                Swal.fire({
+                    title: 'Inicio de Sesión Exitoso',
+                    text: 'Bienvenido a Salta de Turno!',
+                    icon: 'success',
+                    timer: 3000,
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    window.location.href = '/index.html';
+                });
             }
-
-            const data = await response.json();
-            Swal.fire({
-                title: 'Inicio de Sesión Exitoso',
-                text: 'Bienvenido a Salta de Turno!',
-                icon: 'success',
-                timer: 3000,
-                confirmButtonText: 'Ok'
-            }).then(() => {
-                window.location.href = '/index.html'; // Reemplaza con tu URL de destino
-            });
         } catch (error) {
             Swal.fire({
                 title: 'Error',
@@ -133,7 +140,7 @@ $("#form-login").addEventListener("submit", async (e) => {
 $("#form-signup").addEventListener("submit", async (e) => {
     e.preventDefault();
     checkField("#name", ".name-error", validateEmpty, true);
-    checkField("#password-signup", ".password-error", validatePassword);
+    checkField("#email-signup", ".email-error", validateEmail);
     checkPasswordsMatch();
 
     const terminosYCondiciones = $('#acept').checked;
@@ -158,41 +165,44 @@ $("#form-signup").addEventListener("submit", async (e) => {
         return;
     }
 
-    console.log($(".container-form-signUp"));
-    console.log(Array.from($(".container-form-signUp")).length);
-
     if (Array.from($(".container-form-signUp")).length === 0) {
         const name = $("#name").value;
-        const email = $("#email-signup").value;
+        const email = $("#email-signup").value.toLowerCase(); 
         const password = $("#password-signup").value;
-        const status = true;
-        const google = false;
         const apiKey = "";
         const rol = "user";
-        const modoOscuro = false;
         const terminosYCondiciones = $('#acept').checked;
-
         try {
             const response = await fetch('https://api-salta-de-turno.onrender.com/api/auth/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, password, status, google, apiKey, rol, modoOscuro, terminosYCondiciones })
+                body: JSON.stringify({ name, email, password, apiKey, rol, terminosYCondiciones })
             });
 
             if (!response.ok) {
-                throw new Error('Error en el registro');
+                if (response.status === 409) {
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'El email ingresado ya está en uso.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                } else {
+                    throw new Error('Error en el registro');
+                }
+            } else {
+                const data = await response.json();
+                document.cookie = `username=${emailSignup}; path=/; expires=${new Date(new Date().getTime() + 86400 * 1000).toUTCString()};`;
+                Swal.fire({
+                    title: 'Registro Exitoso',
+                    text: '¡Tu cuenta ha sido creada exitosamente!',
+                    icon: 'success',
+                    timer: 3000,
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    window.location.href = '/index.html';
+                });
             }
-
-            const data = await response.json();
-            Swal.fire({
-                title: 'Registro Exitoso',
-                text: '¡Tu cuenta ha sido creada exitosamente!',
-                icon: 'success',
-                timer: 3000,
-                confirmButtonText: 'Ok'
-            }).then(() => {
-                window.location.href = '/index.html';
-            });
         } catch (error) {
             Swal.fire({
                 title: 'Error',
@@ -248,3 +258,7 @@ function setRememberMeCookie() {
         document.cookie = "username=" + username + "; " + expires + "; path=/";
     }
 }
+
+document.getElementById('goToContactButton').addEventListener('click', function() {
+    window.location.href = '../index.html#contact';
+});

@@ -6,32 +6,38 @@ function checkLoginStatus() {
     var medicamentosDropdown = document.getElementById('medicamentos-dropdown');
     var footerMedicamentosLinks = document.getElementById('footer-links-medicamentos');
 
-    loginLink.style.display = isLoggedIn ? 'none' : 'block';
-    logoutLink.style.display = isLoggedIn ? 'block' : 'none';
+    if (loginLink && logoutLink && medicamentosLink && medicamentosDropdown && footerMedicamentosLinks) {
+        var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
 
-    if (isLoggedIn) {
-        medicamentosLink.dataset.bsToggle = 'dropdown';
-        medicamentosDropdown.innerHTML = `
+        loginLink.style.display = isLoggedIn ? 'none' : 'block';
+        logoutLink.style.display = isLoggedIn ? 'block' : 'none';
+    }
+
+    if (medicamentosLink && medicamentosDropdown && footerMedicamentosLinks) {
+        if (isLoggedIn) {
+            medicamentosLink.dataset.bsToggle = 'dropdown';
+            medicamentosDropdown.innerHTML = `
             <li><a class="dropdown-item" href="./pages/medicamentos.html#free">Venta libre</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#recipes">Venta bajo receta</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#types-med">Tipos</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#injectables">Inyectables</a></li>
             <li><a class="dropdown-item" href="./pages/medicamentos.html#plants">Plantas medicinales</a></li>`; // Contenido para usuarios logueados
-        footerMedicamentosLinks.innerHTML = `
+            footerMedicamentosLinks.innerHTML = `
             <li><a href="./pages/medicamentos.html#free" class="text-decoration-none">Venta libre</a></li>
             <li><a href="./pages/medicamentos.html#recipes" class="text-decoration-none">Venta bajo receta</a></li>
             <li><a href="./pages/medicamentos.html#types-med" class="text-decoration-none">Tipos</a></li>
             <li><a href="./pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
             <li><a href="./pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
-        `; 
-    } else {
-        medicamentosLink.dataset.bsToggle = 'dropdown';
-        medicamentosDropdown.innerHTML = `
+        `;
+        } else {
+            medicamentosLink.dataset.bsToggle = 'dropdown';
+            medicamentosDropdown.innerHTML = `
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
-        footerMedicamentosLinks.innerHTML = `
+            footerMedicamentosLinks.innerHTML = `
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
+        }
     }
 }
 
@@ -52,6 +58,80 @@ async function cargarFarmacias() {
     }
 }
 
+function obtenerHorariosDeApertura(horario) {
+    const ahora = new Date();
+    const diaSemana = ahora.getDay();
+    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
+    let aperturaHoy, aperturaHoy2 = false;
+
+    if (esFinDeSemana) {
+        aperturaHoy = horario.finDeSemana['apertura' + (diaSemana === 0 ? '2' : '')];
+        aperturaHoy2 = horario.finDeSemana['apertura2' + (diaSemana === 0 ? '2' : '')];
+    } else {
+        aperturaHoy = horario.semana['apertura' + (diaSemana === 0 ? '2' : '')] || horario.semana.apertura;
+        aperturaHoy2 = horario.semana['apertura2' + (diaSemana === 0 ? '2' : '')] || horario.semana.apertura2;
+    }
+    
+    const result = {
+        apertura: aperturaHoy
+    };
+
+    if (aperturaHoy2) {
+        result.apertura2 = aperturaHoy2;
+    }
+
+    return result;
+}
+
+function obtenerHorariosDeCierre(horario) {
+    const ahora = new Date();
+    const diaSemana = ahora.getDay();
+    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
+    let cierreHoy, cierreHoy2, cierrePronto = false;
+
+    try {
+        if (horario && (esFinDeSemana ? horario.finDeSemana : horario.semana)) {
+            if (esFinDeSemana) {
+                cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')];
+                cierreHoy2 = horario.finDeSemana['cierre2' + (diaSemana === 0 ? '2' : '')];
+            } else {
+                cierreHoy = horario.semana['cierre' + (diaSemana === 0 ? '2' : '')] || horario.semana.cierre;
+                cierreHoy2 = horario.semana['cierre2' + (diaSemana === 0 ? '2' : '')] || horario.semana.cierre2;
+            }
+
+            if (cierreHoy === '00:00') {
+                cierreHoy = '23:59';
+            }
+
+            const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
+            const horaCierre = horasCierre + minutosCierre / 60;
+            const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
+
+            if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
+                cierrePronto = true;
+            }
+        } else {
+            throw new Error('Propiedades no definidas');
+        }
+
+        const result = {
+            cierre: cierreHoy
+        };
+
+        if (cierreHoy2) {
+            result.cierre2 = cierreHoy2;
+            result.cierrePronto = cierrePronto;
+        }
+
+        return result;
+    } catch (error) {
+        return {
+            cierre: 'ABIERTO 24 HORAS',
+            cierrePronto: false
+        };
+    }
+}
+
 async function cargarAcordeonFarmacias() {
     try {
         const farmacias = await cargarFarmacias();
@@ -61,18 +141,40 @@ async function cargarAcordeonFarmacias() {
             farmacias.forEach(farmacia => {
                 if (farmacia.Zona) { // Comprobar que la propiedad Zona existe
                     const card = document.createElement('div');
+                    const horarioHoy = obtenerHorariosDeCierre(farmacia.horario);
+                    const horarioApertura = obtenerHorariosDeApertura(farmacia.horario);
                     card.className = 'card-farmacia';
                     card.innerHTML = `
                         <img src="${farmacia.imagen || '../assets/images/img-card-farmacia.png'}" />
                         <div>
                             <h2>${farmacia.nombre}</h2>
+                            ${horarioHoy.cierrePronto ?
+                                `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
+                            :
+                                `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`}
                             <div class="w-100 d-flex flex-column justify-content-center text-start">
                                 <p><strong>Dirección:</strong> ${farmacia.direccion}</p>
-                                <p><strong>Cierra:</strong> ${obtenerHorarioDeCierre(farmacia.horario).cierre}</p>
+                                ${horarioHoy.cierre === 'ABIERTO 24 HORAS' ?
+                                `<p class="text-danger"><strong>ABIERTO 24 HORAS</strong></p>`
+                                : horarioHoy.cierre ?
+                                    `<div class="d-flex gap-3">
+                                        <p><strong>Abre:</strong> ${horarioApertura.apertura}</p>
+                                        <p><strong>Cierra:</strong> ${horarioHoy.cierre}</p>
+                                    </div>`
+                                : `
+                                <div class="d-flex gap-3">
+                                        <p><strong>Abre:</strong> ---</p>
+                                        <p><strong>Cierra:</strong> ---</p>
+                                </div>` }
+                                ${horarioApertura.apertura2 ? `
+                                <div class="d-flex gap-3">
+                                        <p><strong>Abre:</strong> ${horarioApertura.apertura2}</p>
+                                        <p><strong>Cierra:</strong> ${horarioHoy.cierre2}</p>
+                                </div>` : '' }
                             </div>
                             <div class="container-buttons w-100 mt-3 d-flex justify-content-between">
-                                <a href="#" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
-                                <a href="#" class="button-map fw-bold text-decoration-none rounded-3">Ver mapa</a>
+                                <a href="${farmacia.telefono}" class="button-call fw-bold text-decoration-none rounded-3">Llamar</a>
+                                <a href="${farmacia.ubicacion}" target="__BLANK" class="button-map fw-bold text-decoration-none rounded-3">Ver mapa</a>
                             </div>
                         </div>`;
 
@@ -195,9 +297,20 @@ function cargarCronogramaParaMesActual() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    cargarCronogramaParaMesActual();
-    cargarAcordeonFarmacias(); // Añadir esta línea
-    checkLoginStatus();
+    mostrarLoader();
+
+    Promise.all([
+        cargarCronogramaParaMesActual(),
+        cargarAcordeonFarmacias(),
+        checkLoginStatus()
+    ])
+        .then(() => {
+            setTimeout(ocultarLoader, 2000);
+        })
+        .catch((error) => {
+            console.error("Error durante la carga de datos:", error);
+            ocultarLoader();
+        });
 });
 
 
@@ -209,3 +322,23 @@ function logout() {
 }
 
 window.onload = checkLoginStatus;
+
+function mostrarLoader() {
+    const contenedorFarmacias = document.querySelector('#contenedor-loader');
+    const loaderHTML = `
+        <div class="loadingio-spinner-ripple-xm2ty3k97d">
+            <div class="ldio-8ty988q2u8f">
+                <div></div>
+                <div></div>
+            </div>
+        </div>`;
+    if (contenedorFarmacias) {
+        contenedorFarmacias.innerHTML = loaderHTML;
+    }
+}
+function ocultarLoader() {
+    const loader = document.querySelector('.loadingio-spinner-ripple-xm2ty3k97d');
+    if (loader) {
+        loader.remove();
+    }
+}

@@ -9,10 +9,9 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/general.css">
     <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
-    <script type="text/javascript"
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
-    emailjs.init('4OS4vcxrQkT2fEZdC')
+        emailjs.init('4OS4vcxrQkT2fEZdC')
     </script>
 </head>
 
@@ -25,8 +24,10 @@
                     <a class="navbar-brand" href="#">Salta de Turno</a>
                 </div>
                 <div class="nav-btn">
-                    <iconify-icon class="icon-settings" icon="solar:settings-linear" width="30" height="30"></iconify-icon>
-                    <button class="navbar-toggler" type="button" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <iconify-icon class="icon-settings" icon="solar:settings-linear" width="30"
+                        height="30"></iconify-icon>
+                    <button class="navbar-toggler" type="button" data-bs-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="navbar-dropdown hide" id="navbarNavDropdown">
@@ -39,19 +40,23 @@
                                 <a class="nav-link" href="#contact">Contactanos</a>
                             </li>
                             <li class="nav-item | dropdown">
-                                <a class="nav-link dropdown-toggle" href="./pages/farmacias.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="./pages/farmacias.html" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Farmacias
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="./pages/farmacias.html#cards">Farmacias por zona</a></li>
+                                    <li><a class="dropdown-item" href="./pages/farmacias.html#cards">Farmacias por
+                                            zona</a></li>
                                     <li><a class="dropdown-item" href="./pages/farmacias.html#maps">Mapa</a></li>
-                                    <li><a class="dropdown-item" href="./pages/farmacias.html#schedule">Cronograma anual</a></li>
-                                    <li><a class="dropdown-item" href="./pages/farmacias.html#farmaonline">FarmaOnline</a></li>
-                                    <li><a class="dropdown-item" href="./pages/farmacias.html#vacuum">Farmacias que vacunan</a></li>
+                                    <li><a class="dropdown-item" href="./pages/farmacias.html#schedule">Cronograma
+                                            anual</a></li>
+                                    <li><a class="dropdown-item"
+                                            href="./pages/farmacias.html#farmaonline">FarmaOnline</a></li>
                                 </ul>
                             </li>
                             <li class="nav-item | dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" id="medicamentos-link" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" id="medicamentos-link"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Medicamentos
                                 </a>
                                 <ul class="dropdown-menu" id="medicamentos-dropdown">
@@ -59,8 +64,10 @@
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a type="button" class="nav-link btn" href="pages/form-login.html" id="login-link">Iniciar sesión</a>
-                                <a type="button" class="nav-link btn" href="#" onclick="logout()" id="logout-link">Cerrar sesión</a>
+                                <a type="button" class="nav-link btn" href="pages/form-login.html"
+                                    id="login-link">Iniciar sesión</a>
+                                <a type="button" class="nav-link btn" href="#" onclick="logout()"
+                                    id="logout-link">Cerrar sesión</a>
                             </li>
                         </ul>
                     </div>
@@ -85,8 +92,7 @@
             </div>
 
             <div class="container-image | w-50">
-                <img src="./assets/images/imagen-landing-header.png" alt="img-pc" 
-                class=" w-100 | h-100">
+                <img src="./assets/images/imagen-landing-header.png" alt="img-pc" class=" w-100 | h-100">
             </div>
         </div>
     </header>
@@ -107,13 +113,13 @@
     <main class="pb-5 | main-landing">
         <section class="pharmacy-section">
             <img src="./assets/images/wave-white.png" id="imgArriba"  alt="wave" class="header-mood">
-            <!-- clase de img claro -->
             <header>
                 <h3 id="turno">Farmacias de turno</h3>
             </header>
             <div class="d-flex | div-search">
                 <form role="search">
-                    <input id="search-input" class="form-control" type="search" placeholder="Busca tu farmacia" aria-label="Search">
+                    <input id="search-input" class="form-control" type="search" placeholder="Busca tu farmacia"
+                        aria-label="Search">
                 </form>
                 <div class="d-flex | div-select">
                     <select id="zona" class="form-select-sm">
@@ -132,52 +138,56 @@
 
             <div id="container-cards" class="container-cards | w-100 | d-flex | justify-content-center | flex-wrap">
             </div>
-            
+
         </section>
 
         <section id="contact" class="container-general-contact | m-auto | d-flex  | flex-column | mb-4 | p-4">
             <header class="fs-1 | mt-5 | fw-bold | header-title | mb-3">Dejanos un Comentario</header>
-            <p class="fs-6 | mb-5">Bienvenido a nuestra sección de comentarios. Aquí tienes la oportunidad de compartir tus pensamientos, opiniones y sugerencias con nosotros. Valoramos tus comentarios y los utilizamos para mejorar nuestros servicios. Siéntete libre de dejar tu comentario sobre tu experiencia o cualquier otro tema que desees discutir, siempre y cuando sea desde el respeto. ¡Esperamos leerte pronto!</p>
-            
+            <p class="fs-6 | mb-5">Bienvenido a nuestra sección de comentarios. Aquí tienes la oportunidad de compartir
+                tus pensamientos, opiniones y sugerencias con nosotros. Valoramos tus comentarios y los utilizamos para
+                mejorar nuestros servicios. Siéntete libre de dejar tu comentario sobre tu experiencia o cualquier otro
+                tema que desees discutir, siempre y cuando sea desde el respeto. ¡Esperamos leerte pronto!</p>
+
             <div class="container-form-img | m-auto | d-flex | justify-content-center | mb-5">
                 <div class="container-form-contact | text-white | p-2">
                     <form id="form" class="p-2">
                         <fieldset class="d-flex | flex-column | mb-4">
-                            <p>Por favor selecciona una de las siguientes opciones antes de completar el formulario. ¡Gracias por dejarnos tu comentario!</p>
-    
+                            <p>Por favor selecciona una de las siguientes opciones antes de completar el formulario.
+                                ¡Gracias por dejarnos tu comentario!</p>
+
                             <div class="d-flex | justify-content-between | flex-wrap">
                                 <div>
                                     <input type="radio" name="optionscontact" value="Consultation"> Consulta
                                 </div>
-    
+
                                 <div>
                                     <input type="radio" name="optionscontact" value="Suggestions"> Sugerencia
                                 </div>
-    
+
                                 <div>
                                     <input type="radio" name="optionscontact" value="Complaint"> Reclamo
                                 </div>
-    
+
                                 <div>
                                     <input type="radio" name="optionscontact" value="Complied"> Cumplido
                                 </div>
                             </div>
                         </fieldset>
-    
+
                         <fieldset class="d-flex | flex-column | mb-4">
                             <label for="fullnamecontact">Nombre Completo:</label>
                             <input type="text" name="fullnamecontact" id="fullnamecontact" placeholder="John Doe"
                                 minlength="6" maxlength="40" class="mt-1 | rounded-2 | border | border-none | p-1"
                                 required>
                         </fieldset>
-    
+
                         <fieldset class="d-flex | flex-column | mb-4">
                             <label for="emailcontact">Correo Electrónico:</label>
                             <input type="email" name="emailcontact" id="emailcontact" placeholder="johndoe@gmail.com"
                                 minlength="6" maxlength="40" class="mt-1 | rounded-2 | border | border-none | p-1"
                                 required>
                         </fieldset>
-    
+
                         <fieldset class="d-flex | flex-column | mb-4">
                             <label for="messagecontact">Mensaje:</label>
                             <textarea name="messagecontact" id="messagecontact" cols="30" rows="10"
@@ -191,18 +201,18 @@
                     </form>
                 </div>
                 <div class="container-img-contact | p-4">
-                    <img src="./assets/images/img-contact.png" class="img-contact" alt="Imagen de una mujer atendiendo uan consulta holografica">
+                    <img src="./assets/images/img-contact.png" class="img-contact"
+                        alt="Imagen de una mujer atendiendo uan consulta holografica">
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="d-flex | flex-column">
-        <img id="imgAbajo" alt="Wave blue">
+        <img id="imgAbajo" src="./assets/images/wave-blue.png" alt="Wave blue" class="header-mood">
         <div class="container-footer">
             <!-- Inicio 1-->
-            <div
-                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
+            <div class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
                 <h4 class="text-center">Inicio</h4>
                 <ul class="text-center | w-50 | ps-0">
                     <li><a href="#turno" class="text-decoration-none">De turno</a></li>
@@ -212,133 +222,100 @@
                 </ul>
             </div>
             <!-- Farmacias 2-->
-            <div
-                class="footer-links farma | d-flex | flex-column | justify-content-center | align-items-center ">
+            <div class="footer-links farma | d-flex | flex-column | justify-content-center | align-items-center ">
                 <h4 class="text-center">Farmacias</h4>
                 <ul class="text-center | w-50 | ps-0">
                     <li><a href="./pages/farmacias.html#cards" class="text-decoration-none">Todas las farmacias</a></li>
                     <li><a href="./pages/farmacias.html#maps" class="text-decoration-none">Mapa</a></li>
                     <li><a href="./pages/farmacias.html#schedule" class="text-decoration-none">Cronograma anual</a></li>
                     <li><a href="./pages/farmacias.html#farmaonline" class="text-decoration-none">FarmaOnline</a></li>
-                    <li><a href="./pages/farmacias.html#vacuum" class="text-decoration-none">Farmacias que vacunan</a></li>
+                    <li><a href="./pages/farmacias.html#vacuum" class="text-decoration-none">Farmacias que vacunan</a>
+                    </li>
                 </ul>
             </div>
             <!-- Medicamentos 3-->
-            <div class="footer-links | d-flex | flex-column | justify-content-center | align-items-center | border-dashed">
+            <div
+                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center | border-dashed">
                 <h4 class="text-center">Medicamentos</h4>
                 <ul class="text-center | w-50 | ps-0" id="footer-links-medicamentos">
-                    
+
                 </ul>
             </div>
             <!-- Redes sociales 4-->
-            <div
-                class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
+            <div class="footer-links | d-flex | flex-column | justify-content-center | align-items-center">
                 <h4>Redes sociales</h4>
-                <div
-                    class="social-link | d-flex | align-items-center | justify-content-center | align-items-center ">
-                    <a 
-                    href="http://www.instagram.com" target="_blank" title="@saltadeturno"><span
-                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="bi:instagram" data-width="40"></span></a>
-                    <a 
-                    href="http://www.facebook.com" target="_blank" 
-                    title="Salta de Turno"><span
-                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="lucide:facebook" data-width="40"></span></a>
-                    <a 
-                    href="mailto:saltadeturno@gmail.com" target="_blank" title="saltadeturno@gmail.com"><span
+                <div class="social-link | d-flex | align-items-center | justify-content-center | align-items-center ">
+                    <a href="http://www.instagram.com" target="_blank" title="@saltadeturno"><span
+                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="bi:instagram"
+                            data-width="40"></span></a>
+                    <a href="http://www.facebook.com" target="_blank" title="Salta de Turno"><span
+                            class="iconify | iconify-footer | p-2 | rounded-3" data-icon="lucide:facebook"
+                            data-width="40"></span></a>
+                    <a href="mailto:saltadeturno@gmail.com" target="_blank" title="saltadeturno@gmail.com"><span
                             class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconamoon:email-fill"
                             data-width="40"></span></a>
                 </div>
             </div>
         </div>
         <!-- Equipo de desarrollo -->
-        <div 
-            class="container-copy | d-flex | flex-column | justify-content-center | align-items-center | p-2">
+        <div class="container-copy | d-flex | flex-column | justify-content-center | align-items-center | p-2">
             <h5 class="text-center">Equipo de desarrollo</h5>
-            <ul class="ul-list | d-flex | justify-content-center | align-items-center | text-center | w-75 | flex-wrap ">
+            <ul
+                class="ul-list | d-flex | justify-content-center | align-items-center | text-center | w-75 | flex-wrap ">
                 <li class="m-2">
-                        <h6>Agustina Chiodini</h6>
-                        <div>
-                            <a
-                            href="https://www.linkedin.com/in/agustina-chiodini/" 
-                            title="LinkedIn"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="icomoon-free:linkedin"
-                            data-width="35"></span></a>
-                            <a 
-                            href="https://github.com/AgusChio" 
-                            title="Git Hub"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="iconoir:github-circle"
-                            data-width="35"></span></a>
-                        </div>
+                    <h6>Agustina Chiodini</h6>
+                    <div>
+                        <a href="https://www.linkedin.com/in/agustina-chiodini/" title="LinkedIn" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="icomoon-free:linkedin"
+                                data-width="35"></span></a>
+                        <a href="https://github.com/AgusChio" title="Git Hub" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconoir:github-circle"
+                                data-width="35"></span></a>
+                    </div>
                 </li>
                 <li class="m-2">
-                        <h6>Laura Escalante</h6>
-                        <div>
-                            <a 
-                            href="https://www.linkedin.com/in/maria-laura-escalante/" 
-                            title="LinkedIn"
+                    <h6>Laura Escalante</h6>
+                    <div>
+                        <a href="https://www.linkedin.com/in/maria-laura-escalante/" title="LinkedIn"
                             target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="icomoon-free:linkedin"
-                            data-width="35"></span></a>
-                            <a 
-                            href="https://github.com/mlse8" 
-                            title="Git Hub"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="iconoir:github-circle"
-                            data-width="35"></span></a>
-                        </div>
+                                data-icon="icomoon-free:linkedin" data-width="35"></span></a>
+                        <a href="https://github.com/mlse8" title="Git Hub" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconoir:github-circle"
+                                data-width="35"></span></a>
+                    </div>
                 </li>
                 <li class="m-2">
-                        <h6>Camila Martinez</h6>
-                        <div>
-                            <a 
-                            href="https://www.linkedin.com/in/cami-martinez-b84539222/" 
-                            title="LinkedIn"
+                    <h6>Camila Martinez</h6>
+                    <div>
+                        <a href="https://www.linkedin.com/in/cami-martinez-b84539222/" title="LinkedIn"
                             target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="icomoon-free:linkedin"
-                            data-width="35"></span></a>
-                            <a 
-                            href="https://github.com/cami-martinez" 
-                            title="Git Hub"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="iconoir:github-circle"
-                            data-width="35"></span></a>
-                        </div>
+                                data-icon="icomoon-free:linkedin" data-width="35"></span></a>
+                        <a href="https://github.com/cami-martinez" title="Git Hub" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconoir:github-circle"
+                                data-width="35"></span></a>
+                    </div>
                 </li>
                 <li class="m-2">
-                        <h6>Estefania Apaza</h6>
-                        <div>
-                            <a 
-                            href="https://www.linkedin.com/in/estefania-eliana-apaza-burgos-7327a2287/" 
-                            title="LinkedIn"
+                    <h6>Estefania Apaza</h6>
+                    <div>
+                        <a href="https://www.linkedin.com/in/estefania-eliana-apaza-burgos-7327a2287/" title="LinkedIn"
                             target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="icomoon-free:linkedin"
-                            data-width="35"></span></a>
-                            <a 
-                            href="" 
-                            title="Git Hub"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="iconoir:github-circle"
-                            data-width="35"></span></a>
-                        </div>
+                                data-icon="icomoon-free:linkedin" data-width="35"></span></a>
+                        <a href="" title="Git Hub" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconoir:github-circle"
+                                data-width="35"></span></a>
+                    </div>
                 </li>
                 <li class="m-2">
-                        <h6>Lourdes Fernández</h6>
-                        <div>
-                            <a 
-                            href="https://www.linkedin.com/in/lourdesefernandez/" 
-                            title="LinkedIn"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="icomoon-free:linkedin"
-                            data-width="35"></span></a>
-                            <a 
-                            href="https://github.com/LourdesEFernandez" 
-                            title="Git Hub"
-                            target="_blank"><span class="iconify | iconify-footer | p-2 | rounded-3"
-                            data-icon="iconoir:github-circle"
-                            data-width="35"></span></a>
-                        </div>
+                    <h6>Lourdes Fernández</h6>
+                    <div>
+                        <a href="https://www.linkedin.com/in/lourdesefernandez/" title="LinkedIn" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="icomoon-free:linkedin"
+                                data-width="35"></span></a>
+                        <a href="https://github.com/LourdesEFernandez" title="Git Hub" target="_blank"><span
+                                class="iconify | iconify-footer | p-2 | rounded-3" data-icon="iconoir:github-circle"
+                                data-width="35"></span></a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -359,4 +336,5 @@
     <script src="./js/index.js"></script>
     <script src="js/nav.js"></script>
 </body>
+
 </html>

@@ -17,7 +17,7 @@
             <div class="container-fluid">
                 <div class="logo | d-flex | align-items-center">
                     <img src="../assets/images/logo.png" alt="salta de turno">
-                    <a class="navbar-brand | ms-2 | fw-bold" href="index.html">Salta de Turno</a>
+                    <a class="navbar-brand | ms-2 | fw-bold" href="../">Salta de Turno</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
@@ -58,8 +58,8 @@
                         <fieldset class="mb-3 input-iconify input-email">
                             <span class="iconify iconify-left" data-icon="ic:round-alternate-email" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email-login" id="email-login"
-                                placeholder="Correo Electronico">
+                            <input type="text" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="email-login" id="email-login" placeholder="Correo Electronico">
                             <span class="error | email-error | none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un mail valido</p>
@@ -68,8 +68,8 @@
                         <fieldset class="mb-3 input-iconify">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
-                            <input type="password" class="w-100 | mt-4 | rounded-4" name="password" id="password"
-                                placeholder="Contraseña">
+                            <input type="password" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="password" id="password" placeholder="Contraseña">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password')"></span>
                         </fieldset>
@@ -83,7 +83,36 @@
                         </div>
                         <div
                             class="mt-4 | mb-2 | container-login-forgot-password | d-flex | justify-content-between | align-items-center">
-                            <a href="#" class="text-decoration-none | fs-6">¿Olvidaste tu contraseña?</a>
+                            <a href="#" class="text-decoration-none | fs-6" data-bs-toggle="modal"
+                                data-bs-target="#forgotPassword">¿Olvidaste tu contraseña?</a>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="forgotPassword" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="forgotPasswordLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h1 class="modal-title fs-5" id="forgotPasswordLabel">¿Olvidaste tu
+                                                contraseña?</h1>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Actualmente, estamos desarrollando la funcionalidad de recuperación de
+                                            contraseña para mejorar tu experiencia. Lamentamos los inconvenientes que
+                                            esto pueda causar. Si has olvidado tu contraseña, te invitamos a
+                                            contactarnos a través de nuestra sección de contacto en la página web.
+                                            Apreciamos tu paciencia y comprensión, y te agradecemos por elegir nuestros
+                                            servicios. ¡Muchas gracias! </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-bs-dismiss="modal">Salir</button>
+                                                <button type="button" id="goToContactButton" class="btn btn-success">Ir a contactos</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <button class="btn-login | py-2 | px-4 | fs-6 | fw-bold" type="submit"
                                 id="login-button">Iniciar
                                 sesión</button>
@@ -101,8 +130,8 @@
                         <fieldset class="mb-3 input-iconify input-name">
                             <span class="iconify iconify-left" data-icon="mdi:card-account-details" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="name" id="name"
-                                placeholder="Nombre y Apellido">
+                            <input type="text" class="w-100 | mt-4 | rounded-4 | placeholder-login-register" name="name"
+                                id="name" placeholder="Nombre y Apellido">
                             <span class="error name-error none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un nombre válido</p>
@@ -111,8 +140,8 @@
                         <fieldset class="mb-3 input-iconify input-email">
                             <span class="iconify iconify-left" data-icon="ic:round-alternate-email" data-width="25"
                                 data-height="25"></span>
-                            <input type="text" class="w-100 | mt-4 | rounded-4" name="email-signup" id="email-signup"
-                                placeholder="Correo Electronico">
+                            <input type="text" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="email-signup" id="email-signup" placeholder="Correo Electronico">
                             <span class="error | email-error | none">
                                 <iconify-icon icon="jam:alert"></iconify-icon>
                                 <p class="error-text">Por favor, ingrese un mail valido</p>
@@ -121,8 +150,8 @@
                         <fieldset class="mb-3 input-iconify input-password">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
-                            <input type="password" class="w-100 mt-4 rounded-4" name="password-signup"
-                                id="password-signup" placeholder="Contraseña" min="8">
+                            <input type="password" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="password-signup" id="password-signup" placeholder="Contraseña" min="8">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password-signup')"></span>
                             <span class="error password-error none">
@@ -134,8 +163,9 @@
                         <fieldset class="mb-3 input-iconify input-password">
                             <span class="iconify iconify-left" data-icon="mdi:form-textbox-password" data-width="25"
                                 data-height="25"></span>
-                            <input type="password" class="w-100 mt-4 rounded-4" name="password-signup-confirm"
-                                id="password-signup-confirm" placeholder="Confirmar contraseña">
+                            <input type="password" class="w-100 | mt-4 | rounded-4 | placeholder-login-register"
+                                name="password-signup-confirm" id="password-signup-confirm"
+                                placeholder="Confirmar contraseña">
                             <span class="iconify iconify-right eye-icon password-toggle" data-icon="mdi:eye"
                                 onclick="togglePasswordVisibility('password-signup-confirm')"></span>
                             <span class="error password-match-error none">
@@ -145,70 +175,91 @@
                         </fieldset>
                         <div>
                             <div class="mt-5 | form-check">
-                                <input class="form-check-input" type="checkbox" id="acept">
-                                <a class="form-check-label acept-terms" data-bs-toggle="modal"
+                                <a class="form-check-label | acept-terms" data-bs-toggle="modal"
                                     data-bs-target="#staticBackdrop">
                                     Acepto los términos y condiciones
                                 </a>
+                                <input class="form-check-input" type="checkbox" id="acept" disabled>
                                 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                     aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                                        <div class="modal-content">
+                                    <div class="modal-dialog | modal-dialog-centered | modal-dialog-scrollable">
+                                        <div class="modal-content ">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Términos y Condiciones de Uso para Salta de Turno</h1>
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Términos y
+                                                    Condiciones de Uso para Salta de Turno</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
                                                 <ol>
                                                     <li><strong>1. Aceptación de Términos</strong></li>
-                                                    <p>Al acceder y utilizar el sitio web Salta de Turno, usted acepta cumplir
-                                                        con estos Términos y Condiciones de Uso. Si no está de acuerdo con
+                                                    <p>Al acceder y utilizar el sitio web Salta de Turno, usted acepta
+                                                        cumplir
+                                                        con estos Términos y Condiciones de Uso. Si no está de acuerdo
+                                                        con
                                                         alguno de los términos aquí presentados, por favor absténgase de
                                                         utilizar nuestro sitio web.</p>
 
                                                     <li><strong>2. Uso de la Información</strong></li>
-                                                    <p>La información proporcionada en Salta de Turno, especialmente en lo que
-                                                        respecta a medicamentos y farmacias, es solo para fines informativos. No
-                                                        promovemos la automedicación y siempre recomendamos la consulta con un
-                                                        profesional de la salud calificado antes de tomar cualquier medicamento.</p>
+                                                    <p>La información proporcionada en Salta de Turno, especialmente en
+                                                        lo que
+                                                        respecta a medicamentos y farmacias, es solo para fines
+                                                        informativos. No
+                                                        promovemos la automedicación y siempre recomendamos la consulta
+                                                        con un
+                                                        profesional de la salud calificado antes de tomar cualquier
+                                                        medicamento.</p>
 
                                                     <li><strong>3. No Automedicación</strong></li>
-                                                    <p>Usted acepta no utilizar la información proporcionada en Salta de Turno
-                                                        para automedicarse o tratar condiciones médicas sin previa consulta con
-                                                        un médico. Entiende que la automedicación puede ser peligrosa y se
-                                                        compromete a buscar asesoramiento médico profesional para cualquier
+                                                    <p>Usted acepta no utilizar la información proporcionada en Salta de
+                                                        Turno
+                                                        para automedicarse o tratar condiciones médicas sin previa
+                                                        consulta con
+                                                        un médico. Entiende que la automedicación puede ser peligrosa y
+                                                        se
+                                                        compromete a buscar asesoramiento médico profesional para
+                                                        cualquier
                                                         condición de salud.</p>
-                                                    
+
                                                     <li><strong>4. Recetas Médicas</strong></li>
-                                                    <p>Reconoce que ciertos medicamentos requieren una receta médica y se
-                                                        compromete a no adquirir medicamentos de venta bajo receta sin la debida
+                                                    <p>Reconoce que ciertos medicamentos requieren una receta médica y
+                                                        se
+                                                        compromete a no adquirir medicamentos de venta bajo receta sin
+                                                        la debida
                                                         autorización de un profesional de la salud.</p>
 
                                                     <li><strong>5. Responsabilidad</strong></li>
-                                                    <p>Salta de Turno no se hace responsable de las consecuencias que puedan
-                                                        surgir del uso indebido de la información proporcionada en el sitio web.
-                                                        Usted será el único responsable de las decisiones tomadas con base en el
+                                                    <p>Salta de Turno no se hace responsable de las consecuencias que
+                                                        puedan
+                                                        surgir del uso indebido de la información proporcionada en el
+                                                        sitio web.
+                                                        Usted será el único responsable de las decisiones tomadas con
+                                                        base en el
                                                         contenido de este sitio web.</p>
-                                                    
+
                                                     <li><strong>6. Enlaces a Terceros</strong></li>
                                                     <p>Este sitio web puede contener enlaces a sitios web operados por
-                                                        terceros. Estos enlaces se proporcionan para su conveniencia y no
-                                                        significan que endosamos o aceptamos responsabilidad por el contenido o
+                                                        terceros. Estos enlaces se proporcionan para su conveniencia y
+                                                        no
+                                                        significan que endosamos o aceptamos responsabilidad por el
+                                                        contenido o
                                                         uso de estos sitios web.</p>
 
                                                     <li><strong>7. Cambios a los Términos</strong></li>
-                                                    <p>Salta de Turno se reserva el derecho de modificar estos Términos y
+                                                    <p>Salta de Turno se reserva el derecho de modificar estos Términos
+                                                        y
                                                         Condiciones en cualquier momento. Cualquier cambio será efectivo
                                                         inmediatamente después de su publicación en el sitio web.</p>
 
                                                     <li><strong>8. Contacto</strong></li>
                                                     Si tiene preguntas sobre estos Términos y Condiciones, por favor
-                                                        contáctenos a través de los canales proporcionados en nuestro sitio web.
+                                                    contáctenos a través de los canales proporcionados en nuestro sitio
+                                                    web.
                                                 </ol>
 
-                                                <p>Al utilizar Salta de Turno, usted acepta estos términos en su totalidad.</p>
+                                                <p>Al utilizar Salta de Turno, usted acepta estos términos en su
+                                                    totalidad.</p>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-success">Acepto</button>
@@ -240,6 +291,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="../js/form-login.js"></script>
+    <script src="../js/nav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

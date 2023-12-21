@@ -17,37 +17,44 @@ body {
     --font-title: 'Roboto', sans-serif;
     --font-text: 'Poppins', sans-serif;
     --text-color: #0A1E3D;
-    --text-color-box:#0A1E3D;
+    --text-color-n: #18468B;
+    --text-color-box: #0A1E3D;
     --text-color-light: #18468B;
+    --text-color-placeholder: #034272af;
     --color-primary: #36EDA9;
     --color-secondary: #338DFF;
     --color-tertiary: #82D1FF;
     --color-quaternary: #28A174;
     --color-underline: #4674B7;
-    --bg-color-main:#ffffff;
+    --bg-color-main: #ffffff;
     --bg-color-container: #F1F1F1;
     --bg-color-comments: #D9D9D9;
     --bg-thead-table: #022E50;
     --table-color: #034172;
-    --bg-color-g-1:#D2FFEE;
-    --bg-color-g-2:#2984FF;
+    --bg-color-g-1: #D2FFEE;
+    --bg-color-g-2: #2984FF;
     --bg-nav-scroll: #ffffffe9;
+    --color-shadow: rgba(3, 65, 114, 0.20);
+    --img-pharmacy: url('../assets/images/back-pharmacy.png')
 }
 
-h1{
+h1 {
     color: var(--text-color-light);
     letter-spacing: 3px;
 }
-h2{
+
+h2 {
     color: var(--text-color-light);
     font-family: var(--font-title);
 }
+
 h3,
-h4{
+h4 {
     color: var(--text-color-light);
     font-family: var(--font-title);
 }
-h3{
+
+h3 {
     font-size: calc(1.375rem + 1.5vw);
     font-weight: 600;
     letter-spacing: 2px;
@@ -55,40 +62,42 @@ h3{
 }
 
 section,
-article{
+article {
     padding: 3rem 1.4rem;
 }
 
 section header,
-article header{
+article header {
     max-width: 1900px;
     margin: auto;
 }
 
-.container-image-text-header{
+.container-image-text-header {
     padding-top: 4rem;
 }
-.navbar{
+
+.navbar {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 3;
 }
+
 nav a,
-nav .btn{
+nav .btn {
     font-family: var(--font-title);
 }
 
-.main-landing{
+.main-landing {
     background: linear-gradient(180deg, var(--bg-color-g-1) 10%, var(--bg-color-g-2) 100%);
 }
 
-.main-pharmacy{
+.main-pharmacy {
     background-color: var(--bg-color-main);
 }
 
-.btn{
+.btn {
     background: transparent;
     border: 1px solid;
     border-radius: 1rem;
@@ -98,7 +107,7 @@ nav .btn{
     display: inline-block;
 }
 
-.btn::after{
+.btn::after {
     content: "";
     position: absolute;
     z-index: -1;
@@ -110,7 +119,7 @@ nav .btn{
     transition: all 0.35s;
 }
 
-.btn:hover::after{
+.btn:hover::after {
     left: 0;
     right: 0;
     top: 0;
@@ -118,17 +127,85 @@ nav .btn{
     -webkit-transition: all 0.35s;
     transition: all 0.35s;
 }
-.dark-mode{
+
+.dark-mode {
     --text-color: #F1F1F1;
-    --color-secondary:#24afa3;
-    --color-quaternary:#5ac59e;
-    --text-color-light:#75d6be;
-    --bg-color-comments:#585858;
-    --bg-color-container:#034172;
-    --bg-thead-table:#134c78;
+    --text-color-n: #4674B7;
+    --color-secondary: #24afa3;
+    --color-quaternary: #5ac59e;
+    --text-color-light: #75d6be;
+    --text-color-placeholder: #dbdbdbda;
+    --bg-color-comments: #585858;
+    --bg-color-container: #034172;
+    --bg-thead-table: #134c78;
     --table-color: #226ca5;
-    --bg-color-main:#113048;
-    --bg-color-g-1:#034172;
-    --bg-color-g-2:#4674B7;
+    --bg-color-main: #113048;
+    --bg-color-g-1: #034172;
+    --bg-color-g-2: #4674B7;
     --bg-nav-scroll: #113048e9;
+    --color-shadow: rgba(161, 161, 161, 0.2);
+    --img-pharmacy: url('../assets/images/Imagen-fondo-inicio-oscuro.png');
+}
+
+@keyframes ldio-8ty988q2u8f {
+    0% {
+        top: 96px;
+        left: 96px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 18px;
+        left: 18px;
+        width: 156px;
+        height: 156px;
+        opacity: 0;
+    }
+}
+
+.ldio-8ty988q2u8f div {
+    position: absolute;
+    border-width: 4px;
+    border-style: solid;
+    opacity: 1;
+    border-radius: 50%;
+    animation: ldio-8ty988q2u8f 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ldio-8ty988q2u8f div:nth-child(1) {
+    border-color: #2984ff;
+    animation-delay: 0s;
+}
+
+.ldio-8ty988q2u8f div:nth-child(2) {
+    border-color: #36eda9;
+    animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-xm2ty3k97d {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    z-index: 1000;
+}
+
+.ldio-8ty988q2u8f {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+}
+
+.ldio-8ty988q2u8f div {
+    box-sizing: content-box;
 }

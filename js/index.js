@@ -12,61 +12,28 @@ const currentDay = today.getDate()
 const currentYear = today.getFullYear()
 
 function cargarFarmaciasDeTurno() {
-    return fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
+    mostrarLoader();
+    return new Promise(resolve => setTimeout(resolve, 2000)) 
+    .then(() => fetch('https://api-salta-de-turno.onrender.com/api/farmacias')
         .then(response => {
             if (!response.ok) {
-                throw new Error('HTTP error: ' + response.status)
+                throw new Error('HTTP error: ' + response.status);
             }
-            return response.json()
+            return response.json();
         })
         .then(apiData => {
             if (!apiData.farmacias || !Array.isArray(apiData.farmacias)) {
-                throw new Error('Los datos recibidos no son válidos')
+                throw new Error('Los datos recibidos no son válidos');
             }
-            return apiData.farmacias
+            setTimeout(ocultarLoader, 2000);
+            return apiData.farmacias;
         })
         .catch(error => {
-            console.error("Hubo un problema con la operación: " + error.message)
-        })
+            setTimeout(ocultarLoader, 2000);
+            console.error("Hubo un problema con la operación: " + error.message);
+        }));
 }
 
-function obtenerHorarioDeCierre(horario) {
-    const ahora = new Date();
-    const diaSemana = ahora.getDay();
-    const esFinDeSemana = diaSemana === 0 || diaSemana === 6;
-
-    let cierreHoy, cierrePronto = false;
-
-    try {
-        if (esFinDeSemana) {
-            cierreHoy = horario.finDeSemana['cierre' + (diaSemana === 0 ? '2' : '')]
-        } else {
-            cierreHoy = horario.semana.cierre;
-        }
-
-        if (cierreHoy === '00:00') {
-            cierreHoy = '23:59'
-        }
-
-        const [horasCierre, minutosCierre] = cierreHoy.split(':').map(Number);
-        const horaCierre = horasCierre + minutosCierre / 60;
-        const horaActual = ahora.getHours() + ahora.getMinutes() / 60;
-
-        if (horaCierre - horaActual <= 1 && horaCierre - horaActual > 0) {
-            cierrePronto = true;
-        }
-    } catch (error) {
-        return {
-            cierre: 'ABIERTO 24 HORAS',
-            cierrePronto: false
-        }
-    }
-
-    return {
-        cierre: cierreHoy,
-        cierrePronto: cierrePronto
-    }
-}
 
 const obtenerTurnos = (day, month, year, data) => {
     const deTurno24 = data.filter(({ abierto24Horas }) => abierto24Horas)
@@ -103,23 +70,16 @@ const mostrarMensajeNoResultados = () => {
 const cargarFarmacias = (farmacias) => {
     contenedorFarmacias.innerHTML = ''
     const farmaciasActivas = farmacias.filter(({ estado }) => estado === "Activo")
-    farmaciasActivas.forEach(({ nombre, direccion, telefono, ubicacion, horario, imagen, Zona }) => {
-        const horarioHoy = obtenerHorarioDeCierre(horario)
+    farmaciasActivas.forEach(({ nombre, direccion, telefono, ubicacion, imagen, Zona }) => {
         const card = document.createElement("div")
-        let alertPronto = ''
         card.className = "card-farmacia"
         if (!imagen)
             imagen = "../assets/images/img-card-farmacia.png"
-        horarioHoy.cierrePronto ?
-            alertPronto = `<div class="alert | alert-danger | fw-bold" role="alert">CIERRA PRONTO</div>`
-            :
-            alertPronto = `<div class="alert | alert-danger | fw-bold | d-none" role="alert">CIERRA PRONTO</div>`
 
         card.innerHTML = `
             <img src="${imagen}" alt="imagen de farmacia"/>
             <div class="w-100">
                 <h2>Farmacia ${nombre}</h2>
-                ${alertPronto}
                 <div class="w-100 | d-flex | flex-column | justify-content-center | text-start | p-2">
                     <p><strong>Zona:</strong> ${Zona}</p>
                     <p><strong>Dirección:</strong> ${direccion}</p>
@@ -213,6 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function checkLoginStatus() {
     var isLoggedIn = document.cookie.split(';').some((item) => item.trim().startsWith('username='));
+    console.log("Está logueado:", isLoggedIn);
+    console.log("Cookie 'username':", document.cookie.split('; ').find(row => row.startsWith('username=')));
     var loginLink = document.getElementById('login-link');
     var logoutLink = document.getElementById('logout-link');
     var medicamentosLink = document.getElementById('medicamentos-link');
@@ -256,3 +218,21 @@ function logout() {
 }
 
 window.onload = checkLoginStatus;
+
+function mostrarLoader() {
+    const loaderHTML = `
+    <div class="loadingio-spinner-ripple-xm2ty3k97d">
+        <div class="ldio-8ty988q2u8f">
+            <div></div>
+            <div></div>
+        </div>
+    </div>`;
+    contenedorFarmacias.innerHTML = loaderHTML;
+}
+
+function ocultarLoader() {
+    const loader = document.querySelector('.loadingio-spinner-ripple-tpkdqvqcrsb');
+    if (loader) {
+        loader.remove();
+    }
+}
