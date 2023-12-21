@@ -35,6 +35,10 @@
     box-shadow: none;
 }
 
+.navbar-toggler-icon{
+    filter: contrast(var(--contrast-btn));
+}
+
 .navbar-dropdown{
     width: 65%;
     height: 100%;
