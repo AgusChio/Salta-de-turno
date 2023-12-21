@@ -197,7 +197,7 @@ nav .btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: var(--bg-color-main);
     z-index: 1000;
 }
 
