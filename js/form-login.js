@@ -91,8 +91,8 @@ $("#password-signup-confirm").addEventListener("input", checkPasswordsMatch);
 //Promesas
 $("#form-login").addEventListener("submit", async (e) => {
     e.preventDefault();
-    checkField("#name", ".name-error", validateEmpty, true);
-    checkField("#email-login", ".email-error", validateEmail);
+    checkField("#name", ".name-error-login", validateEmpty, true);
+    checkField("#email-login", ".email-error-login", validateEmail);
 
     const email = $("#email-login").value.toLowerCase();
     const password = $("#password").value;
@@ -165,16 +165,6 @@ $("#form-signup").addEventListener("submit", async (e) => {
         return;
     }
 
-    const emailSignup = $("#email-signup").value;
-    if (!validateEmail(emailSignup)) {
-        Swal.fire({
-            title: 'Error',
-            text: 'El email ingresado no es válido.',
-            icon: 'error',
-            confirmButtonText: 'Aceptar'
-        });
-        return;
-    }
 
     if (Array.from($(".container-form-signUp")).length === 0) {
         const name = $("#name").value;
