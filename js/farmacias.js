@@ -267,7 +267,7 @@ function cargarCronogramaParaMes(mes) {
 }
 
 function cargarCronogramaParaMesActual() {
-    const buttonsMonths = document.querySelectorAll(".tabla-meses a.mesAnual");
+    const buttonsMonths = document.querySelectorAll(".tabla-meses .box-mes");
     const fechaActual = new Date();
     const nombreMesActual = new Intl.DateTimeFormat('es-ES', { month: 'long' }).format(fechaActual);
 
