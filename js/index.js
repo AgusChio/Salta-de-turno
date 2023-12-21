@@ -180,6 +180,8 @@ function checkLoginStatus() {
     var medicamentosLink = document.getElementById('medicamentos-link');
     var medicamentosDropdown = document.getElementById('medicamentos-dropdown');
     var footerMedicamentosLinks = document.getElementById('footer-links-medicamentos');
+    const fullnamecontact = document.getElementById("fullnamecontact");
+    const emailcontact = document.getElementById("emailcontact");
 
     loginLink.style.display = isLoggedIn ? 'none' : 'block';
     logoutLink.style.display = isLoggedIn ? 'block' : 'none';
@@ -199,6 +201,10 @@ function checkLoginStatus() {
             <li><a href="./pages/medicamentos.html#injectables" class="text-decoration-none">Inyectables de venta libre</a></li>
             <li><a href="./pages/medicamentos.html#plants" class="text-decoration-none">Plantas medicinales</a></li>
         `; 
+        fullnamecontact.value = "fulanito";
+        emailcontact.value = "pepito";
+        fullnamecontact.disabled = true;
+        emailcontact.disabled = true;
     } else {
         medicamentosLink.dataset.bsToggle = 'dropdown';
         medicamentosDropdown.innerHTML = `
@@ -208,6 +214,8 @@ function checkLoginStatus() {
             <li><span class="dropdown-item dropdown-item-noLogued disabled" tabindex="-1" aria-disabled="true">Debes iniciar sesión y aceptar los términos y condiciones para acceder a esta sección.</span></li>
         `;
     }
+
+
 }
 
 // Función para manejar el cierre de sesión
