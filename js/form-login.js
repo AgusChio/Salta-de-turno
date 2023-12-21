@@ -127,6 +127,15 @@ $("#form-login").addEventListener("submit", async (e) => {
                 }).then(() => {
                     window.location.href = '/index.html';
                 });
+                var rememberMeChecked = document.getElementById('remember').checked;
+                if (rememberMeChecked) {
+                    var currentDate = new Date();
+            
+                    currentDate.setTime(currentDate.getTime() + (14 * 24 * 60 * 60 * 1000));
+            
+                    var expires = "expires=" + currentDate.toUTCString();
+                    document.cookie = "username=" + email + "; " + expires + "; path=/";
+                }
             }
         } catch (error) {
             Swal.fire({
@@ -245,24 +254,3 @@ $("#email-login").addEventListener("keyup", () => checkField("#email-login", ".e
 $("#password-signup").addEventListener("keyup", () => checkField("#password-signup", ".password-error", validatePassword));
 $("#password-signup").addEventListener("keyup", checkPasswordsMatch);
 $("#password-signup-confirm").addEventListener("keyup", checkPasswordsMatch);
-
-
-
-// function recordarme
-function setRememberMeCookie() {
-    var username = document.getElementById('email-login').value; // Asumiendo que es un campo de correo electrónico
-    var rememberMeChecked = document.getElementById('remember').checked;
-
-    if (rememberMeChecked) {
-        var currentDate = new Date();
-
-        currentDate.setTime(currentDate.getTime() + (14 * 24 * 60 * 60 * 1000));
-
-        var expires = "expires=" + currentDate.toUTCString();
-        document.cookie = "username=" + username + "; " + expires + "; path=/";
-    }
-}
-
-document.getElementById('goToContactButton').addEventListener('click', function() {
-    window.location.href = '../index.html#contact';
-});
